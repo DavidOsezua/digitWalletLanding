@@ -14,7 +14,7 @@ const Hero = () => {
       ></div>
 
       {/* Background Logo */}
-      <div className="absolute top-1/2 md:top-1/3 left-1/2 max-w-101 -translate-x-1/2 md:-translate-x-1/4 -translate-y-1/2 w-full  opacity-10 pointer-events-none">
+      <div className="absolute top-1/2 md:top-1/3 left-1/2 max-w-75 md:max-w-101 -translate-x-1/2 md:-translate-x-1/4 -translate-y-1/2 w-full  opacity-10 pointer-events-none">
         <img
           src="/digitWallet.svg"
           alt="DigitWallet Background"
@@ -90,9 +90,9 @@ const Hero = () => {
             className="relative flex justify-center lg:justify-end"
           >
             {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-32 h-32 opacity-30">
+            {/* <div className="absolute top-0 right-0 w-32 h-32 opacity-30">
               <img src="/Rectangle1.svg" alt="" className="w-full h-full" />
-            </div>
+            </div> */}
 
             {/* Phone Mockup */}
             <div className="">
