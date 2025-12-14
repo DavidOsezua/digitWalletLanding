@@ -8,7 +8,10 @@ const Hero = () => {
   return (
     <section className="px-4 lg:px-8 pt-12 lg:pt-20 relative overflow-hidden">
       {/* Bottom-right Flashlight Effect */}
-      <div className="absolute -bottom-48 -right-48 w-150 h-150 rounded-full blur-3xl opacity-25 pointer-events-none" style={{ backgroundColor: "#9917EF" }}></div>
+      <div
+        className="absolute -bottom-48 -right-48 w-150 h-150 rounded-full blur-3xl opacity-25 pointer-events-none"
+        style={{ backgroundColor: "#9917EF" }}
+      ></div>
 
       {/* Background Logo */}
       <div className="absolute top-1/2 md:top-1/3 left-1/2 max-w-101 -translate-x-1/2 md:-translate-x-1/4 -translate-y-1/2 w-full  opacity-10 pointer-events-none">
@@ -93,7 +96,7 @@ const Hero = () => {
 
             {/* Phone Mockup */}
             <div className="">
-              <img src="/phone.svg" alt="DigitWallet App" className="" />
+              <img src="/phone.png" alt="DigitWallet App" className="" />
             </div>
 
             {/* Decorative Circle */}
