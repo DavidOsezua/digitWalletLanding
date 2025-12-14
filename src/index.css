@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-widget: #161b33e5;
+  --color-bg-secondary: #1e2440;
+  --color-bg-body: #0f1326;
+  --color-primary-300: #b4eaff;
+  --color-border-gradient-start: #d9d9d966;
+  --color-border-gradient-end: #d9d9d91a;
+  --color-border-navbar: #495253;
+  --color-white: #ffffff;
+  --color-dark-primary-50: #e9f9ff;
+  --color-gradient-card-start: #3a436d80;
+  --color-gradient-card-end: #4d698b80;
+  --color-gradient-alternate-start: #454c6f33;
+  --color-gradient-alternate-end: #5f689533;
+  --color-gradient-blue-start: #b4eaff33;
+  --color-gradient-blue-end: #161b3333;
+  --color-gradient-blue-1-start: #ecfaff;
+  --color-gradient-blue-2-end: #cbd6ff;
+  --color-dark-text: #191919;
+  --color-gradient-black-start: #ffffff;
+  --color-gradient-black-end: #999999;
+
+  --background-image-gradient-card-2: linear-gradient(
+    135deg,
+    var(--color-gradient-card-start) 0%,
+    var(--color-gradient-card-end) 100%
+  );
+  --background-image-gradient-alternate: linear-gradient(
+    var(--color-gradient-alternate-end),
+    var(--color-gradient-alternate-start)
+  );
+  --background-image-gradient-blue: linear-gradient(
+    to bottom,
+    var(--color-gradient-blue-start) 0%,
+    var(--color-gradient-blue-end) 100%
+  );
+  --background-image-gradient-blue-2: linear-gradient(
+    to bottom,
+    var(--color-gradient-blue-1-start) 0%,
+    var(--color-gradient-blue-2-end) 100%
+  );
+  --background-image-gradient-black: linear-gradient(
+    to right,
+    var(--color-gradient-black-start) 0%,
+    var(--color-gradient-black-end) 100%
+  );
+}
+
+/* @utility bg-widget {
+  background-color: var(--color-bg-widget);
+}
+
+@utility bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+@utility bg-body {
+  background-color: var(--color-bg-body);
+}
+
+@utility bg-primary-300 {
+  background-color: var(--color-primary-300);
+}
+
+@utility text-primary-300 {
+  color: var(--color-primary-300);
+}
+
+@utility border-navbar {
+  border-color: var(--color-border-navbar);
+} */
+
+body {
+  background-color: var(--color-bg-body);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
