@@ -1,4 +1,4 @@
-import { Shield, UserCheck } from "lucide-react";
+
 import ComplianceCard from "./ComplianceCard";
 import KYC from "./SvgComponent/KYC";
 import Compliance from "./SvgComponent/Compliance";

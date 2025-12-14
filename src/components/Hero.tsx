@@ -1,16 +1,32 @@
 import { motion } from "framer-motion";
+import Dollar from "./SvgComponent/Dollar";
+import Euro from "./SvgComponent/Euro";
+import Pounds from "./SvgComponent/Pounds";
+import Bitcoin from "./SvgComponent/Bitcoin";
 
 const Hero = () => {
   return (
     <section className="px-4 lg:px-8 pt-12 lg:pt-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      {/* Bottom-right Flashlight Effect */}
+      <div className="absolute -bottom-48 -right-48 w-150 h-150 rounded-full blur-3xl opacity-25 pointer-events-none" style={{ backgroundColor: "#9917EF" }}></div>
+
+      {/* Background Logo */}
+      <div className="absolute top-1/2 md:top-1/3 left-1/2 max-w-101 -translate-x-1/2 md:-translate-x-1/4 -translate-y-1/2 w-full  opacity-10 pointer-events-none">
+        <img
+          src="/digitWallet.svg"
+          alt="DigitWallet Background"
+          className="w-full h-auto"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 lg:space-y-8"
+            className="space-y-3"
           >
             {/* Tagline */}
             <p className="text-gray-400 text-sm md:text-base">
@@ -45,34 +61,20 @@ const Hero = () => {
             </motion.button>
 
             {/* Supported Currency */}
-            <div className="flex items-center gap-4 pt-4">
+            <div
+              className="flex items-center gap-3 py-2 px-4  rounded-full w-fit"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+            >
               <span className="text-gray-400 text-sm">Supported Currency</span>
-              <div className="flex items-center gap-2">
+              <div
+                className="flex items-center gap-2 px-2 py-2 rounded-full"
+                style={{ backgroundColor: "#161B33E5" }}
+              >
                 {/* Currency Icons */}
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-                >
-                  $
-                </div>
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-                >
-                  £
-                </div>
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-                >
-                  €
-                </div>
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold"
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-                >
-                  ₿
-                </div>
+                <Dollar />
+                <Euro />
+                <Pounds />
+                <Bitcoin />
               </div>
             </div>
           </motion.div>

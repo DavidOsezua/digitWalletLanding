@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import ArrowUp from "./SvgComponent/ArrowUp";
 import ArrowDown from "./SvgComponent/ArrowDown";
 

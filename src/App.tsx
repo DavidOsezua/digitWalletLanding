@@ -15,7 +15,10 @@ import LogoTicker from "./components/LogoTicker";
 
 const App = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Top-left Flashlight Effect */}
+      <div className="fixed -top-96 -left-96 w-200 h-200 rounded-full blur-3xl opacity-30 pointer-events-none z-0" style={{ backgroundColor: "#7A72FF" }}></div>
+
       <Navbar />
       <DisclaimerBanner />
       <Hero />

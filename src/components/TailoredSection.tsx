@@ -1,8 +1,4 @@
 import { useMobile } from "../hooks/useMobile";
-import ForBusiness from "./SvgComponent/ForBusiness";
-import ForIndividuals from "./SvgComponent/ForIndividuals";
-import HorizontalLine from "./SvgComponent/HorizontalLine";
-import RightArrow from "./SvgComponent/RightArrow";
 import TwoVerticalLines from "./SvgComponent/TwoVerticalLines";
 import WeServeArrow from "./SvgComponent/WeServeArrow";
 import TailoredSectionDesktop from "./TailoredSectionDesktop";
