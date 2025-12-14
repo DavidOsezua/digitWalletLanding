@@ -65,7 +65,7 @@ export default function OnboardingSteps() {
 
               {/* Mock Screenshot */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-75">
-                <img src="/verify.svg" alt="" className="w-full h-auto" />
+                <img src="/verify.png" alt="" className="w-full h-auto" />
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function OnboardingSteps() {
 
               {/* Mock Screenshot */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-75">
-                <img src="/transactions.svg" alt="" className="w-full h-auto" />
+                <img src="/transactions.png" alt="" className="w-full h-auto" />
               </div>
             </div>
           </div>

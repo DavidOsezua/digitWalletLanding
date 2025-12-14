@@ -72,7 +72,7 @@ const Features = () => {
               {/* Conversion Interface */}
               <div className="absolute bottom-0 left-6 w-[calc(100%-48px)]">
                 <img
-                  src="/conversions.svg"
+                  src="/conversions.png"
                   alt="Conversion Interface"
                   className="w-full h-auto"
                 />
@@ -111,7 +111,7 @@ const Features = () => {
               {/* Account Dashboard Preview */}
               <div className="absolute bottom-0 right-0 w-[calc(100%-48px)]">
                 <img
-                  src="/accounts.svg"
+                  src="/accounts.png"
                   alt="Account Dashboard"
                   className="w-full h-auto"
                 />
