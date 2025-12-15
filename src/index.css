@@ -53,14 +53,20 @@
   );
   --background-image-gradient-dark-bg: linear-gradient(
     to bottom,
-    var(--color-gradient-dark-bg-start) 0%,
-    var(--color-gradient-dark-bg-end) 100%
+    color-mix(in srgb, var(--color-gradient-dark-bg-start) 20%, transparent),
+    color-mix(in srgb, var(--color-gradient-dark-bg-end) 20%, transparent)
   );
   --background-image-gradient-auxiliary: linear-gradient(
     to bottom,
     var(--color-gradient-auxiliary-start) 0%,
     var(--color-gradient-auxiliary-end) 100%
   );
+  --background-image-gradient-black-fade: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--color-gradient-black-start) 20%, transparent),
+    color-mix(in srgb, var(--color-gradient-black-end) 20%, transparent)
+  );
+
 }
 
 /* @utility bg-widget {

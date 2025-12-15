@@ -32,12 +32,12 @@ const Hero = () => {
             className="space-y-3"
           >
             {/* Tagline */}
-            <p className="text-gray-400 text-sm md:text-base">
+            <p className=" text-sm md:text-base text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full max-w-70">
               Simplified Bankinking with Ease
             </p>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wider">
               Powering Financial{" "}
               <span style={{ color: "var(--color-primary-300)" }}>
                 Freedom.
@@ -66,12 +66,24 @@ const Hero = () => {
             {/* Supported Currency */}
             <div
               className="flex items-center gap-3 py-2 px-4 rounded-full w-fit relative"
-              style={{}}
+              style={{
+                border: "1px solid transparent",
+                background: `
+                  linear-gradient(rgba(15, 19, 38, 0.3), rgba(15, 19, 38, 0.3)) padding-box,
+                  linear-gradient(90deg, rgba(73, 84, 137, 0.8) 0%, rgba(73, 84, 137, 0.21) 100%) border-box
+                `,
+              }}
             >
-              <span className="text-gray-400 text-sm">Supported Currency</span>
+              <span className="text-white text-sm">Supported Currency</span>
               <div
                 className="flex items-center gap-2 px-2 py-2 rounded-full"
-                style={{ backgroundColor: "#161B33E5" }}
+                style={{
+                  border: "0.87px solid transparent",
+                  background: `
+                    linear-gradient(rgba(22, 27, 51, 0.898), rgba(22, 27, 51, 0.898)) padding-box,
+                    linear-gradient(180deg, rgba(45, 51, 81, 1) 0%, rgba(67, 74, 109, 1) 100%) border-box
+                  `,
+                }}
               >
                 {/* Currency Icons */}
                 <Dollar />
