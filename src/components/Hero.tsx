@@ -67,7 +67,7 @@ const Hero = () => {
             <div
               className="flex items-center gap-3 py-2 px-4 rounded-full w-fit relative"
               style={{
-                border: "3px solid transparent",
+                border: "1px solid transparent",
                 backgroundImage: `
                   linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
                   linear-gradient(to bottom, #454C6F, #5F6895)
