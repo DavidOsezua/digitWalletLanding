@@ -14,9 +14,9 @@ const Hero = () => {
       ></div>
 
       {/* Background Logo */}
-      <div className="absolute top-1/2 md:top-1/3 left-1/2 max-w-75 md:max-w-101 -translate-x-1/2 md:-translate-x-1/4 -translate-y-1/2 w-full  opacity-10 pointer-events-none">
+      <div className="absolute top-1/2 md:top-1/3 left-1/2 max-w-75 md:max-w-101 -translate-x-1/2 md:-translate-x-1/4 -translate-y-1/2 w-full opacity-50  pointer-events-none">
         <img
-          src="/digitWallet.svg"
+          src="/digitWallet.png"
           alt="DigitWallet Background"
           className="w-full h-auto"
         />
@@ -65,8 +65,16 @@ const Hero = () => {
 
             {/* Supported Currency */}
             <div
-              className="flex items-center gap-3 py-2 px-4  rounded-full w-fit"
-              style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+              className="flex items-center gap-3 py-2 px-4 rounded-full w-fit relative"
+              style={{
+                border: "3px solid transparent",
+                backgroundImage: `
+                  linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
+                  linear-gradient(to bottom, #454C6F, #5F6895)
+                `,
+                backgroundOrigin: "border-box",
+                backgroundClip: "padding-box, border-box",
+              }}
             >
               <span className="text-gray-400 text-sm">Supported Currency</span>
               <div

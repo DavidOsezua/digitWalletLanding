@@ -21,6 +21,8 @@
   --color-dark-text: #191919;
   --color-gradient-black-start: #ffffff;
   --color-gradient-black-end: #999999;
+  --color-gradient-dark-bg-start: #454c6f;
+  --color-gradient-dark-bg-end: #5f6895;
 
   --background-image-gradient-card-2: linear-gradient(
     135deg,
@@ -45,6 +47,11 @@
     to right,
     var(--color-gradient-black-start) 0%,
     var(--color-gradient-black-end) 100%
+  );
+  --background-image-gradient-dark-bg: linear-gradient(
+    to bottom,
+    var(--color-gradient-dark-bg-start) 0%,
+    var(--color-gradient-dark-bg-end) 100%
   );
 }
 
