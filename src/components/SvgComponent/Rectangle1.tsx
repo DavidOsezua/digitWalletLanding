@@ -1,17 +1,28 @@
 const Rectangle1 = ({ className = "" }) => {
   return (
-    <div
-      className={className}
-      style={{
-        animation: 'spin 3s linear infinite',
-      }}
-    >
-      <svg
-        className="w-full h-auto"
-        viewBox="0 0 59 59"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+    <div className={className}>
+      <style>
+        {`
+          @keyframes spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+          .spin-container {
+            animation: spin 3s linear infinite;
+          }
+        `}
+      </style>
+      <div className="spin-container">
+        <svg
+          className="w-full h-auto"
+          viewBox="0 0 59 59"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
         <rect
           x="40.7377"
           y="0.654606"
@@ -34,6 +45,7 @@ const Rectangle1 = ({ className = "" }) => {
           </linearGradient>
         </defs>
       </svg>
+      </div>
     </div>
   );
 };

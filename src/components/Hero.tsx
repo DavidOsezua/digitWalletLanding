@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Left side - Ellipse */}
           <div className="absolute bottom-1/5 md:bottom-1 md:-left-20 p-4 pointer-events-none">
-            <Ellipse className="max-w-20" />
+            <Ellipse className="max-w-12 md:max-w-20" />
           </div>
           {/* Left Content */}
           <motion.div
