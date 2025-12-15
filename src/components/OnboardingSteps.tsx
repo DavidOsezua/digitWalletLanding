@@ -2,7 +2,7 @@ export default function OnboardingSteps() {
   return (
     <section className="">
       <div
-        className="max-w-7xl mx-auto py-3 px-3 md:px-1"
+        className="max-w-7xl mx-auto py-3 px-3 md:px-2"
         style={{
           backgroundImage: `url("/bg.png")`,
           backgroundSize: "cover",
@@ -10,9 +10,9 @@ export default function OnboardingSteps() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-2">
           {/* Step 1: KYC */}
-          <div className="relative h-131.5 bg-[#161b33]/90 rounded-md  border border-slate-800 overflow-hidden">
+          <div className="relative h-131.5 bg-[#161b33]/80 rounded-md  border border-slate-800 overflow-hidden">
           
 
             <div className="space-y-4">
@@ -40,7 +40,7 @@ export default function OnboardingSteps() {
           </div>
 
           {/* Step 2: Verify Wallet */}
-          <div className="relative h-131.5 bg-[#161b33]/90 rounded-md  border border-slate-800 overflow-hidden">
+          <div className="relative h-131.5 bg-[#161b33]/80 rounded-md  border border-slate-800 overflow-hidden">
      
 
             <div className="space-y-4">
@@ -69,7 +69,7 @@ export default function OnboardingSteps() {
           </div>
 
           {/* Step 3: Transactions */}
-          <div className="relative h-131.5 bg-[#161b33]/90 rounded-md  border border-slate-800 overflow-hidden">
+          <div className="relative h-131.5 bg-[#161b33]/80 rounded-md  border border-slate-800 overflow-hidden">
            
 
             <div className="space-y-4">

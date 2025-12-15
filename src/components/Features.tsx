@@ -9,9 +9,9 @@ const Features = () => {
   return (
     <section className="px-4 lg:px-8 py-4 lg:py-8 relative">
       {/* Background Logo */}
-      <div className="absolute top-50 left-1/2 -translate-x-1/2 w-full max-w-77 md:max-w-101.5 opacity-10 pointer-events-none">
+      <div className="absolute top-50 left-1/2 -translate-x-1/2 w-full max-w-77 md:max-w-101.5 pointer-events-none">
         <img
-          src="/digitWallet.svg"
+          src="/digitWallet.png"
           alt="DigitWallet Background"
           className="w-full h-auto"
         />
@@ -23,11 +23,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto pt-4 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-6 gap-4">
-    
-            <h2 className="text-4xl max-w-150 md:leading-16 lg:text-5xl font-bold text-white ">
-              Everything You Need in One Place
-            </h2>
-          
+          <h2 className="text-4xl max-w-150 md:leading-16 lg:text-5xl font-bold text-white ">
+            Everything You Need in One Place
+          </h2>
+
           <div className="max-w-md">
             <p className="text-gray-300 text-sm lg:text-base mb-4">
               Digitwallet provides a suit of services for you to buy & sell
