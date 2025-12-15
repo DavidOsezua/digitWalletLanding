@@ -29,7 +29,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-3"
+            className="space-y-4"
           >
             {/* Tagline */}
             <p className=" text-sm md:text-base text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full max-w-70">
@@ -37,7 +37,7 @@ const Hero = () => {
             </p>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wider">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide md:tracking-wider">
               Powering Financial{" "}
               <span style={{ color: "var(--color-primary-300)" }}>
                 Freedom.
@@ -65,7 +65,7 @@ const Hero = () => {
 
             {/* Supported Currency */}
             <div
-              className="flex items-center gap-3 py-2 px-4 rounded-full w-fit relative"
+              className="flex items-center gap-3 py-1 justify-between md:py-2 px-2 md:px-4 rounded-full max-w-90 w-full  text-nowrap relative"
               style={{
                 border: "1px solid transparent",
                 background: `

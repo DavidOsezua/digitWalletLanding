@@ -17,9 +17,13 @@ const Features = () => {
         />
       </div>
 
-      <h1 className="text-center text-4xl md:text-6xl mb-4 lg:text-[96px] font-[300px] tracking-[1rem] md:tracking-[1.5rem] lg:tracking-[2.5rem] bg-linear-to-r from-gradient-black-start/20 to-gradient-black-end/20 bg-clip-text text-transparent relative z-10">
+      {/* <h1 className="text-center text-4xl md:text-6xl mb-4 lg:text-[96px] font-[300px] tracking-[1rem] md:tracking-[1.5rem] lg:tracking-[2.5rem] bg-linear-to-r from-gradient-black-start/20 to-gradient-black-end/20 bg-clip-text text-transparent relative z-10">
         DigitWallet
-      </h1>
+      </h1> */}
+
+      <div className="max-w-250 mx-auto">
+        <img src="/DigitWallet.png" alt="" className="w-full h-auto" />
+      </div>
       <div className="max-w-7xl mx-auto pt-4 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-6 gap-4">

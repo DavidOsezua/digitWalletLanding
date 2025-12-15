@@ -1,6 +1,6 @@
 const Warning = () => {
   return (
-    <div className="min-h-screen  p-8 flex items-center justify-center">
+    <div className="p-8 flex items-center justify-center">
       <div className="max-w-7xl w-full bg-gradient-alternate border border-slate-700 rounded-lg p-5 md:p-10">
         <div className="text-gray-300 leading-relaxed space-y-6">
           <p className="text-[16px] md:text-[18px]">
