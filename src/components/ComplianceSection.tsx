@@ -6,14 +6,20 @@ import Security from "./SvgComponent/Security";
 
 const ComplianceSection = () => {
   return (
-    <div className=" text-white  px-8">
+    <div className=" text-white py-4 md:py-16 px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-30 items-start">
           {/* Left Side - Text Content */}
           <div className="space-y-4">
             <h2 className="text-[28px] lg:text-[40px] font-medium leading-tight">
               Transparent{" "}
-              <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
+                }}
+              >
                 Regulated{" "}
               </span>
               Aligned.
@@ -36,7 +42,7 @@ const ComplianceSection = () => {
           </div>
 
           {/* Right Side - Feature Cards */}
-          <div className="space-y-6">
+          <div className="space-y-16 md:space-y-28">
             {/* Designed for Security Card */}
             <ComplianceCard
               icon={Security}

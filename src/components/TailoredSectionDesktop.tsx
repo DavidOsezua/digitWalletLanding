@@ -1,4 +1,4 @@
-import HorizontalLine from "./SvgComponent/HorizontalLine";
+
 import RightArrow from "./SvgComponent/RightArrow";
 import ForBusiness from "./SvgComponent/ForBusiness";
 import ForIndividuals from "./SvgComponent/ForIndividuals";
@@ -49,21 +49,7 @@ const TailoredSectionDesktop = () => {
         </p>
       </div>
 
-      <div className="max-w-110 absolute bottom-[13%] right-[3%] text-white">
-        <div className="flex items-center gap-6 justify-end">
-          <HorizontalLine />
-
-          <p className="text-[34px]">
-            4.9<span className="text-[16px]">/5</span>
-          </p>
-        </div>
-
-        <p className="text-[18px]">
-          Effortlessly map out your loan journey with our precise and
-          user-friendly calculator. Take control of your financial future with
-          just a few clicks.
-        </p>
-      </div>
+     
     </div>
   );
 };

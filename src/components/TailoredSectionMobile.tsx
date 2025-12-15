@@ -68,24 +68,10 @@ const TailoredSectionMobile = () => {
             </p>
           </div>
 
-          {/* Rating - Bottom Right */}
-          <div className="absolute bottom-[3%] sm:bottom-[5%] right-[2%] flex items-center gap-2">
-            <div className="bg-slate-800/90 rounded-lg px-2 py-0.5 sm:px-3 sm:py-1">
-              <p className="text-white text-xl sm:text-2xl font-bold">
-                4.9<span className="text-xs sm:text-sm">/5</span>
-              </p>
-            </div>
-          </div>
+       
         </div>
 
-        {/* Second Text */}
-        <div className="text-white mt-6">
-          <p className="text-base leading-relaxed">
-            Effortlessly map out your loan journey with our precise and
-            user-friendly calculator. Take control of your financial future with
-            just a few clicks.
-          </p>
-        </div>
+    
       </div>
     </>
   );

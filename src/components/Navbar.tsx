@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className="sticky top-3 m-4 px-6 py-4 rounded-full z-40"
+        className="sticky top-3 m-4 px-6 py-4 rounded-full z-40 backdrop-blur-2xl"
         style={{
           backgroundColor: "var(--color-bg-widget)",
           border: "1px solid var(--color-border-navbar)",
@@ -21,14 +21,25 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             {/* Desktop Logo */}
-            <img src="/logo.svg" alt="DigitWallet" className="h-8 hidden md:block" />
+            <img
+              src="/logo.svg"
+              alt="DigitWallet"
+              className="h-8 hidden md:block"
+            />
             {/* Mobile Logo */}
-            <img src="/digitWallet.svg" alt="DigitWallet" className="h-8 md:hidden" />
+            <img
+              src="/digitWallet.svg"
+              alt="DigitWallet"
+              className="h-8 md:hidden"
+            />
           </div>
 
           {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#home" className="text-white hover:text-gray-300 transition-colors">
+            <a
+              href="#home"
+              className="text-white hover:text-gray-300 transition-colors"
+            >
               Home
             </a>
             <div className="relative group">
@@ -49,10 +60,16 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <a href="#contact" className="text-white hover:text-gray-300 transition-colors">
+            <a
+              href="#contact"
+              className="text-white hover:text-gray-300 transition-colors"
+            >
               Contact
             </a>
-            <a href="#about" className="text-white hover:text-gray-300 transition-colors">
+            <a
+              href="#about"
+              className="text-white hover:text-gray-300 transition-colors"
+            >
               About Us
             </a>
           </div>
@@ -112,82 +129,82 @@ const Navbar = () => {
           }}
           onClick={(e) => e.stopPropagation()}
         >
-            {/* Close Button */}
-            <button
+          {/* Close Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="absolute top-4 right-4 text-white text-2xl"
+            aria-label="Close menu"
+          >
+            ×
+          </button>
+
+          {/* Mobile Navigation Links */}
+          <div className="flex flex-col gap-6 mt-12">
+            <a
+              href="#home"
+              className="text-white hover:text-gray-300 transition-colors"
               onClick={toggleMobileMenu}
-              className="absolute top-4 right-4 text-white text-2xl"
-              aria-label="Close menu"
             >
-              ×
+              Home
+            </a>
+            <button className="text-white hover:text-gray-300 transition-colors text-left flex items-center gap-1">
+              Solution
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </button>
+            <a
+              href="#contact"
+              className="text-white hover:text-gray-300 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Contact
+            </a>
+            <a
+              href="#about"
+              className="text-white hover:text-gray-300 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              About Us
+            </a>
 
-            {/* Mobile Navigation Links */}
-            <div className="flex flex-col gap-6 mt-12">
-              <a
-                href="#home"
-                className="text-white hover:text-gray-300 transition-colors"
-                onClick={toggleMobileMenu}
-              >
-                Home
-              </a>
-              <button className="text-white hover:text-gray-300 transition-colors text-left flex items-center gap-1">
-                Solution
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <a
-                href="#contact"
-                className="text-white hover:text-gray-300 transition-colors"
-                onClick={toggleMobileMenu}
-              >
-                Contact
-              </a>
-              <a
-                href="#about"
-                className="text-white hover:text-gray-300 transition-colors"
-                onClick={toggleMobileMenu}
-              >
-                About Us
-              </a>
-
-              {/* Mobile Action Buttons */}
-              <div className="flex flex-col gap-4 mt-6">
-                <button
-                  className="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity"
-                  style={{
-                    background: `linear-gradient(var(--color-bg-widget), var(--color-bg-widget)) padding-box,
+            {/* Mobile Action Buttons */}
+            <div className="flex flex-col gap-4 mt-6">
+              <button
+                className="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity"
+                style={{
+                  background: `linear-gradient(var(--color-bg-widget), var(--color-bg-widget)) padding-box,
                                  linear-gradient(to right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box`,
-                    border: "1px solid transparent",
-                  }}
-                  onClick={toggleMobileMenu}
-                >
-                  Login
-                </button>
-                <button
-                  className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
-                  style={{
-                    backgroundColor: "var(--color-primary-300)",
-                    color: "#0F1326",
-                  }}
-                  onClick={toggleMobileMenu}
-                >
-                  Get Started
-                </button>
-              </div>
+                  border: "1px solid transparent",
+                }}
+                onClick={toggleMobileMenu}
+              >
+                Login
+              </button>
+              <button
+                className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
+                style={{
+                  backgroundColor: "var(--color-primary-300)",
+                  color: "#0F1326",
+                }}
+                onClick={toggleMobileMenu}
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 };

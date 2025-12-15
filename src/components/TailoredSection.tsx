@@ -7,7 +7,7 @@ import TailoredSectionMobile from "./TailoredSectionMobile";
 const TailoredSection = () => {
   const isMobile = useMobile();
   return (
-    <section className="px-4 lg:px-8 py-16 lg:py-24">
+    <section className="px-4 lg:px-8 pt-8">
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
         <div className="space-y-6">

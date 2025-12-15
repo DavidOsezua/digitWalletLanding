@@ -11,7 +11,7 @@ const Features = () => {
       {/* Background Logo */}
       <div className="absolute top-50 left-1/2 -translate-x-1/2 w-full max-w-77 md:max-w-101.5 pointer-events-none">
         <img
-          src="/digitWallet.png"
+          src="/digitWallet.webp"
           alt="DigitWallet Background"
           className="w-full h-auto"
         />
@@ -26,22 +26,22 @@ const Features = () => {
       </div>
       <div className="max-w-7xl mx-auto pt-4 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-6 gap-4">
-          <h2 className="text-4xl max-w-150 md:leading-16 lg:text-5xl font-bold text-white ">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end space-y-3 mb-4">
+          <h2 className="text-[32px] max-w-150 md:leading-16 lg:text-5xl font-semibold tracking-wide text-white ">
             Everything You Need in One Place
           </h2>
 
-          <div className="max-w-md">
-            <p className="text-gray-300 text-sm lg:text-base mb-4">
+          <div className="max-w-md space-y-3">
+            <p className="text-gray-300 text-sm lg:text-base ">
               Digitwallet provides a suit of services for you to buy & sell
               crypto, safeguard your crypto, pay and, send money to friends and
               more — all in one place.
             </p>
             <button
-              className="px-6 py-2.5 rounded-full font-medium text-sm"
+              className="px-6 py-2.5 rounded-full font-medium text-sm text-white"
               style={{
-                backgroundColor: "var(--color-primary-300)",
-                color: "#0F1326",
+                backgroundImage:
+                  "linear-gradient(to bottom, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
               }}
             >
               Get Started
@@ -149,7 +149,7 @@ const Features = () => {
               </p>
 
               {/* World Background */}
-              <div className="absolute -bottom-[5%] -right-[5%] md:-right-[15%] w-1/2 md:w-2/3">
+              <div className="absolute bottom-1/8 md:-bottom-[5%] -right-[5%] md:-right-[15%] w-1/2 md:w-2/3">
                 <img
                   src="/world.png"
                   alt="World Map"
@@ -158,7 +158,7 @@ const Features = () => {
               </div>
 
               {/* All Day Access Badge */}
-              <div className="absolute top-0 right-0 md:bottom-6  md:right-[20%] bg-white rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg max-w-30 md:max-w-50">
+              <div className="absolute top-1/2  right-1/7   bg-white rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg max-w-30 md:max-w-50">
                 <div className="space-y-4">
                   <div className="w-8 h-8 md:w-12 md:h-12">
                     <Clock />
@@ -168,6 +168,10 @@ const Features = () => {
                     Access to view your funds any time, any
                   </p>
                 </div>
+              </div>
+
+              <div className="absolute -right-1 bg-white rounded-xl md:rounded-md px-3 py-1 max-w-40.75 text-center top-1/3">
+                <p className="text-black/59 text-sm">All Day Access</p>
               </div>
             </motion.div>
 

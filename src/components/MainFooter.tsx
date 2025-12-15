@@ -4,7 +4,7 @@ const MainFooter = () => {
   return (
     <footer className="px-0 lg:px-8">
       <div
-        className="max-w-7xl mx-auto p-5 md:p-10"
+        className="max-w-7xl mx-auto p-3"
         style={{
           backgroundImage: `url("/bg.png")`,
           backgroundSize: "cover",

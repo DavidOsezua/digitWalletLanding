@@ -11,7 +11,13 @@ const DigitalFinance = () => {
           <div className="space-y-2 md:space-y-4">
             <h1 className="text-[28px] lg:text-5xl font-[400px] tracking-wide">
               Start Your{" "}
-              <span className="bg-linear-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
+                }}
+              >
                 Digital Finance{" "}
               </span>
               Journey Today
