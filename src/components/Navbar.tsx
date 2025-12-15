@@ -13,8 +13,11 @@ const Navbar = () => {
       <nav
         className="sticky top-3 m-4 px-6 py-4 rounded-full z-40 backdrop-blur-2xl"
         style={{
-          backgroundColor: "var(--color-bg-widget)",
-          border: "1px solid var(--color-border-navbar)",
+          border: "1px solid transparent",
+          background: `
+            linear-gradient(rgba(22, 27, 51, 0.898), rgba(22, 27, 51, 0.898)) padding-box,
+            linear-gradient(to bottom, rgba(73, 82, 83, 0.2), rgba(101, 97, 126, 0.8)) border-box
+          `,
         }}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">

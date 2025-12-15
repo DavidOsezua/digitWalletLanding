@@ -143,7 +143,7 @@ const Features = () => {
               <h3 className="text-xl md:text-2xl font-bold text-dark-text mb-2">
                 24/7 Access
               </h3>
-              <p className="text-dark-text text-xs md:text-sm mb-4 md:mb-6 max-w-50 md:max-w-70">
+              <p className="text-dark-text text-xs md:text-sm mb-4 md:mb-6   max-w-35 md:max-w-70">
                 Access your account anytime, anywhere, from any device. Take
                 control of your finances with our comprehensive platform.
               </p>

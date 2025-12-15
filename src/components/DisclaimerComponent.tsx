@@ -3,7 +3,16 @@ import { AlertCircle } from "lucide-react";
 export default function DisclaimerComponent() {
   return (
     <div className="flex items-center justify-center p-8">
-      <div className="max-w-7xl w-full bg-slate-900 border border-slate-700 rounded-lg p-4 md:p-8">
+      <div
+        className="max-w-7xl w-full rounded-lg p-4 md:p-8"
+        style={{
+          border: "1px solid transparent",
+          background: `
+            linear-gradient(rgba(15, 25, 38, 1), rgba(15, 25, 38, 1)) padding-box,
+            linear-gradient(to bottom, rgba(73, 82, 83, 0.2), rgba(101, 97, 126, 0.8)) border-box
+          `,
+        }}
+      >
         <div className="flex items-center gap-3 mb-4">
           <div className="bg-[#FF4246] rounded-full p-2">
             <AlertCircle className="w-6 h-6 text-white" />

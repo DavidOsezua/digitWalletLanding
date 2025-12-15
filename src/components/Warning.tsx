@@ -1,7 +1,16 @@
 const Warning = () => {
   return (
     <div className="p-8 flex items-center justify-center">
-      <div className="max-w-7xl w-full bg-gradient-alternate border border-slate-700 rounded-lg p-5 md:p-10">
+      <div
+        className="max-w-7xl w-full bg-gradient-alternate rounded-lg p-5 md:p-10"
+        style={{
+          border: "1px solid transparent",
+          background: `
+             linear-gradient(rgba(15, 25, 38, 1), rgba(15, 25, 38, 1)) padding-box,
+            linear-gradient(to bottom, rgba(73, 82, 83, 0.2), rgba(101, 97, 126, 0.8)) border-box
+          `,
+        }}
+      >
         <div className="text-gray-300 leading-relaxed space-y-6">
           <p className="text-[16px] md:text-[18px]">
             Cryptocurrency is an unregulated high risk investment. The value of
