@@ -12,9 +12,8 @@ export default function OnboardingSteps() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
           {/* Step 1: KYC */}
-          <div className="relative h-131.5 bg-slate-900 rounded-md  border border-slate-800 overflow-hidden">
-            {/* Glow effect */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
+          <div className="relative h-131.5 bg-[#161b33]/90 rounded-md  border border-slate-800 overflow-hidden">
+          
 
             <div className="space-y-4">
               <div className="p-6 space-y-3">
@@ -41,9 +40,8 @@ export default function OnboardingSteps() {
           </div>
 
           {/* Step 2: Verify Wallet */}
-          <div className="relative h-131.5 bg-slate-900 rounded-md  border border-slate-800 overflow-hidden">
-            {/* Glow effect */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="relative h-131.5 bg-[#161b33]/90 rounded-md  border border-slate-800 overflow-hidden">
+     
 
             <div className="space-y-4">
               <div className="p-6 space-y-3">
@@ -71,9 +69,8 @@ export default function OnboardingSteps() {
           </div>
 
           {/* Step 3: Transactions */}
-          <div className="relative h-131.5 bg-slate-900 rounded-md  border border-slate-800 overflow-hidden">
-            {/* Glow effect */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl"></div>
+          <div className="relative h-131.5 bg-[#161b33]/90 rounded-md  border border-slate-800 overflow-hidden">
+           
 
             <div className="space-y-4">
               <div className="p-6 space-y-3">
