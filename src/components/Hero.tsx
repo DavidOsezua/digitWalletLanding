@@ -3,6 +3,9 @@ import Dollar from "./SvgComponent/Dollar";
 import Euro from "./SvgComponent/Euro";
 import Pounds from "./SvgComponent/Pounds";
 import Bitcoin from "./SvgComponent/Bitcoin";
+import Rectangle2 from "./SvgComponent/Rectangle2";
+import Rectangle1 from "./SvgComponent/Rectangle1";
+import Ellipse from "./SvgComponent/Ellipse";
 
 const Hero = () => {
   return (
@@ -27,8 +30,8 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Left side - Ellipse */}
-          <div className="absolute bottom-1/5 md:bottom-1 md:-left-20 pointer-events-none">
-            <img src="/ellipse.svg" alt="" className="w-20 h-20" />
+          <div className="absolute bottom-1/5 md:bottom-1 md:-left-20 p-4 pointer-events-none">
+            <Ellipse className="max-w-20" />
           </div>
           {/* Left Content */}
           <motion.div
@@ -77,7 +80,7 @@ const Hero = () => {
             {/* Supported Currency */}
             <div className="relative max-w-100 w-full ">
               <div
-                className="flex items-center  gap-3 py-1 justify-between max-w-70 md:py-2 px-2 md:px-4 rounded-full md:max-w-90 md:w-full z-20  text-nowrap relative"
+                className="flex items-center backdrop-blur-2xl  gap-3 py-1 justify-between max-w-70 md:py-2 px-2 md:px-4 rounded-full md:max-w-90 md:w-full z-20  text-nowrap relative"
                 style={{
                   border: "1px solid transparent",
                   background: `
@@ -86,7 +89,9 @@ const Hero = () => {
                 `,
                 }}
               >
-                <span className="text-white text-sm md:text-base">Supported Currency</span>
+                <span className="text-white text-sm md:text-base">
+                  Supported Currency
+                </span>
                 <div
                   className="flex items-center gap-2 px-2 py-2 rounded-full"
                   style={{
@@ -106,7 +111,7 @@ const Hero = () => {
               </div>
               {/* Right side - Rectangle rotated */}
               <div className="absolute bottom-3 md:-bottom-5 right-0 z-2  pointer-events-none">
-                <img src="/Rectangle2.svg" alt="" className="md:w-16 md:h-16" />
+                <Rectangle2 className="max-w-16" />
               </div>
             </div>
           </motion.div>
@@ -129,7 +134,7 @@ const Hero = () => {
             </div>
             {/* Top-left area - Rectangle */}
             <div className="absolute left-[8%] md:-top-15 md:left-1/2 md:-translate-x-1/2 pointer-events-none">
-              <img src="/Rectangle1.svg" alt="" className="w-16 h-16" />
+              <Rectangle1 className="max-w-14" />
             </div>
 
             {/* Decorative Circle */}
