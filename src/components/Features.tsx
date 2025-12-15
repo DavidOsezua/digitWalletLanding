@@ -149,20 +149,18 @@ const Features = () => {
               </p>
 
               {/* World Background */}
-              <div className="absolute bottom-1/8 md:-bottom-[5%] -right-[5%] md:-right-[15%] w-1/2 md:w-2/3">
+              <div className="absolute top-1/2 -translate-y-1/6  md:-bottom-[5%] -right-[15%] md:-right-[15%] w-[90%]  md:w-2/3">
                 <img
                   src="/world.png"
                   alt="World Map"
-                  className="w-full h-auto opacity-30 md:opacity-50"
+                  className="w-full h-auto"
                 />
               </div>
 
               {/* All Day Access Badge */}
               <div className="absolute top-1/2  right-1/7   bg-white rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg max-w-30 md:max-w-50">
-                <div className="space-y-4">
-                  <div className="w-8 h-8 md:w-12 md:h-12">
-                    <Clock />
-                  </div>
+                <div className="space-y-1 md:space-y-4">
+                  <Clock className="max-w-6" />
 
                   <p className="text-dark-text text-[10px] md:text-xs leading-tight">
                     Access to view your funds any time, any
@@ -171,7 +169,7 @@ const Features = () => {
               </div>
 
               <div className="absolute -right-1 bg-white rounded-xl md:rounded-md px-3 py-1 max-w-40.75 text-center top-1/3">
-                <p className="text-black/59 text-sm">All Day Access</p>
+                <p className="text-black/59 text-[10px] md:text-sm">All Day Access</p>
               </div>
             </motion.div>
 

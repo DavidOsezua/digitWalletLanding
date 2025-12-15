@@ -6,10 +6,10 @@ import Bitcoin from "./SvgComponent/Bitcoin";
 
 const Hero = () => {
   return (
-    <section className="px-4 lg:px-8 pt-12 lg:pt-20 relative overflow-hidden">
+    <section className="px-4 lg:px-8 pt-4 md:pt-15 relative overflow-hidden">
       {/* Bottom-right Flashlight Effect */}
       <div
-        className="absolute -bottom-48 -right-48 w-150 h-150 rounded-full blur-3xl opacity-25 pointer-events-none"
+        className="absolute -bottom-108 -right-98 w-150 h-150 rounded-full blur-3xl opacity-25 pointer-events-none"
         style={{ backgroundColor: "#9917EF" }}
       ></div>
 
@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-6">
           {/* Left side - Ellipse */}
           <div className="absolute bottom-1/5 md:bottom-1 md:-left-20 pointer-events-none">
             <img src="/ellipse.svg" alt="" className="w-20 h-20" />
@@ -35,16 +35,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-2 md:space-y-4"
           >
             {/* Tagline */}
-            <p className=" text-sm md:text-base text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full max-w-70 ">
+            <span className=" text-[10px] md:text-base text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full  ">
               Simplified Bankinking with Ease
-            </p>
+            </span>
 
             {/* Main Heading */}
 
-            <h1 className="text-4xl relative md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide md:tracking-wider">
+            <h1 className="text-[32px] relative md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide md:tracking-wider">
               Powering Financial{" "}
               <span style={{ color: "var(--color-primary-300)" }}>
                 Freedom.
@@ -56,7 +56,7 @@ const Hero = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-gray-300 text-base md:text-lg max-w-lg">
+            <p className="text-gray-300 text-sm md:text-lg max-w-lg">
               Digitwallet Provides an all-in-one solution to help you manage,
               exchange, and grow your assets with minimal hassle.
             </p>
@@ -65,7 +65,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full font-medium text-base md:text-lg"
+              className="px-4 md:px-8 py-3 rounded-full font-medium text-sm md:text-lg"
               style={{
                 backgroundColor: "var(--color-primary-300)",
                 color: "#0F1326",
@@ -77,7 +77,7 @@ const Hero = () => {
             {/* Supported Currency */}
             <div className="relative max-w-100 w-full ">
               <div
-                className="flex items-center  gap-3 py-1 justify-between md:py-2 px-2 md:px-4 rounded-full max-w-90 w-full z-20  text-nowrap relative"
+                className="flex items-center  gap-3 py-1 justify-between max-w-70 md:py-2 px-2 md:px-4 rounded-full md:max-w-90 md:w-full z-20  text-nowrap relative"
                 style={{
                   border: "1px solid transparent",
                   background: `
@@ -86,7 +86,7 @@ const Hero = () => {
                 `,
                 }}
               >
-                <span className="text-white text-sm">Supported Currency</span>
+                <span className="text-white text-sm md:text-base">Supported Currency</span>
                 <div
                   className="flex items-center gap-2 px-2 py-2 rounded-full"
                   style={{
@@ -98,15 +98,15 @@ const Hero = () => {
                   }}
                 >
                   {/* Currency Icons */}
-                  <Dollar />
-                  <Euro />
-                  <Pounds />
-                  <Bitcoin />
+                  <Dollar className="max-w-5 md:max-w-10" />
+                  <Euro className="max-w-5 md:max-w-10" />
+                  <Pounds className="max-w-5 md:max-w-10" />
+                  <Bitcoin className="max-w-5 md:max-w-10" />
                 </div>
               </div>
               {/* Right side - Rectangle rotated */}
-              <div className="absolute -bottom-5 right-0 z-2  pointer-events-none">
-                <img src="/Rectangle2.svg" alt="" className="w-24 h-24" />
+              <div className="absolute bottom-3 md:-bottom-5 right-0 z-2  pointer-events-none">
+                <img src="/Rectangle2.svg" alt="" className="md:w-16 md:h-16" />
               </div>
             </div>
           </motion.div>

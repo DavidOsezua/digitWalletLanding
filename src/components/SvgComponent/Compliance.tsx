@@ -1,9 +1,8 @@
-const Compliance = () => {
+const Compliance = ({ className = "", maxWidth = "100%" }) => {
   return (
-    <div>
+    <div style={{ width: "100%", maxWidth: maxWidth }}>
       <svg
-        width="74"
-        height="74"
+        className={`w-full h-auto ${className}`}
         viewBox="0 0 74 74"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

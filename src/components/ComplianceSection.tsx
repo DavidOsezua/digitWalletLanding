@@ -6,8 +6,8 @@ import Security from "./SvgComponent/Security";
 
 const ComplianceSection = () => {
   return (
-    <div className=" text-white py-4 md:py-16 px-8">
-      <div className="max-w-6xl mx-auto">
+    <div className=" text-white py-4  md:py-8 px-3 md:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-30 items-start">
           {/* Left Side - Text Content */}
           <div className="space-y-4">

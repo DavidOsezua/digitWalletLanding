@@ -1,9 +1,8 @@
-const ArrowUp = () => {
+const ArrowUp = ({ className = "", maxWidth = "100%" }) => {
   return (
-    <div>
+    <div style={{ width: "100%", maxWidth: maxWidth }}>
       <svg
-        width="48"
-        height="48"
+        className={`w-full h-auto ${className}`}
         viewBox="0 0 48 48"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

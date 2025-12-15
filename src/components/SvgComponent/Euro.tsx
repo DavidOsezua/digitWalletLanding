@@ -1,9 +1,8 @@
-const Euro = () => {
+const Euro = ({ className = "", maxWidth = "100%" }) => {
   return (
-    <div>
+    <div style={{ width: "100%", maxWidth: maxWidth }}>
       <svg
-        width="35"
-        height="35"
+        className={`w-full h-auto ${className}`}
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

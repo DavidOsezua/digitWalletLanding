@@ -13,10 +13,10 @@ const ComplianceCard = ({
 }: ComplianceCardProps) => {
   return (
     <div className="relative">
-      <div className=" relative z-10 bg-gradient-blue-2 h-52.25 rounded-2xl p-4 md:p-8 shadow-xl flex items-center justify-center">
+      <div className=" relative z-10 bg-gradient-blue-2 h-42.5 md:h-52.25 rounded-2xl p-4 md:p-8 shadow-xl flex items-center justify-center">
         <div className="flex flex-row items-center justify-center gap-4 w-full">
           <div className="shrink-0">
-            <Icon />
+            <Icon className="max-w-10 md:max-w-20" />
           </div>
 
           <div className="text-left">

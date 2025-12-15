@@ -79,8 +79,12 @@ const FAQSection = () => {
                     <span className="text-white font-medium text-base lg:text-lg">
                       {faq.question}
                     </span>
-                    <div className="ml-4 shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                      {openIndex === index ? <ArrowUp /> : <ArrowDown />}
+                    <div className="">
+                      {openIndex === index ? (
+                        <ArrowUp className="max-w-6 md:max-w-12" />
+                      ) : (
+                        <ArrowDown className="max-w-6 md:max-w-12" />
+                      )}
                     </div>
                   </button>
 

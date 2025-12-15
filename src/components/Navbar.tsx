@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className="sticky top-3 m-4 px-6 py-4 rounded-full z-40 backdrop-blur-2xl"
+        className="sticky top-3 mx-4 my-2 px-6 py-4 rounded-full z-40 backdrop-blur-2xl"
         style={{
           border: "1px solid transparent",
           background: `

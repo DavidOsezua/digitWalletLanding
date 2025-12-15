@@ -1,9 +1,8 @@
-const Clock = () => {
+const Clock = ({ className = "", maxWidth = "100%" }) => {
   return (
-    <div>
+    <div style={{ width: "100%", maxWidth: maxWidth }}>
       <svg
-        width="45"
-        height="45"
+        className={`w-full h-full ${className}`}
         viewBox="0 0 45 45"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

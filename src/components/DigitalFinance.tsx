@@ -1,6 +1,6 @@
 const DigitalFinance = () => {
   return (
-    <div className=" text-white py-8 px-8">
+    <div className=" text-white py-4 md:py-8 px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -39,7 +39,7 @@ const DigitalFinance = () => {
                 transactions
               </p>
 
-              <div className="flex items-center gap-3 pt-4">
+              <div className="flex items-center gap-3 pt-2 md:pt-4">
                 <div className="flex -space-x-2">
                   <div className="w-10 h-10 rounded-full bg-linear-to-r from-gray-300 to-gray-400 border-2 border-slate-950"></div>
                   <div className="w-10 h-10 rounded-full bg-linear-to-r from-gray-200 to-gray-300 border-2 border-slate-950"></div>
@@ -49,9 +49,9 @@ const DigitalFinance = () => {
                 </div>
                 <div className="text-sm">
                   <p className="text-white font-semibold">
-                    Committed to Your Complete
+                    Committed to Complete your
                   </p>
-                  <p className="text-gray-400">Satisfaction</p>
+                  <p className="text-gray-400">transactions</p>
                 </div>
               </div>
             </div>

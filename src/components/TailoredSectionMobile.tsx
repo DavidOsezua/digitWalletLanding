@@ -7,9 +7,7 @@ const TailoredSectionMobile = () => {
   return (
     <>
       {/* MOBILE LAYOUT */}
-      <div className="py-8 md:hidden ">
-       
-
+      <div className="py-4 md:hidden ">
         {/* First Text */}
         <div className="text-white mb-6">
           <p className="text-base leading-relaxed">
@@ -18,7 +16,7 @@ const TailoredSectionMobile = () => {
           </p>
         </div>
 
-        <div className="relative min-h-125 sm:min-h-150">
+        <div className="relative  sm:min-h-150">
           {/* Background Image */}
           <div>
             <img
@@ -28,13 +26,13 @@ const TailoredSectionMobile = () => {
             />
           </div>
 
-           <div className="absolute top-4 left-4">
-          <Line />
-        </div>
+          <div className="absolute top-2 left-4">
+            <Line />
+          </div>
 
           {/* For Individuals Card - Top Right */}
           <div className="absolute top-[3%] sm:top-[5%] right-[1%] sm:right-[2%] p-3 sm:p-4 max-w-[75%]  space-y-8">
-            <div className="flex justify-between items-start mb-8 sm:mb-3">
+            <div className="flex justify-between items-start mb-2 sm:mb-3">
               <ForIndividuals />
 
               <RightArrow className="max-w-10 absolute right-[5%]" />
@@ -52,7 +50,7 @@ const TailoredSectionMobile = () => {
           </div>
 
           {/* For Businesses Card - Bottom Left */}
-          <div className="absolute bottom-[12%] sm:bottom-[15%] left-[1%] sm:left-[2%] p-3 sm:p-4 max-w-[75%]">
+          <div className="absolute bottom-[3%] sm:bottom-[15%] left-[1%] sm:left-[2%] p-3 sm:p-4 max-w-[75%]">
             <div className="flex justify-between items-start mb-2 sm:mb-3">
               <ForBusiness />
 
@@ -67,11 +65,7 @@ const TailoredSectionMobile = () => {
               currency on your behalf
             </p>
           </div>
-
-       
         </div>
-
-    
       </div>
     </>
   );
