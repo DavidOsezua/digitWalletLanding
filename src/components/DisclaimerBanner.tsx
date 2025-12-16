@@ -7,7 +7,7 @@ const DisclaimerBanner = () => {
         backgroundColor: "rgba(255, 255, 255, 0.05)",
       }}
     > 
-      <p className="text-white text-[10px] md:text-base">
+      <p className="text-white text-sm md:text-base">
         Don't invest unless you're prepared to lose all the money you invest.
         This is a high-risk investment and you should not expect to be protected
         if something goes wrong.{" "}
