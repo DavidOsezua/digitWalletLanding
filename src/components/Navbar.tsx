@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Hamburger from "./SvgComponent/Hamburger";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -92,7 +93,8 @@ const Navbar = () => {
             </button>
 
             {/* Get Started Button */}
-            <button
+            <Link
+              to="/register"
               className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
               style={{
                 backgroundColor: "var(--color-primary-300)",
@@ -100,7 +102,7 @@ const Navbar = () => {
               }}
             >
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Menu */}
