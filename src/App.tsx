@@ -1,15 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import LoginLayout from "./pages/LoginLayout";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router";
+import Register from "./Register";
+import Home from "./Home";
 
 const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/">
+        <Route index element={<Home />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
+    )
+  );
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginLayout />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="relative">
+      <RouterProvider router={router} />
+    </div>
   );
 };
 
