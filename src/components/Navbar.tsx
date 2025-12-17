@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Hamburger from "./SvgComponent/Hamburger";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -81,7 +81,8 @@ const Navbar = () => {
           {/* Action Buttons - Desktop */}
           <div className="hidden md:flex items-center gap-4">
             {/* Login Button with Gradient Border */}
-            <button
+            <NavLink
+              to={"/auth"}
               className="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity relative"
               style={{
                 background: `linear-gradient(var(--color-bg-widget), var(--color-bg-widget)) padding-box,
@@ -90,7 +91,7 @@ const Navbar = () => {
               }}
             >
               Login
-            </button>
+            </NavLink>
 
             {/* Get Started Button */}
             <Link
