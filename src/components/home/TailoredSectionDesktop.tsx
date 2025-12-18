@@ -1,7 +1,6 @@
-
-import RightArrow from "./SvgComponent/RightArrow";
-import ForBusiness from "./SvgComponent/ForBusiness";
-import ForIndividuals from "./SvgComponent/ForIndividuals";
+import RightArrow from "../SvgComponent/RightArrow";
+import ForBusiness from "../SvgComponent/ForBusiness";
+import ForIndividuals from "../SvgComponent/ForIndividuals";
 
 const TailoredSectionDesktop = () => {
   return (
@@ -48,8 +47,6 @@ const TailoredSectionDesktop = () => {
           business, DigitWallet provides tools designed for your goals.
         </p>
       </div>
-
-     
     </div>
   );
 };

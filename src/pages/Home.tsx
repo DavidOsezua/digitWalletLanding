@@ -1,17 +1,17 @@
-import Navbar from "../components/Navbar";
 import DisclaimerBanner from "../components/DisclaimerBanner";
-import Hero from "../components/Hero";
-import Features from "../components/Features";
-import TailoredSection from "../components/TailoredSection";
-import FAQSection from "../components/FAQSection";
-import DigitalFinance from "../components/DigitalFinance";
-import DisclaimerComponent from "../components/DisclaimerComponent";
+import Hero from "../components/home/Hero";
+import Features from "../components/home/Features";
+import TailoredSection from "../components/home/TailoredSection";
+import FAQSection from "../components/home/FAQSection";
+import DigitalFinance from "../components/home/DigitalFinance";
+import DisclaimerComponent from "../components/home/DisclaimerComponent";
 import MainFooter from "../components/MainFooter";
-import Footer from "../components/Footer";
+import Footer from "../components/home/Footer";
 import Warning from "../components/Warning";
-import OnboardingSteps from "../components/OnboardingSteps";
-import ComplianceSection from "../components/ComplianceSection";
-import LogoTicker from "../components/LogoTicker";
+import OnboardingSteps from "../components/home/OnboardingSteps";
+import ComplianceSection from "../components/home/ComplianceSection";
+import LogoTicker from "../components/home/LogoTicker";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
@@ -22,8 +22,6 @@ const Home = () => {
         style={{ backgroundColor: "#7A72FF" }}
       ></div>
 
-      <Navbar />
-      <DisclaimerBanner />
       <Hero />
       <Features />
       <TailoredSection />
@@ -33,9 +31,6 @@ const Home = () => {
       <FAQSection />
       <DigitalFinance />
       <DisclaimerComponent />
-      <MainFooter />
-      <Warning />
-      <Footer />
     </div>
   );
 };

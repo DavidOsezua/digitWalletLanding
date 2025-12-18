@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ArrowUp from "./SvgComponent/ArrowUp";
-import ArrowDown from "./SvgComponent/ArrowDown";
+import ArrowUp from "../SvgComponent/ArrowUp";
+import ArrowDown from "../SvgComponent/ArrowDown";
 
 interface FAQItem {
   question: string;

@@ -1,6 +1,6 @@
 const Warning = () => {
   return (
-    <div className="p-8 flex items-center justify-center">
+    <div className="p-4 flex items-center justify-center">
       <div
         className="max-w-7xl w-full bg-gradient-alternate rounded-lg p-5 md:p-10"
         style={{

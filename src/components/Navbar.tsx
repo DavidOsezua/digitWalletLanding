@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Hamburger from "./SvgComponent/Hamburger";
+
 import { Link, NavLink } from "react-router";
+import Hamburger from "./SvgComponent/Hamburger";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,6 +70,12 @@ const Navbar = () => {
               className="text-white hover:text-gray-300 transition-colors"
             >
               Contact
+            </a>
+            <a
+              href="#myaccount"
+              className="text-white hover:text-gray-300 transition-colors"
+            >
+              My account
             </a>
             <a
               href="#about"
@@ -175,6 +182,13 @@ const Navbar = () => {
               onClick={toggleMobileMenu}
             >
               Contact
+            </a>
+
+            <a
+              href="#myaccount"
+              className="text-white hover:text-gray-300 transition-colors"
+            >
+              My account
             </a>
             <a
               href="#about"
