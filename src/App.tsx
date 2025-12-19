@@ -14,6 +14,7 @@ import MainLayout from "./layout.tsx/MainLayout";
 import LoginLayout from "./layout.tsx/LoginLayout";
 import Home from "./pages/Home";
 import UkFinance from "./components/onboardingFlow/UkFinance";
+import Profile from "./features/myAccount/components/Profile";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -24,6 +25,14 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/ukfinance" element={<UkFinance />} />
+
+          <Route path="/myaccount">
+            <Route
+              index
+              element={<Navigate to="/myaccount/dashboard" replace />}
+            />
+            <Route path="profile" element={<Profile />} />
+          </Route>
         </Route>
 
         {/* Auth Layout - Login/Signup pages */}

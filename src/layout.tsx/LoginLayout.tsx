@@ -1,4 +1,4 @@
-import { Outlet, Link, useLocation } from "react-router";
+import { Outlet, Link, useLocation, NavLink } from "react-router";
 
 const LoginLayout = () => {
   const location = useLocation();
@@ -7,11 +7,11 @@ const LoginLayout = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center py-8"
+      className="min-h-screen flex items-center justify-center py-8 px-4"
       style={{ backgroundColor: "#0F1326" }}
     >
       <div
-        className="w-full max-w-md p-12 rounded-[24px] bg-[#161B33E5] space-y-6"
+        className="w-full max-w-md p-6 md:p-12 rounded-[24px] bg-[#161B33E5] space-y-6"
         style={{
           border: "1px solid transparent",
           background: `
@@ -21,9 +21,9 @@ const LoginLayout = () => {
         }}
       >
         {/* Logo */}
-        <div className="flex">
+        <NavLink to={"/"} className="flex">
           <img src="/logo.svg" alt="" />
-        </div>
+        </NavLink>
 
         {/* Tabs */}
         <div className="flex gap-1 border-dark-stroke3 border-[0.8px] p-1 rounded-[5px] max-w-61.25">

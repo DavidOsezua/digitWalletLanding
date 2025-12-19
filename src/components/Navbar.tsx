@@ -184,12 +184,12 @@ const Navbar = () => {
               Contact
             </a>
 
-            <a
-              href="#myaccount"
+            <NavLink
+              to={"/myaccount/dashboard"}
               className="text-white hover:text-gray-300 transition-colors"
             >
               My account
-            </a>
+            </NavLink>
             <a
               href="#about"
               className="text-white hover:text-gray-300 transition-colors"
