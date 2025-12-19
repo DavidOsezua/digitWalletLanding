@@ -25,3 +25,7 @@ export interface AuthResponse {
   user: User;
   accessToken: string;
 }
+
+export interface SignUpResponse {
+  message: string;
+}

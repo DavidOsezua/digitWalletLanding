@@ -5,11 +5,8 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router";
-import {
-  QueryCache,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 import Register from "./Register";
 
 import Login from "./pages/auth/Login";
@@ -52,6 +49,7 @@ const App = () => {
   return (
     <div className="relative">
       <QueryClientProvider client={queryClient}>
+        <Toaster position="top-right" />
         <RouterProvider router={router} />
       </QueryClientProvider>
     </div>

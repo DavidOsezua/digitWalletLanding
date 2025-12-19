@@ -182,27 +182,6 @@ const Signup = () => {
             </Link>
           </div>
         </div>
-
-        {/* Divider */}
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-[#2d3351]"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-[#1e2339] text-gray-400">OR</span>
-          </div>
-        </div>
-
-        {/* Google Sign Up */}
-
-        {/* Google Sign In */}
-        <button
-          type="button"
-          className="w-full  rounded-lg border border-[#2d3351] text-white  hover:bg-[#2d3351] transition-colors flex items-center py-4 justify-center gap-2 cursor-pointer"
-        >
-          <Google />
-          Continue with Google
-        </button>
       </form>
     </>
   );
