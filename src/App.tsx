@@ -5,6 +5,11 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router";
+import {
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 import Register from "./Register";
 
 import Login from "./pages/auth/Login";
@@ -42,9 +47,13 @@ const App = () => {
       </>
     )
   );
+
+  const queryClient = new QueryClient();
   return (
     <div className="relative">
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </div>
   );
 };
