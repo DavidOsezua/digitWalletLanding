@@ -1,7 +1,7 @@
-import ForIndividuals from "./SvgComponent/ForIndividuals";
-import RightArrow from "./SvgComponent/RightArrow";
-import ForBusiness from "./SvgComponent/ForBusiness";
-import Line from "./SvgComponent/Line";
+import ForIndividuals from "../SvgComponent/ForIndividuals";
+import RightArrow from "../SvgComponent/RightArrow";
+import ForBusiness from "../SvgComponent/ForBusiness";
+import Line from "../SvgComponent/Line";
 
 const TailoredSectionMobile = () => {
   return (

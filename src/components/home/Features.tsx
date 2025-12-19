@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import RightArrow from "./SvgComponent/RightArrow";
-import AccountsSvg from "./SvgComponent/AccountsSvg";
-import Clock from "./SvgComponent/Clock";
-import Access from "./SvgComponent/Access";
-import Secure from "./SvgComponent/Secure";
+import RightArrow from "../SvgComponent/RightArrow";
+import AccountsSvg from "../SvgComponent/AccountsSvg";
+import Clock from "../SvgComponent/Clock";
+import Access from "../SvgComponent/Access";
+import Secure from "../SvgComponent/Secure";
 
 const Features = () => {
   return (
@@ -169,7 +169,9 @@ const Features = () => {
               </div>
 
               <div className="absolute -right-1 bg-white rounded-xl md:rounded-md px-3 py-1 max-w-40.75 text-center top-1/3">
-                <p className="text-black/59 text-[10px] md:text-sm">All Day Access</p>
+                <p className="text-black/59 text-[10px] md:text-sm">
+                  All Day Access
+                </p>
               </div>
             </motion.div>
 

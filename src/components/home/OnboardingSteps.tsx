@@ -1,4 +1,4 @@
-import { useMobile } from "../hooks/useMobile";
+import { useMobile } from "../../hooks/useMobile";
 import OnboardingStepsDesktop from "./OnboardingStepsDesktop";
 import OnboardingStepsMobile from "./OnboardingStepsMobile";
 

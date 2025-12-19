@@ -1,6 +1,6 @@
-import { useMobile } from "../hooks/useMobile";
-import TwoVerticalLines from "./SvgComponent/TwoVerticalLines";
-import WeServeArrow from "./SvgComponent/WeServeArrow";
+import { useMobile } from "../../hooks/useMobile";
+import TwoVerticalLines from "../SvgComponent/TwoVerticalLines";
+import WeServeArrow from "../SvgComponent/WeServeArrow";
 import TailoredSectionDesktop from "./TailoredSectionDesktop";
 import TailoredSectionMobile from "./TailoredSectionMobile";
 

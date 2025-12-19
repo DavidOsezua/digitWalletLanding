@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import Dollar from "./SvgComponent/Dollar";
-import Euro from "./SvgComponent/Euro";
-import Pounds from "./SvgComponent/Pounds";
-import Bitcoin from "./SvgComponent/Bitcoin";
-import Rectangle2 from "./SvgComponent/Rectangle2";
-import Rectangle1 from "./SvgComponent/Rectangle1";
-import Ellipse from "./SvgComponent/Ellipse";
+import Dollar from "../SvgComponent/Dollar";
+import Euro from "../SvgComponent/Euro";
+import Pounds from "../SvgComponent/Pounds";
+import Bitcoin from "../SvgComponent/Bitcoin";
+import Rectangle2 from "../SvgComponent/Rectangle2";
+import Rectangle1 from "../SvgComponent/Rectangle1";
+import Ellipse from "../SvgComponent/Ellipse";
 
 const Hero = () => {
   return (

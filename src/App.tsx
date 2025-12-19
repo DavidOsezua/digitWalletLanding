@@ -3,22 +3,55 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
+  Navigate,
 } from "react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 import Register from "./Register";
-import Home from "./Home";
+
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
+
+import Home from "./pages/Home";
+import UkFinance from "./components/onboardingFlow/UkFinance";
+import MainLayout from "./layout.tsx/MainLayout";
+import LoginLayout from "./layout.tsx/LoginLayout";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/">
-        <Route index element={<Home />} />
-        <Route path="/register" element={<Register />} />
-      </Route>
+      <>
+        {/* Main Layout - Pages with Navbar, DisclaimerBanner, Footer, Warning */}
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/ukfinance" element={<UkFinance />} />
+
+          <Route path="/myaccount">
+            <Route
+              index
+              element={<Navigate to="/myaccount/dashboard" replace />}
+            />
+          </Route>
+        </Route>
+
+        {/* Auth Layout - Login/Signup pages */}
+        <Route path="/auth" element={<LoginLayout />}>
+          <Route index element={<Navigate to="/auth/login" replace />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+        </Route>
+      </>
     )
   );
+
+  const queryClient = new QueryClient();
   return (
     <div className="relative">
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <Toaster position="top-right" />
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </div>
   );
 };

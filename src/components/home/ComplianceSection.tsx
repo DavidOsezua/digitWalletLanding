@@ -1,8 +1,7 @@
-
 import ComplianceCard from "./ComplianceCard";
-import KYC from "./SvgComponent/KYC";
-import Compliance from "./SvgComponent/Compliance";
-import Security from "./SvgComponent/Security";
+import KYC from "../SvgComponent/KYC";
+import Compliance from "../SvgComponent/Compliance";
+import Security from "../SvgComponent/Security";
 
 const ComplianceSection = () => {
   return (
