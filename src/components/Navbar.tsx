@@ -200,8 +200,9 @@ const Navbar = () => {
 
             {/* Mobile Action Buttons */}
             <div className="flex flex-col gap-4 mt-6">
-              <button
-                className="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity"
+              <NavLink
+                to={"/auth/login"}
+                className="px-6 py-2 rounded-full block text-center text-white font-medium hover:opacity-90 transition-opacity"
                 style={{
                   background: `linear-gradient(var(--color-bg-widget), var(--color-bg-widget)) padding-box,
                                  linear-gradient(to right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box`,
@@ -210,7 +211,7 @@ const Navbar = () => {
                 onClick={toggleMobileMenu}
               >
                 Login
-              </button>
+              </NavLink>
               <button
                 className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
                 style={{
