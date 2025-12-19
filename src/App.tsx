@@ -10,11 +10,10 @@ import Register from "./Register";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 
-import MainLayout from "./layout.tsx/MainLayout";
-import LoginLayout from "./layout.tsx/LoginLayout";
 import Home from "./pages/Home";
 import UkFinance from "./components/onboardingFlow/UkFinance";
-import Profile from "./features/myAccount/components/Profile";
+import MainLayout from "./layout.tsx/MainLayout";
+import LoginLayout from "./layout.tsx/LoginLayout";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -31,7 +30,6 @@ const App = () => {
               index
               element={<Navigate to="/myaccount/dashboard" replace />}
             />
-            <Route path="profile" element={<Profile />} />
           </Route>
         </Route>
 
