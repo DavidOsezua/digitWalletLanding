@@ -16,6 +16,8 @@ import Home from "./pages/Home";
 import UkFinance from "./components/onboardingFlow/UkFinance";
 import MainLayout from "./layout.tsx/MainLayout";
 import LoginLayout from "./layout.tsx/LoginLayout";
+import BuyAndSellPage from "./pages/BuyAndSellPage";
+import CryptoGateWayPage from "./pages/CryptoGateWayPage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -34,6 +36,8 @@ const App = () => {
             />
           </Route>
         </Route>
+        <Route path="/buyandsell" element={<BuyAndSellPage />} />
+        <Route path="/cryptogateway" element={<CryptoGateWayPage />} />
 
         {/* Auth Layout - Login/Signup pages */}
         <Route path="/auth" element={<LoginLayout />}>

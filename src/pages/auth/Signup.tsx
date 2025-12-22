@@ -4,6 +4,8 @@ import { useState } from "react";
 import Eye from "../../components/SvgComponent/Eye";
 import { EyeClosed } from "lucide-react";
 import Google from "../../components/SvgComponent/Google";
+import { useSignUp } from "../../hooks/useAuth";
+import Spinner from "../../components/Spinner";
 
 type SignupFormData = {
   email: string;
@@ -16,6 +18,7 @@ type SignupFormData = {
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const { mutate: signupUser, isPending } = useSignUp();
   const {
     register,
     handleSubmit,
@@ -26,8 +29,9 @@ const Signup = () => {
   const password = watch("password");
 
   const onSubmit = (data: SignupFormData) => {
-    console.log("Signup data:", data);
-    // Handle signup logic here
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { confirmPassword, ...signupData } = data;
+    signupUser(signupData);
   };
 
   return (
@@ -126,7 +130,7 @@ const Signup = () => {
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
             >
-              {showPassword ? <Eye /> : <EyeClosed />}
+              {showPassword ? <EyeClosed /> : <Eye />}
             </button>
           </div>
           {errors.password && (
@@ -155,7 +159,7 @@ const Signup = () => {
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
             >
-              {showConfirmPassword ? <Eye /> : <EyeClosed />}
+              {showConfirmPassword ? <EyeClosed /> : <Eye />}
             </button>
           </div>
           {errors.confirmPassword && (
@@ -169,9 +173,11 @@ const Signup = () => {
         <div className="space-y-1">
           <button
             type="submit"
-            className="w-full py-3 rounded-lg bg-primary-300 font-medium  cursor-pointer text-dark-text transition-colors"
+            disabled={isPending}
+            className="w-full py-3 rounded-lg bg-primary-300 font-medium  cursor-pointer text-dark-text transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            Sign Up
+            {isPending && <Spinner size="sm" />}
+            {isPending ? "Creating account..." : "Sign Up"}
           </button>
 
           {/* Login Link */}

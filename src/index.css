@@ -32,6 +32,8 @@
   --color-gradient-dark-bg-end: #5f6895;
   --color-gradient-auxiliary-start: #93cdfd;
   --color-gradient-auxiliary-end: #4d6aae;
+  --color-gradient-selected2-start: #5778c7;
+  --color-gradient-selected2-end: #545a93;
 
   --background-image-gradient-card-2: linear-gradient(
     135deg,
@@ -72,6 +74,12 @@
     color-mix(in srgb, var(--color-gradient-black-start) 20%, transparent),
     color-mix(in srgb, var(--color-gradient-black-end) 20%, transparent)
   );
+
+  --background-image-gradient-selected2: linear-gradient(
+    to right,
+    var(--color-gradient-selected2-start) 0%,
+    var(--color-gradient-selected2-end) 100%
+  );
 }
 
 /* @utility bg-widget {
@@ -99,7 +107,7 @@
 } */
 
 body {
-  background-color: var(--color-bg-body);
+  /* background-color: var(--color-bg-body); */
 }
 
 @keyframes scroll {
