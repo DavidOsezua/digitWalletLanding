@@ -3,6 +3,7 @@ import {
   type LoginCredentials,
   type SignupCredentials,
   type SignUpResponse,
+  type User,
 } from "../types/auth";
 import { apiInstance } from "./api";
 
@@ -23,5 +24,10 @@ export const register = async (
     "/auth/register",
     credentials
   );
+  return response.data;
+};
+
+export const getUser = async (): Promise<User> => {
+  const response = await apiInstance.get<User>("/user");
   return response.data;
 };
