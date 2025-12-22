@@ -173,8 +173,8 @@ const Navbar = () => {
                       color: "#0F1326",
                     }}
                   >
-                    {user.firstName.charAt(0).toUpperCase()}
-                    {user.lastName.charAt(0).toUpperCase()}
+                    {user?.firstName?.charAt(0).toUpperCase()}
+                    {user?.lastName?.charAt(0).toUpperCase()}
                   </div>
                   {/* User Name */}
                   <span className="text-white font-medium">

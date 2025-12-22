@@ -21,6 +21,8 @@ import type { FormSchema } from "@/pages/Onboarding";
 import toast from "react-hot-toast";
 import { useOnboard } from "@/hooks/useMutations";
 import { Button } from "@/components/ui/button";
+import { useSearchParams } from "react-router";
+import { countries } from "@/lib/countries";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -29,9 +31,12 @@ type StepProps = {
 export const BusinessForm2: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const [, setSearchParams] = useSearchParams();
+
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 2 });
+      setSearchParams({ s: "3" });
       setStep("business-form-3");
     } catch (error) {
       if (error instanceof Error) {
@@ -150,9 +155,11 @@ export const BusinessForm2: FC<StepProps> = ({ setStep }) => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="US">United States</SelectItem>
-                        <SelectItem value="GB">United Kingdom</SelectItem>
-                        <SelectItem value="CA">Canada</SelectItem>
+                        {countries.map((country) => (
+                          <SelectItem key={country.value} value={country.value}>
+                            {country.label}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -243,7 +250,7 @@ export const BusinessForm2: FC<StepProps> = ({ setStep }) => {
                     <FormLabel>Employment Status</FormLabel>
                     <Select
                       onValueChange={field.onChange}
-                      defaultValue={field.value || "employed"}
+                      defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger className="w-full border-[#DAE1EA66]">

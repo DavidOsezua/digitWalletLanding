@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import { type FC } from "react";
 
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import type { FormSchema } from "@/pages/Onboarding";
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +11,8 @@ type StepProps = {
 
 export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
+  const [, setSearchParams] = useSearchParams();
+
   const { watch } = form;
   const firstName = watch("firstName");
   const lastName = watch("lastName");
@@ -32,7 +34,10 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
           <div>
             <div className="text-lg">Yes</div>
             <Button
-              onClick={() => setStep("business-form-8")}
+              onClick={() => {
+                setStep("business-form-8");
+                setSearchParams({ s: "8" });
+              }}
               type="button"
               className="mt-2 bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
             >
