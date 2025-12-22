@@ -28,8 +28,8 @@ export const register = async (
   return response.data;
 };
 
-export const getUser = async (): Promise<User> => {
-  const response = await apiInstance.get<User>("/user");
-  useAuthStore.setState({ user: response.data });
+export const getUser = async (): Promise<{ user: User }> => {
+  const response = await apiInstance.get<{ user: User }>("/user");
+  useAuthStore.setState({ user: response.data.user });
   return response.data;
 };

@@ -21,6 +21,8 @@ import type { FormSchema } from "@/pages/Onboarding";
 import toast from "react-hot-toast";
 import { useOnboard } from "@/hooks/useMutations";
 import { Button } from "@/components/ui/button";
+import { useSearchParams } from "react-router";
+import { nationalities } from "@/lib/nationalities";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -28,10 +30,13 @@ type StepProps = {
 
 export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
+  const [, setSearchParams] = useSearchParams();
+
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 4 });
+      setSearchParams({ s: "5" });
       setStep("business-form-5");
     } catch (error) {
       if (error instanceof Error) {
@@ -70,7 +75,7 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
                 </FormItem>
               )}
             />
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="purposeOfAccount"
@@ -186,7 +191,7 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
                 </FormItem>
               )}
             />
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="nationality"
@@ -203,9 +208,14 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="GB">British</SelectItem>
-                        <SelectItem value="US">American</SelectItem>
-                        {/* Add more */}
+                        {nationalities.map((nationality) => (
+                          <SelectItem
+                            key={nationality.value}
+                            value={nationality.value}
+                          >
+                            {nationality.label}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                     <FormMessage />

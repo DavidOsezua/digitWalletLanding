@@ -20,6 +20,7 @@ import type { FormSchema } from "@/pages/Onboarding";
 import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import { useOnboard } from "@/hooks/useMutations";
+import { useSearchParams } from "react-router";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -28,9 +29,12 @@ type StepProps = {
 export const BusinessForm3: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const [, setSearchParams] = useSearchParams();
+
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 3 });
+      setSearchParams({ s: "4" });
       setStep("business-form-4");
     } catch (error) {
       if (error instanceof Error) {

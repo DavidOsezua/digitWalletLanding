@@ -16,6 +16,7 @@ import { RIStatement } from "@/components/onboardingFlow/forms/RIStatement";
 import { SIStatement } from "@/components/onboardingFlow/forms/SIStatement";
 import { Quiz } from "@/components/onboardingFlow/forms/Quiz";
 import { useAuthStore } from "@/store/authStore";
+import { useGetUser } from "@/hooks/useQueries";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -125,6 +126,7 @@ export type FormSchema = z.infer<typeof formSchema>;
 
 const Onboarding = () => {
   const { user } = useAuthStore();
+  useGetUser();
   const businessForm = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -133,7 +135,7 @@ const Onboarding = () => {
       lastName: user?.onboarding?.lastName || "",
       email: user?.onboarding?.email || "",
       phoneNumber: user?.onboarding?.phoneNumber || "",
-      dateOfBirth: user?.onboarding?.dateOfBirth || "",
+      dateOfBirth: user?.onboarding?.dateOfBirth || undefined,
       addressLine1: user?.onboarding?.addressLine1 || "",
       addressLine2: user?.onboarding?.addressLine2 || "",
       city: user?.onboarding?.city || "",
@@ -145,7 +147,7 @@ const Onboarding = () => {
       companyType: user?.onboarding?.companyType || "",
       companyName: user?.onboarding?.companyName || "",
       companyNumber: user?.onboarding?.companyNumber || "",
-      dateOfIncorporation: user?.onboarding?.dateOfIncorporation || "",
+      dateOfIncorporation: user?.onboarding?.dateOfIncorporation || undefined,
       companyAddress1: user?.onboarding?.companyAddress1 || "",
       companyAddress2: user?.onboarding?.companyAddress2 || "",
       companyCity: user?.onboarding?.companyCity || "",
@@ -194,7 +196,7 @@ const Onboarding = () => {
         user?.onboarding?.organizationalChartOfOwnership || "",
       undertakerFirstName: user?.onboarding?.undertakerFirstName || "",
       undertakerLastName: user?.onboarding?.undertakerLastName || "",
-      undertakerDate: user?.onboarding?.undertakerDate || "",
+      undertakerDate: user?.onboarding?.undertakerDate || undefined,
       investorType: user?.onboarding?.investorType || "",
       hasAnnualIncomeAbove100k:
         user?.onboarding?.hasAnnualIncomeAbove100k || false,
@@ -217,15 +219,16 @@ const Onboarding = () => {
       qualifiedAsSophisticatedInvestorNotAppliedToMe:
         user?.onboarding?.qualifiedAsSophisticatedInvestorNotAppliedToMe ||
         false,
-      assesmentDate: user?.onboarding?.assesmentDate || "",
+      assesmentDate: user?.onboarding?.assesmentDate || undefined,
       assesmentSignature: user?.onboarding?.assesmentSignature || "",
     },
   });
   const [searchParams] = useSearchParams();
   const stepParam = searchParams.get("s") || "0";
-  console.log(stepParam);
   const initialStep = (() => {
-    console.log(user?.onboarding?.investorType);
+    if (stepParam === "0") {
+      return "confirm";
+    }
     if (
       stepParam === "8" &&
       user?.onboarding?.investorType === "high-net-worth"
@@ -244,8 +247,7 @@ const Onboarding = () => {
     if (stepParam === "9" || stepParam === "10" || stepParam === "11") {
       return "quiz";
     }
-    console.log(Number(stepParam + 1));
-    return stepMapping[Number(stepParam + 1)].toString();
+    return stepMapping[Number(stepParam)].toString();
   })();
   useEffect(() => {
     console.log(initialStep);
@@ -283,6 +285,7 @@ const Onboarding = () => {
 
 const Confirm: FC<StepProps> = ({ setStep }) => {
   const navigate = useNavigate();
+  const [, setSearchParams] = useSearchParams();
 
   return (
     <>
@@ -311,7 +314,10 @@ const Confirm: FC<StepProps> = ({ setStep }) => {
           Go Back
         </button>
         <button
-          onClick={() => setStep("business-form-1")}
+          onClick={() => {
+            setStep("business-form-1");
+            setSearchParams({ s: "1" });
+          }}
           className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors"
         >
           Next

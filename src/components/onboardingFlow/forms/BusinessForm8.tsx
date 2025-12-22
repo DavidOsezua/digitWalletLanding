@@ -19,6 +19,7 @@ import type { FormSchema } from "@/pages/Onboarding";
 import { Button } from "@/components/ui/button";
 import { useOnboard } from "@/hooks/useMutations";
 import toast from "react-hot-toast";
+import { useSearchParams } from "react-router";
 
 interface StepProps {
   setStep: (step: string) => void;
@@ -38,16 +39,21 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
   };
 
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const [, setSearchParams] = useSearchParams();
+
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 9 });
       if (investorType === "high-net-worth") {
+        setSearchParams({ s: "9" });
         setStep("hni-statement");
       }
-      if (investorType === "sophisticated") {
+      if (investorType === "restricted") {
+        setSearchParams({ s: "10" });
         setStep("ri-statement");
       }
-      if (investorType === "restricted") {
+      if (investorType === "sophisticated") {
+        setSearchParams({ s: "11" });
         setStep("si-statement");
       }
     } catch (error) {

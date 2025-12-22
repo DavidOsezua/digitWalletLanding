@@ -2,12 +2,17 @@ import { onboard } from "@/services/OnboardingService";
 import { submitQuiz } from "@/services/QuizService";
 import { useQuizStore } from "@/store/quizStore";
 import type { QuizResponse } from "@/types/quiz";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-export const useOnboard = () =>
-  useMutation({
+export const useOnboard = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
     mutationFn: onboard,
+    onSuccess: () => {
+      queryClient.refetchQueries({ queryKey: ["user"] });
+    },
   });
+};
 
 export const useSubmitQuiz = () => {
   const { setQuizResponse } = useQuizStore();

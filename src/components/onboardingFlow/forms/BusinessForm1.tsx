@@ -20,6 +20,9 @@ import type { FormSchema } from "@/pages/Onboarding";
 import { useOnboard } from "@/hooks/useMutations";
 import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
+import { useSearchParams } from "react-router";
+import { countries } from "@/lib/countries";
+import { nationalities } from "@/lib/nationalities";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -27,10 +30,12 @@ type StepProps = {
 
 export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
+  const [, setSearchParams] = useSearchParams();
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 1 });
+      setSearchParams({ s: "2" });
       setStep("business-form-2");
     } catch (error) {
       if (error instanceof Error) {
@@ -45,7 +50,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="space-y-4">
             <h3>Basic Profile</h3>
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="firstName"
@@ -98,7 +103,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                 </FormItem>
               )}
             />
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="phoneNumber"
@@ -138,7 +143,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
           </div>
           <div className="mt-6 space-y-4">
             <h3>Personal Address</h3>
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="addressLine1"
@@ -174,7 +179,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                 )}
               />
             </div>
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="city"
@@ -210,7 +215,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                 )}
               />
             </div>
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="zipCode"
@@ -234,13 +239,23 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Country</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="border-[#DAE1EA66]"
-                        placeholder="Select a country"
-                        {...field}
-                      />
-                    </FormControl>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="border-[#DAE1EA66] w-full">
+                          <SelectValue placeholder="Select a country" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {countries.map((country) => (
+                          <SelectItem key={country.value} value={country.value}>
+                            {country.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -251,14 +266,24 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
               name="citizenship"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Citizenship</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="border-[#DAE1EA66]"
-                      placeholder="Please Select"
-                      {...field}
-                    />
-                  </FormControl>
+                  <FormLabel>Country</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger className="border-[#DAE1EA66] w-1/2">
+                        <SelectValue placeholder="Select citizenship" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {nationalities.map((country) => (
+                        <SelectItem key={country.value} value={country.value}>
+                          {country.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
@@ -266,7 +291,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
           </div>
           <div className="mt-6 space-y-4">
             <h3>Account Setup</h3>
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="accountType"
@@ -283,7 +308,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="personal">Personal</SelectItem>
+                        <SelectItem value="individual">Individual</SelectItem>
                         <SelectItem value="business">Business</SelectItem>
                       </SelectContent>
                     </Select>
@@ -307,9 +332,22 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="None">None</SelectItem>
-                        <SelectItem value="llc">LLC</SelectItem>
-                        <SelectItem value="corporation">Corporation</SelectItem>
+                        <SelectItem value="plc">
+                          Public Limited Company (PLC)
+                        </SelectItem>
+                        <SelectItem value="ltd">
+                          Limited Liability Company (LTD)
+                        </SelectItem>
+                        <SelectItem value="llp">
+                          Limited Liability Partnership (LLP)
+                        </SelectItem>
+                        <SelectItem value="rc">Royal Charter (RC)</SelectItem>
+                        <SelectItem value="cic">
+                          Community Interest Company (CIC)
+                        </SelectItem>
+                        <SelectItem value="rtm">
+                          Right to Manage Company (RTM)
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -334,7 +372,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                 </FormItem>
               )}
             />
-            <div className="flex gap-3 *:grow">
+            <div className="flex gap-3 *:w-1/2">
               <FormField
                 control={form.control}
                 name="companyNumber"
