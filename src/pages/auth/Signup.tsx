@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import { useState } from "react";
 import Eye from "../../components/SvgComponent/Eye";
 import { EyeClosed } from "lucide-react";
-import Google from "../../components/SvgComponent/Google";
 import { useSignUp } from "../../hooks/useAuth";
 import Spinner from "../../components/Spinner";
 

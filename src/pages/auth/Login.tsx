@@ -5,8 +5,6 @@ import Eye from "../../components/SvgComponent/Eye";
 import { EyeClosedIcon } from "lucide-react";
 import { useLogin } from "../../hooks/useAuth";
 import Spinner from "../../components/Spinner";
-import { useLogin } from "@/hooks/useAuth";
-import toast from "react-hot-toast";
 
 type LoginFormData = {
   email: string;
@@ -105,7 +103,6 @@ const Login = () => {
             className="w-full py-3 rounded-lg bg-primary-300 font-medium  cursor-pointer text-dark-text transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isPending && <Spinner size="sm" />}
-            {isPending ? "Signing in..." : "Sign In"}
           </button>
 
           {/* Sign Up Link */}

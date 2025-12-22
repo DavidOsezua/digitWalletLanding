@@ -1,15 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-
 import { Link, NavLink } from "react-router";
 import Hamburger from "./SvgComponent/Hamburger";
 import { useAuthStore } from "../store/authStore";
 import { useLogout } from "../hooks/useAuth";
-import { useAuthStore } from "@/store/authStore";
 
 const Navbar = () => {
-  const { token } = useAuthStore();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isLoggedIn = token !== null && token !== "";
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { isAuthenticated, user } = useAuthStore();
   const handleLogout = useLogout();
@@ -205,28 +201,29 @@ const Navbar = () => {
                   Login
                 </NavLink>
 
-              {/* Get Started Button */}
-              <Link
-                to="/auth/signup"
-                className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
-                style={{
-                  backgroundColor: "var(--color-primary-300)",
-                  color: "#0F1326",
-                }}
-              >
-                Get Started
-              </Link>
-            </div>
-          )}
+                {/* Get Started Button */}
+                <Link
+                  to="/auth/signup"
+                  className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
+                  style={{
+                    backgroundColor: "var(--color-primary-300)",
+                    color: "#0F1326",
+                  }}
+                >
+                  Get Started
+                </Link>
+              </>
+            )}
 
-          {/* Mobile Hamburger Menu */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden"
-            aria-label="Toggle menu"
-          >
-            <Hamburger />
-          </button>
+            {/* Mobile Hamburger Menu */}
+            <button
+              onClick={toggleMobileMenu}
+              className="md:hidden"
+              aria-label="Toggle menu"
+            >
+              <Hamburger />
+            </button>
+          </div>
         </div>
       </nav>
 
