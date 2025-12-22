@@ -102,7 +102,7 @@ const Login = () => {
             disabled={isPending}
             className="w-full py-3 rounded-lg bg-primary-300 font-medium  cursor-pointer text-dark-text transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            {isPending && <Spinner size="sm" />}
+            {isPending ? <Spinner size="sm" /> : "Log In"}
           </button>
 
           {/* Sign Up Link */}
