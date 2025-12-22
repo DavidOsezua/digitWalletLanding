@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 
 const Dashboard = () => {
   const { user } = useAuthStore();
-  const isFirstTimeOnboarding = user?.onboarding?.stepCompleted === 0;
+  const isFirstTimeOnboarding = !user?.onboarding;
   const navigate = useNavigate();
   return (
     <div className="w-full">
@@ -42,9 +42,13 @@ const Dashboard = () => {
           completing our onboarding process.
         </div>
         <Button
-          onClick={() =>
-            navigate(`/onboarding?s=${user?.onboarding?.stepCompleted}`)
-          }
+          onClick={() => {
+            if (isFirstTimeOnboarding) {
+              navigate("/onboarding");
+              return;
+            }
+            navigate(`/onboarding?s=${user?.onboarding?.stepCompleted}`);
+          }}
           className="bg-primary-300 hover:bg-primary-300/90 text-sm text-dark-text rounded-full mt-6 px-6"
         >
           {isFirstTimeOnboarding ? "Start Onboarding" : "Continue Onboarding"}

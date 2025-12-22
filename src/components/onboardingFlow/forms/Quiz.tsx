@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import toast from "react-hot-toast";
 import { useSubmitQuiz } from "@/hooks/useMutations";
-import { useGetQuiz } from "@/hooks/useQueries";
+import { useGetQuiz, useGetUser } from "@/hooks/useQueries";
 import type { Question } from "@/types/quiz";
 import { Label } from "@/components/ui/label";
 import { useAuthStore } from "@/store/authStore";
@@ -21,6 +21,7 @@ import { useEffect, type FC } from "react";
 import Throbber from "@/components/ui/throbber";
 import { useQuizStore } from "@/store/quizStore";
 import { useNavigate } from "react-router";
+import { useQueryClient } from "@tanstack/react-query";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -59,7 +60,9 @@ export const Quiz: FC<StepProps> = ({ setStep }) => {
 };
 
 const QuizForm: FC<StepProps> = ({ setStep }) => {
+  const queryClient = useQueryClient();
   const { mutateAsync: submitQuiz, isPending: isSubmitting } = useSubmitQuiz();
+  useGetUser();
   const { data: quiz, isLoading: isLoadingQuiz } = useGetQuiz();
   const form = useForm<QuizFormData>({
     resolver: zodResolver(quizSchema),
@@ -85,6 +88,7 @@ const QuizForm: FC<StepProps> = ({ setStep }) => {
         quizId: quiz?.quiz.id ?? 0,
         answers: data.answers.filter((a) => a.selectedOptionId),
       });
+      queryClient.invalidateQueries({ queryKey: ["user"] });
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message);

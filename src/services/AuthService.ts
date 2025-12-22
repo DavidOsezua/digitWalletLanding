@@ -1,3 +1,4 @@
+import { useAuthStore } from "@/store/authStore";
 import {
   type AuthResponse,
   type LoginCredentials,
@@ -29,5 +30,6 @@ export const register = async (
 
 export const getUser = async (): Promise<User> => {
   const response = await apiInstance.get<User>("/user");
+  useAuthStore.setState({ user: response.data });
   return response.data;
 };
