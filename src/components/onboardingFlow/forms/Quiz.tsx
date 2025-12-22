@@ -32,7 +32,7 @@ const quizSchema = z.object({
       questionId: z.number(),
       selectedOptionId: z
         .number({
-          error: "Please select an option",
+          required_error: "Please select an option",
         })
         .min(1, "Please select a valid option"),
     })
@@ -43,14 +43,18 @@ type QuizFormData = z.infer<typeof quizSchema>;
 
 export const Quiz: FC<StepProps> = ({ setStep }) => {
   const { quizResponse } = useQuizStore();
+  const { user } = useAuthStore();
   if (quizResponse === null) {
     return <QuizForm setStep={setStep} />;
   }
   if (quizResponse?.score.passed) {
     return <QuizSuccess score={quizResponse.score.scorePercentage} />;
   }
-  if (!quizResponse?.score.passed) {
+  if (!quizResponse?.score.passed && user?.totalAttempts === 1) {
     return <QuizFailFirstAttempt />;
+  }
+  if (!quizResponse?.score.passed && user?.totalAttempts === 2) {
+    return <QuizFailSecondAttempt />;
   }
 };
 
