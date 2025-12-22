@@ -12,10 +12,10 @@ export const useLogin = () => {
     mutationFn: login,
     onSuccess: (data: AuthResponse) => {
       setAuth(data.user, data.accessToken);
-      navigate("/");
+      navigate("/dashboard");
     },
     onError: (error: never) => {
-      console.error("Login Faield:", error);
+      console.error("Login failed:", error);
     },
   });
 };

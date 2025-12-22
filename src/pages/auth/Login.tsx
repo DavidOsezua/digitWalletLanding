@@ -4,6 +4,8 @@ import { useState } from "react";
 import Eye from "../../components/SvgComponent/Eye";
 import { EyeClosedIcon } from "lucide-react";
 import Google from "../../components/SvgComponent/Google";
+import { useLogin } from "@/hooks/useAuth";
+import toast from "react-hot-toast";
 
 type LoginFormData = {
   email: string;
@@ -18,9 +20,16 @@ const Login = () => {
     formState: { errors },
   } = useForm<LoginFormData>();
 
-  const onSubmit = (data: LoginFormData) => {
+  const { mutateAsync: login, isPending } = useLogin();
+
+  const onSubmit = async (data: LoginFormData) => {
     console.log("Login data:", data);
-    // Handle login logic here
+    try {
+      await login(data);
+      toast.success("Login successful!");
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
 
   return (
@@ -100,7 +109,7 @@ const Login = () => {
             type="submit"
             className="w-full py-3 rounded-lg bg-primary-300 font-medium  cursor-pointer text-dark-text transition-colors"
           >
-            Sign In
+            {isPending ? "Loading..." : "Sign In"}
           </button>
 
           {/* Sign Up Link */}

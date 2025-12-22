@@ -2,9 +2,12 @@ import { useState } from "react";
 
 import { Link, NavLink } from "react-router";
 import Hamburger from "./SvgComponent/Hamburger";
+import { useAuthStore } from "@/store/authStore";
 
 const Navbar = () => {
+  const { token } = useAuthStore();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isLoggedIn = token !== null && token !== "";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -86,32 +89,34 @@ const Navbar = () => {
           </div>
 
           {/* Action Buttons - Desktop */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Login Button with Gradient Border */}
-            <NavLink
-              to={"/auth"}
-              className="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity relative"
-              style={{
-                background: `linear-gradient(var(--color-bg-widget), var(--color-bg-widget)) padding-box,
+          {!isLoggedIn && (
+            <div className="hidden md:flex items-center gap-4">
+              {/* Login Button with Gradient Border */}
+              <NavLink
+                to={"/auth"}
+                className="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity relative"
+                style={{
+                  background: `linear-gradient(var(--color-bg-widget), var(--color-bg-widget)) padding-box,
                              linear-gradient(to right, var(--color-border-gradient-start), var(--color-border-gradient-end)) border-box`,
-                border: "1px solid transparent",
-              }}
-            >
-              Login
-            </NavLink>
+                  border: "1px solid transparent",
+                }}
+              >
+                Login
+              </NavLink>
 
-            {/* Get Started Button */}
-            <Link
-              to="/register"
-              className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
-              style={{
-                backgroundColor: "var(--color-primary-300)",
-                color: "#0F1326",
-              }}
-            >
-              Get Started
-            </Link>
-          </div>
+              {/* Get Started Button */}
+              <Link
+                to="/auth/signup"
+                className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
+                style={{
+                  backgroundColor: "var(--color-primary-300)",
+                  color: "#0F1326",
+                }}
+              >
+                Get Started
+              </Link>
+            </div>
+          )}
 
           {/* Mobile Hamburger Menu */}
           <button

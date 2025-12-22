@@ -26,8 +26,8 @@ const Hamburger = () => {
             y2="17.6787"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#B4EAFF" />
-            <stop offset="1" stop-color="#21274A" />
+            <stop stopColor="#B4EAFF" />
+            <stop offset="1" stopColor="#21274A" />
           </linearGradient>
         </defs>
       </svg>

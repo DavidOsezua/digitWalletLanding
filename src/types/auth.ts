@@ -1,3 +1,5 @@
+import type { OnboardingResponse } from "./onboarding";
+
 export interface User {
   id: number;
   firstName: string;
@@ -5,8 +7,11 @@ export interface User {
   email: string;
   isAdmin: boolean;
   hasPassedQuiz: boolean;
+  lastAttemptedAt: string | null;
   totalAttempts: number;
-  onboarding: null;
+  onboarding: OnboardingResponse["onboarding"] | null;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface LoginCredentials {
