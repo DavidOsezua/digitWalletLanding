@@ -20,6 +20,9 @@ import DashboardLayout from "./layout.tsx/DashboardLayout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import BuyAndSellPage from "./pages/BuyAndSellPage";
 import CryptoGateWayPage from "./pages/CryptoGateWayPage";
+import CustodyPage from "./pages/CustodyPage";
+import AboutUsPage from "./pages/AboutUsPage";
+import ContactUsPage from "./pages/ContactUsPage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -32,15 +35,13 @@ const App = () => {
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/ukfinance" element={<UkFinance />} />
 
-          <Route path="/myaccount">
-            <Route
-              index
-              element={<Navigate to="/myaccount/dashboard" replace />}
-            />
-          </Route>
+          <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/contact" element={<ContactUsPage />} />
+          {/* <Route path="/about" /> */}
         </Route>
         <Route path="/buyandsell" element={<BuyAndSellPage />} />
         <Route path="/cryptogateway" element={<CryptoGateWayPage />} />
+        <Route path="/custody" element={<CustodyPage />} />
 
         {/* Auth Layout - Login/Signup pages */}
         <Route path="/auth" element={<LoginLayout />}>
