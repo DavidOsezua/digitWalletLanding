@@ -252,16 +252,16 @@ const Navbar = () => {
                 </Link>
               </>
             )}
-
-            {/* Mobile Hamburger Menu */}
-            <button
-              onClick={toggleMobileMenu}
-              className="block md:hidden"
-              aria-label="Toggle menu"
-            >
-              <Hamburger />
-            </button>
           </div>
+
+          {/* Mobile Hamburger Menu */}
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden"
+            aria-label="Toggle menu"
+          >
+            <Hamburger />
+          </button>
         </div>
       </nav>
 
