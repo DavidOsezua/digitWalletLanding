@@ -7,7 +7,10 @@
 @theme {
   --color-bg-widget: #161b33e5;
   --color-dark-text: #161b33;
+  --color-dark-text-100: #f7f9fd;
   --color-dark-text-300: #bababa;
+  --color-dark-primary-100: #d7f4ff;
+  --color-dark-primary-400: #62d1f3;
   --color-bg-secondary: #1e2440;
   --color-bg-body: #0f1326;
   --color-primary-300: #b4eaff;

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-
 import { Link, NavLink } from "react-router";
 import Hamburger from "./SvgComponent/Hamburger";
 import { useAuthStore } from "../store/authStore";
@@ -242,7 +241,7 @@ const Navbar = () => {
 
                 {/* Get Started Button */}
                 <Link
-                  to="/register"
+                  to="/auth/signup"
                   className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
                   style={{
                     backgroundColor: "var(--color-primary-300)",
@@ -253,16 +252,16 @@ const Navbar = () => {
                 </Link>
               </>
             )}
-          </div>
 
-          {/* Mobile Hamburger Menu */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden"
-            aria-label="Toggle menu"
-          >
-            <Hamburger />
-          </button>
+            {/* Mobile Hamburger Menu */}
+            <button
+              onClick={toggleMobileMenu}
+              className="block md:hidden"
+              aria-label="Toggle menu"
+            >
+              <Hamburger />
+            </button>
+          </div>
         </div>
       </nav>
 
