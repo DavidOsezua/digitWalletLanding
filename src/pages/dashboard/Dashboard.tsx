@@ -43,9 +43,7 @@ const Dashboard = () => {
         </div>
         <Button
           onClick={() =>
-            navigate(
-              `/onboarding?s=${(user?.onboarding?.stepCompleted as number) + 1}`
-            )
+            navigate(`/onboarding?s=${user?.onboarding?.stepCompleted}`)
           }
           className="bg-primary-300 hover:bg-primary-300/90 text-sm text-dark-text rounded-full mt-6 px-6"
         >

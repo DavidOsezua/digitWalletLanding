@@ -1,5 +1,5 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { useEffect, useState, type FC } from "react";
+import { use, useEffect, useState, type FC } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { BusinessForm4 } from "@/components/onboardingFlow/forms/BusinessForm4";
 import { BusinessForm3 } from "@/components/onboardingFlow/forms/BusinessForm3";
@@ -34,6 +34,7 @@ const stepMapping: Record<number, string> = {
   9: "hni-statement",
   10: "ri-statement",
   11: "si-statement",
+  12: "quiz",
 };
 
 const formSchema = z.object({
@@ -222,7 +223,33 @@ const Onboarding = () => {
   });
   const [searchParams] = useSearchParams();
   const stepParam = searchParams.get("s") || "0";
-  const initialStep = stepMapping[Number(stepParam)] || "confirm";
+  console.log(stepParam);
+  const initialStep = (() => {
+    console.log(user?.onboarding?.investorType);
+    if (
+      stepParam === "8" &&
+      user?.onboarding?.investorType === "high-net-worth"
+    ) {
+      return "hni-statement";
+    }
+    if (stepParam === "8" && user?.onboarding?.investorType === "restricted") {
+      return "ri-statement";
+    }
+    if (
+      stepParam === "8" &&
+      user?.onboarding?.investorType === "sophisticated"
+    ) {
+      return "si-statement";
+    }
+    if (stepParam === "9" || stepParam === "10" || stepParam === "11") {
+      return "quiz";
+    }
+    console.log(Number(stepParam + 1));
+    return stepMapping[Number(stepParam + 1)].toString();
+  })();
+  useEffect(() => {
+    console.log(initialStep);
+  }, [initialStep]);
   const [step, setStep] = useState(initialStep);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
