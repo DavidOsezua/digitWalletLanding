@@ -1,3 +1,4 @@
+import HighVolumes from "../SvgComponent/HighVolumes";
 import MultipleCurrencies from "../SvgComponent/MultipleCurrencies";
 import Settlement from "../SvgComponent/Settlement";
 
@@ -42,29 +43,17 @@ const BuyAndSellFeatures = () => {
           </div>
 
           {/* High Transaction Volumes Card - Spans 2 columns */}
-          <div className="bg-gradient-blue-2 rounded-2xl p-6 lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
-                    stroke="#4A90E2"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+          <div className="bg-gradient-blue-2 rounded-2xl p-6 lg:col-span-2 overflow-hidden">
+            <div className="flex items-center justify-between gap-3 mb-6">
+              <h3 className="text-gray-900 font-semibold text-lg mb-4">
+                We support high transaction volumes
+              </h3>
+              <HighVolumes />
             </div>
-            <h3 className="text-gray-900 font-semibold text-lg mb-4">
-              We support high transaction volumes
-            </h3>
+
+            <div>
+              <img src="/highVolumes.webp" alt="" />
+            </div>
           </div>
         </div>
       </div>

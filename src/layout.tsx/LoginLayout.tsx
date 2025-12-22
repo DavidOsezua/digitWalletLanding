@@ -7,11 +7,14 @@ const LoginLayout = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center py-8 px-4"
+      className="min-h-screen relative flex items-center  justify-center py-8 px-4"
       style={{ backgroundColor: "#0F1326" }}
     >
+      <div className="absolute top-1/4 max-w-7xl mx-auto">
+        <img src="/DigitWallet2.png" alt="" className="w-full h-auto" />
+      </div>
       <div
-        className="w-full max-w-md p-6 md:p-12 rounded-[24px] bg-[#161B33E5] space-y-6"
+        className="w-full max-w-md p-6 md:p-12 backdrop-blur-sm rounded-[24px] bg-[#161B33E5] space-y-6"
         style={{
           border: "1px solid transparent",
           background: `
