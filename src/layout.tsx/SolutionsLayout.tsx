@@ -1,11 +1,10 @@
-import React from "react";
 import MainFooter from "../components/MainFooter";
 import Warning from "../components/Warning";
 import Footer from "../components/home/Footer";
 import DisclaimerBanner from "../components/DisclaimerBanner";
 import Navbar from "../components/Navbar";
 
-const SolutionsLayout = ({ children }) => {
+const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className="bg-gradient-selected2 relative">
       {/* Top-left Flashlight Effect */}

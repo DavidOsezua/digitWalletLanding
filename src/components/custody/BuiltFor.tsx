@@ -2,9 +2,7 @@ import Button from "../Button";
 import Business from "../SvgComponent/Business";
 import HighNetWorthInvestors from "../SvgComponent/HighNetWorthInvestors";
 import Individuals2 from "../SvgComponent/Individuals2";
-import PaymentLink from "../SvgComponent/PaymentLink";
 import Peace from "../SvgComponent/Peace";
-import RecievePayment from "../SvgComponent/RecievePayment";
 import Refresh2 from "../SvgComponent/Refresh2";
 import SignUp from "../SvgComponent/SignUp";
 
