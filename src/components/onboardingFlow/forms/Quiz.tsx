@@ -219,10 +219,10 @@ const QuizSuccess = ({ score }: { score: number }) => {
       </p>
       <div className="mt-6 flex justify-end">
         <Button
-          onClick={() => navigate("/ukfinance")}
+          onClick={() => navigate("/dashboard")}
           className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
         >
-          Try Again
+          Done
         </Button>
       </div>
     </div>
