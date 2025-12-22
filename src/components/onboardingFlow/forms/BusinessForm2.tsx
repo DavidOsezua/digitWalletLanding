@@ -262,8 +262,8 @@ export const BusinessForm2: FC<StepProps> = ({ setStep }) => {
                         <SelectItem value="self-employed">
                           Self-Employed
                         </SelectItem>
-                        <SelectItem value="unemployed">Unemployed</SelectItem>
                         <SelectItem value="retired">Retired</SelectItem>
+                        <SelectItem value="others">Others</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />

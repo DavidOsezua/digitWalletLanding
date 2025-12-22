@@ -302,7 +302,7 @@ const Confirm: FC<StepProps> = ({ setStep }) => {
         complete these to enable you to engage with our services.
       </p>
 
-      <Link className="font-semibold mt-2 text-[#6294FF]" to="/register">
+      <Link className="font-semibold mt-2 text-[#6294FF]" to="/ukfinance">
         Click to learn more
       </Link>
 

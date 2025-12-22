@@ -23,6 +23,7 @@ import { useOnboard } from "@/hooks/useMutations";
 import { Button } from "@/components/ui/button";
 import { useSearchParams } from "react-router";
 import { nationalities } from "@/lib/nationalities";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -82,20 +83,13 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Purpose of opening the account</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="w-full border-[#DAE1EA66]">
-                          <SelectValue placeholder="Select purpose" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="investment">Investment</SelectItem>
-                        <SelectItem value="business">Business</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <FormControl>
+                      <Input
+                        className="border-[#DAE1EA66]"
+                        placeholder="Enter description"
+                        {...field}
+                      />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -164,29 +158,37 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
               name="isAccountHolderBeneficialOwner"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Real Beneficiary</FormLabel>
-                  <Select
-                    onValueChange={(value) =>
-                      field.onChange(value === "accountHolder")
-                    }
-                    defaultValue={field.value ? "accountHolder" : "someoneElse"}
-                  >
-                    <FormControl>
-                      <SelectTrigger className="w-full border-[#DAE1EA66]">
-                        <SelectValue placeholder="Select" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="accountHolder">
-                        The account holder is the real beneficiary of the fund
-                        deposited with DigitalWallet s.r.o
-                      </SelectItem>
-                      <SelectItem value="someoneElse">
-                        The real beneficiary of the fund deposited with
-                        DigitalWallet s.r.o is for someone else
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <FormLabel>I, the undersigned, hereby certify that</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={(value) =>
+                        field.onChange(value === "accountHolder")
+                      }
+                      defaultValue={
+                        field.value ? "accountHolder" : "someoneElse"
+                      }
+                      className="flex flex-col space-y-1"
+                    >
+                      <FormItem className="flex items-center space-x-2">
+                        <FormControl>
+                          <RadioGroupItem value="accountHolder" />
+                        </FormControl>
+                        <FormLabel className="font-normal">
+                          The account holder is the real beneficiary of the fund
+                          deposited with DigitalWallet s.r.o
+                        </FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-2">
+                        <FormControl>
+                          <RadioGroupItem value="someoneElse" />
+                        </FormControl>
+                        <FormLabel className="font-normal">
+                          The real beneficiary of the fund deposited with
+                          DigitalWallet s.r.o is for someone else
+                        </FormLabel>
+                      </FormItem>
+                    </RadioGroup>
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}

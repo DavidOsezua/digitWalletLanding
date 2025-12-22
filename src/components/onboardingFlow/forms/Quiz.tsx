@@ -57,6 +57,7 @@ export const Quiz: FC<StepProps> = ({ setStep }) => {
   if (!quizResponse?.score.passed && user?.totalAttempts === 2) {
     return <QuizFailSecondAttempt />;
   }
+  return <QuizForm setStep={setStep} />;
 };
 
 const QuizForm: FC<StepProps> = ({ setStep }) => {
