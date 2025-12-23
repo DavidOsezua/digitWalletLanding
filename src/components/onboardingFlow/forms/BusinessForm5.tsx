@@ -24,7 +24,26 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const [, setSearchParams] = useSearchParams();
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const stepFields = [
+    "proofOfIdentity",
+    "companyProofOfAddress",
+    "proofOfFunds1",
+    "proofOfFunds2",
+    "certificateOfIncorporation",
+    "articlesOfAssociation",
+    "registerOfDirectors",
+    "authorizedSignatoryList",
+    "shareholderList",
+    "organizationalChartOfOwnership",
+  ] as const;
+
   const onSubmit = async (data: Partial<FormSchema>) => {
+    console.log("Validation errors:", form.formState.errors);
+    const isValid = await form.trigger(stepFields);
+    if (!isValid) {
+      toast.error("Please fill all required fields correctly.");
+      return;
+    }
     try {
       await save({ ...data, stepCompleted: 5 });
       setSearchParams({ s: "7" });

@@ -42,7 +42,16 @@ const AppSidebar = () => {
         <SidebarContent className={"text-white"}>
           <SidebarMenu className={"pl-4"}>
             {items.map((item) => (
-              <NavLink end={item.url === "/dashboard"} to={item.url}>
+              <NavLink
+                onClick={(e) => {
+                  if (item.title === "Account") {
+                    e.preventDefault();
+                  }
+                }}
+                key={item.url}
+                end={item.url === "/dashboard"}
+                to={item.url}
+              >
                 {({ isActive }) => (
                   <SidebarMenuButton
                     className={`hover:bg-primary-100/15 hover:text-primary-100 relative h-auto rounded-r-none px-4 ${

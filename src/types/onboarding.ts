@@ -119,6 +119,8 @@ export interface OnboardingResponse {
     isAccountHolderBeneficialOwner: boolean;
     nationality: string;
     natureOfRelationWithAccountHolder: string;
+    beneficiaryFirstName: string;
+    beneficiaryLastName: string;
     proofOfIdentity: string;
     proofOfAddress: string;
     proofOfFunds1: string;

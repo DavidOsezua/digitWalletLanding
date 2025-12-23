@@ -34,7 +34,25 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
   const [, setSearchParams] = useSearchParams();
 
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const stepFields = [
+    "currencies",
+    "purposeOfAccount",
+    "expectedAnnualVolume",
+    "countriesOfTransaction",
+    "expectedNumberOfMonthlyTransactions",
+    "isAccountHolderBeneficialOwner",
+    "nationality",
+    "natureOfRelationWithAccountHolder",
+    "beneficiaryFirstName",
+    "beneficiaryLastName",
+  ] as const;
+
   const onSubmit = async (data: Partial<FormSchema>) => {
+    const isValid = await form.trigger(stepFields);
+    if (!isValid) {
+      toast.error("Please fill all required fields correctly.");
+      return;
+    }
     try {
       await save({ ...data, stepCompleted: 4 });
       setSearchParams({ s: "5" });
@@ -236,6 +254,42 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
                       <Input
                         className="border-[#DAE1EA66]"
                         placeholder="Enter description"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="flex gap-3 *:w-1/2">
+              <FormField
+                control={form.control}
+                name="beneficiaryFirstName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>First name</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="John"
+                        {...field}
+                        className="border-[#DAE1EA66]"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="beneficiaryLastName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Last name</FormLabel>
+                    <FormControl>
+                      <Input
+                        className="border-[#DAE1EA66]"
+                        placeholder="Doe"
                         {...field}
                       />
                     </FormControl>

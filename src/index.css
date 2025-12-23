@@ -72,6 +72,11 @@
     var(--color-gradient-auxiliary-start) 0%,
     var(--color-gradient-auxiliary-end) 100%
   );
+  --background-image-dark-gradient-auxiliary: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #999999 100%
+  );
   --background-image-gradient-black-fade: linear-gradient(
     to right,
     color-mix(in srgb, var(--color-gradient-black-start) 20%, transparent),

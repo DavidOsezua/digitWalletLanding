@@ -33,7 +33,30 @@ export const BusinessForm2: FC<StepProps> = ({ setStep }) => {
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
   const [, setSearchParams] = useSearchParams();
 
+  const stepFields = [
+    "companyAddress1",
+    "companyAddress2",
+    "companyCity",
+    "companyState",
+    "companyZipCode",
+    "companyCountry",
+    "positionInCompany",
+    "percentageOfOwnership",
+    "ipAddress",
+    "website",
+    "employmentStatus",
+    "jobRole",
+    "annualIncome",
+    "sourceOfFunds",
+    "descriptionOfBusinessActivity",
+  ] as const;
+
   const onSubmit = async (data: Partial<FormSchema>) => {
+    const isValid = await form.trigger(stepFields);
+    if (!isValid) {
+      toast.error("Please fill all required fields correctly.");
+      return;
+    }
     try {
       await save({ ...data, stepCompleted: 2 });
       setSearchParams({ s: "3" });
