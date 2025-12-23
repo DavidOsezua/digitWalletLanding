@@ -15,7 +15,7 @@ export const useLogin = () => {
     onSuccess: (data: AuthResponse) => {
       setAuth(data.user, data.accessToken);
       toast.success("Login successful!");
-      navigate("/dashboard");
+      navigate("/myaccount/dashboard");
     },
     onError: (error: unknown) => {
       const errorMessage = axios.isAxiosError(error)
