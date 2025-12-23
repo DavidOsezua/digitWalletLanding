@@ -2,12 +2,10 @@ const DisclaimerBanner = () => {
   return (
     <section className="sticky top-20 md:top-25 z-30 px-4 lg:px-0">
       <div
-        className="max-w-7xl px-3  py-2 md:px-6 md:py-4 backdrop-blur-2xl mx-auto rounded-3xl"
-        style={{
-          backgroundColor: "rgba(255, 255, 255, 0.05)",
-        }}
+        className="max-w-7xl px-3 bg-gradient-card-2  py-2 md:px-6 md:py-4 backdrop-blur-2xl mx-auto rounded-3xl"
+       
       >
-        <p className="text-white text-[12px] md:text-base">
+        <p className="text-white text-[12px] md:text-[20px]  ">
           Don't invest unless you're prepared to lose all the money you invest.
           This is a high-risk investment and you should not expect to be
           protected if something goes wrong.{" "}

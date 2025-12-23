@@ -21,32 +21,32 @@ const MainFooter = () => {
             <div className="flex items-center gap-2">
               <img src="/digitWallet.svg" alt="DigitWallet" className="h-8" />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Digitwallet Provides an all-in-one solution to help you manage,
               exchange, and grow your assets with minimal hassle.
             </p>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary-300 transition-colors"
+                className="text-white hover:text-primary-300 transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary-300 transition-colors"
+                className="text-white hover:text-primary-300 transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary-300 transition-colors"
+                className="text-white hover:text-primary-300 transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary-300 transition-colors"
+                className="text-white hover:text-primary-300 transition-colors"
               >
                 <Twitter className="w-5 h-5" />
               </a>
@@ -60,7 +60,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Home
                 </a>
@@ -68,7 +68,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Buy & Sell Crypto
                 </a>
@@ -76,7 +76,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Custody
                 </a>
@@ -84,7 +84,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Crypto Gateway
                 </a>
@@ -92,7 +92,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Pay with Crypto
                 </a>
@@ -100,7 +100,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   About
                 </a>
@@ -108,7 +108,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Contact
                 </a>
@@ -123,7 +123,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Risk Summary
                 </a>
@@ -131,7 +131,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Privacy Policy
                 </a>
@@ -139,7 +139,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Terms of Use
                 </a>
@@ -147,7 +147,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Compliance
                 </a>
@@ -155,7 +155,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Information Security
                 </a>
@@ -163,7 +163,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Fees
                 </a>
@@ -178,7 +178,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="mailto:Complaints@digitwallethub.com"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Complaints@digitwallethub.com
                 </a>
@@ -186,7 +186,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="mailto:Support@digitwallethub.com"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   Support@digitwallethub.com
                 </a>
@@ -194,7 +194,7 @@ const MainFooter = () => {
               <li>
                 <a
                   href="mailto:bd@digitwallethub.com"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-primary-300 transition-colors text-sm"
                 >
                   bd@digitwallethub.com
                 </a>

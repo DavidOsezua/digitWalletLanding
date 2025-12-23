@@ -36,14 +36,14 @@ const CustodySecureOption = () => {
         </div>
 
         {/* Features Grid - Custom 2 row layout */}
-        <div className="grid grid-cols-1 md:grid-cols-20 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-20 gap-2">
           {/* Ledger Hardware Wallet Integration */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="p-6 lg:p-8 rounded-2xl bg-linear-to-br from-blue-100 to-blue-50 relative md:col-span-10"
+            className="p-6 lg:p-8 rounded-2xl bg-linear-to-br from-blue-100 to-blue-50 relative md:col-span-9"
           >
             <div className="flex items-start justify-between mb-6">
               <h3 className="text-2xl font-bold text-gray-900 max-w-xs">
@@ -74,7 +74,7 @@ const CustodySecureOption = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="p-6 lg:p-8 rounded-2xl bg-linear-to-br from-blue-100 to-blue-50 relative md:col-span-10"
+            className="p-6 lg:p-8 rounded-2xl bg-linear-to-br from-blue-100 to-blue-50 relative md:col-span-11"
           >
             <div className="flex items-start justify-between mb-6">
               <h3 className="text-2xl font-bold text-gray-900 max-w-116">

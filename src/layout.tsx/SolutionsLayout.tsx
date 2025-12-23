@@ -18,7 +18,7 @@ const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
           backgroundImage: `url("/buyAndSellHero.webp")`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center top",
-          backgroundSize: "100%  540px",
+          backgroundSize: "100%  552px",
         }}
       >
         <Navbar />

@@ -17,7 +17,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Contact", path: "/contact" },
-    { name: "My account", path: "/" },
+    { name: "My account", path: "/myaccount" },
     { name: "About Us", path: "/about" },
   ];
 
@@ -25,6 +25,7 @@ const Navbar = () => {
     { name: "Buy and Sell", path: "/buyandsell" },
     { name: "Custody", path: "/custody" },
     { name: "Crypto Payment Gateway", path: "/cryptogateway" },
+    { name: "Pay With Crypto", path: "/paywithcrypto" },
   ];
 
   const toggleMobileMenu = () => {
@@ -205,13 +206,13 @@ const Navbar = () => {
                       border: "1px solid rgba(101, 97, 126, 0.3)",
                     }}
                   >
-                    {/* <Link
-                      to="/myaccount/dashboard"
+                    <Link
+                      to="/myaccount"
                       className="block px-4 py-3 text-white hover:bg-opacity-80 transition-colors"
                       onClick={() => setIsUserMenuOpen(false)}
                     >
-                      My Account
-                    </Link> */}
+                      My Profile
+                    </Link>
                     <button
                       onClick={() => {
                         setIsUserMenuOpen(false);

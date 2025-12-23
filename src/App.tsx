@@ -23,6 +23,9 @@ import CryptoGateWayPage from "./pages/CryptoGateWayPage";
 import CustodyPage from "./pages/CustodyPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
+import Account from "./pages/dashboard/Account";
+import Profile from "./pages/dashboard/Profile";
+import PayWithCryptoPage from "./pages/PayWithCryptoPage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -35,13 +38,14 @@ const App = () => {
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/ukfinance" element={<UkFinance />} />
 
-          <Route path="/about" element={<AboutUsPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
           {/* <Route path="/about" /> */}
         </Route>
+        <Route path="/about" element={<AboutUsPage />} />
         <Route path="/buyandsell" element={<BuyAndSellPage />} />
         <Route path="/cryptogateway" element={<CryptoGateWayPage />} />
         <Route path="/custody" element={<CustodyPage />} />
+        <Route path="/paywithcrypto" element={<PayWithCryptoPage />} />
 
         {/* Auth Layout - Login/Signup pages */}
         <Route path="/auth" element={<LoginLayout />}>
@@ -51,8 +55,14 @@ const App = () => {
         </Route>
 
         {/* Dashboard Layout */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<Dashboard />} />
+        <Route path="/myaccount" element={<DashboardLayout />}>
+          <Route
+            index
+            element={<Navigate to="/myaccount/dashboard" replace />}
+          />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="account" element={<Account />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </>
     )
