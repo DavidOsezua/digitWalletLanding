@@ -15,7 +15,7 @@ const MainLayout = () => {
       <DisclaimerBanner />
 
       {/* Main Content - Rendered from child routes */}
-      <main>
+      <main className="py-4">
         <Outlet />
       </main>
 

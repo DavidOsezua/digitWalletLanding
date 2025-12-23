@@ -52,7 +52,7 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
           </div>
         </div>
         <div className="flex justify-end">
-          <Link to="/website" className="text-[#6294FF] font-regular text-xs">
+          <Link to="/ukfinance" className="text-[#6294FF] font-regular text-xs">
             Checkout our website
           </Link>
         </div>

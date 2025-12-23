@@ -57,9 +57,13 @@ export const Quiz: FC<StepProps> = ({ setStep }) => {
   if (!quizResponse?.score.passed && user?.totalAttempts === 2) {
     return <QuizFailSecondAttempt />;
   }
+  return <QuizForm setStep={setStep} />;
 };
 
 const QuizForm: FC<StepProps> = ({ setStep }) => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const queryClient = useQueryClient();
   const { mutateAsync: submitQuiz, isPending: isSubmitting } = useSubmitQuiz();
   useGetUser();
@@ -167,6 +171,7 @@ const QuizItem = ({
                   >
                     <FormControl>
                       <RadioGroupItem
+                        className="mt-0.5"
                         id={option.id.toString()}
                         value={option.id.toString()}
                       />
@@ -192,6 +197,9 @@ const QuizItem = ({
 const QuizSuccess = ({ score }: { score: number }) => {
   const { user } = useAuthStore();
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <h3 className="text-xl">
@@ -218,10 +226,10 @@ const QuizSuccess = ({ score }: { score: number }) => {
       </p>
       <div className="mt-6 flex justify-end">
         <Button
-          onClick={() => navigate("/ukfinance")}
+          onClick={() => navigate("/dashboard")}
           className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
         >
-          Try Again
+          Done
         </Button>
       </div>
     </div>
@@ -231,7 +239,9 @@ const QuizSuccess = ({ score }: { score: number }) => {
 const QuizFailSecondAttempt = () => {
   const { user } = useAuthStore();
   const logout = useLogout();
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <h3 className="text-xl">
@@ -259,7 +269,7 @@ const QuizFailSecondAttempt = () => {
         <Button
           type="button"
           variant={"outline"}
-          onClick={() => logout}
+          onClick={() => logout()}
           className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
         >
           Log out
@@ -313,7 +323,7 @@ const QuizFailFirstAttempt = () => {
         <Button
           type="button"
           variant={"outline"}
-          onClick={() => logout}
+          onClick={() => logout()}
           className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
         >
           Log out

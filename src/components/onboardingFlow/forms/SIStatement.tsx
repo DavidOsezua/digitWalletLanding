@@ -9,13 +9,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import type { FormSchema } from "@/pages/Onboarding";
 import toast from "react-hot-toast";
 import { useOnboard } from "@/hooks/useMutations";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { SignaturePad } from "@/components/SignaturePad";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -28,7 +28,7 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 9 });
-      setStep("quiz");
+      setStep("statement-result");
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message);
@@ -184,23 +184,7 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
             </div>
 
             {/* Signature */}
-            <FormField
-              control={form.control}
-              name="assesmentSignature"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm">Signature</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      className="border-none resize-none h-16 w-40 text-center text-dark-text bg-white placeholder:text-dark-text/50"
-                      placeholder="Sign here (type your name )"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <SignaturePad name="assesmentSignature" label="Signature" />
           </div>
 
           <div className="mt-6 flex items-center justify-between">

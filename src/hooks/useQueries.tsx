@@ -12,4 +12,9 @@ export const useGetQuiz = () =>
   useQuery({
     queryKey: ["quiz"],
     queryFn: getQuiz,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+    refetchOnMount: false,
+    refetchInterval: false,
+    staleTime: Infinity,
   });

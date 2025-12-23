@@ -40,8 +40,14 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
 
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
   const [, setSearchParams] = useSearchParams();
+  const stepFields = ["investorType"] as const;
 
   const onSubmit = async (data: Partial<FormSchema>) => {
+    const isValid = await form.trigger(stepFields);
+    if (!isValid) {
+      toast.error("Please fill all required fields correctly.");
+      return;
+    }
     try {
       await save({ ...data, stepCompleted: 9 });
       if (investorType === "high-net-worth") {

@@ -31,7 +31,18 @@ export const BusinessForm3: FC<StepProps> = ({ setStep }) => {
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
   const [, setSearchParams] = useSearchParams();
 
+  const stepFields = [
+    "hasRelativeHoldPoliticalPosition",
+    "doesMemberBelongsToPEP",
+    "politicalPositionDetails",
+  ] as const;
+
   const onSubmit = async (data: Partial<FormSchema>) => {
+    const isValid = await form.trigger(stepFields);
+    if (!isValid) {
+      toast.error("Please fill all required fields correctly.");
+      return;
+    }
     try {
       await save({ ...data, stepCompleted: 3 });
       setSearchParams({ s: "4" });
