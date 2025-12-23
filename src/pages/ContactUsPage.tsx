@@ -1,5 +1,11 @@
+import Banner from "@/components/Banner";
+
 const ContactUsPage = () => {
-  return <div>ContactUsPage</div>;
+  return (
+    <div>
+      <Banner title="Contact Us" />
+    </div>
+  );
 };
 
 export default ContactUsPage;

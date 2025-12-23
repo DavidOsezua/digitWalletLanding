@@ -13,19 +13,19 @@ import { useLogout } from "@/hooks/useAuth";
 const items = [
   {
     title: "Dashboard",
-    url: "/dashboard",
+    url: "/myaccount/dashboard",
     icon: "/icons/dashboard.svg",
     activeIcon: "/icons/dashboard-active.svg",
   },
   {
     title: "Profile",
-    url: "/dashboard/profile",
+    url: "/myaccount/profile",
     icon: "/icons/account.svg",
     activeIcon: "/icons/account-active.svg",
   },
   {
     title: "Account",
-    url: "/dashboard/account",
+    url: "/myaccount/account",
     icon: "/icons/wallet.svg",
     activeIcon: "/icons/wallet-active.svg",
   },
@@ -42,7 +42,7 @@ const AppSidebar = () => {
         <SidebarContent className={"text-white"}>
           <SidebarMenu className={"pl-4"}>
             {items.map((item) => (
-              <NavLink end={item.url === "/dashboard"} to={item.url}>
+              <NavLink end={item.url === "/myaccount/dashboard"} to={item.url}>
                 {({ isActive }) => (
                   <SidebarMenuButton
                     className={`hover:bg-primary-100/15 hover:text-primary-100 relative h-auto rounded-r-none px-4 ${

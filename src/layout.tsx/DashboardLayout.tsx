@@ -16,7 +16,7 @@ const DashboardLayout = () => {
     if (!token) {
       navigate("/auth");
     }
-  });
+  }, [token, navigate]);
 
   return (
     <div className="min-h-screen " style={{ backgroundColor: "#0F1326" }}>

@@ -1,4 +1,3 @@
-import React from "react";
 import MainFooter from "../components/MainFooter";
 import Warning from "../components/Warning";
 import Footer from "../components/home/Footer";
@@ -19,7 +18,7 @@ const SolutionsLayout = ({ children }) => {
           backgroundImage: `url("/buyAndSellHero.webp")`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center top",
-          backgroundSize: "100%  540px",
+          backgroundSize: "100%  552px",
         }}
       >
         <Navbar />
