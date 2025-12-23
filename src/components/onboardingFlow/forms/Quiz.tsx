@@ -198,7 +198,6 @@ const QuizItem = ({
 };
 
 const QuizSuccess = ({ score }: { score: number }) => {
-  console.log(score);
   const { user } = useAuthStore();
   const navigate = useNavigate();
   useEffect(() => {
@@ -212,7 +211,7 @@ const QuizSuccess = ({ score }: { score: number }) => {
         Thanks for completing your Appropriateness Assesment
       </h3>
       <div className="mt-4 font-semibold text-xl">
-        Result: Passed ({score}%)
+        Result: Passed ({score.toFixed(2)}%)
       </div>
       <p className="mt-4">
         You've demonstrated a sufficient understanding of the risks involved in
