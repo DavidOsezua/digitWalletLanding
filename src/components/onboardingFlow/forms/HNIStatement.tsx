@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { SignaturePad } from "@/components/SignaturePad";
+import { Checkbox } from "@/components/ui/checkbox";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -218,26 +219,11 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                       C) None of these apply to me.
                     </FormLabel>
                     <FormControl>
-                      <RadioGroup
-                        className="mt-2.5"
-                        onValueChange={(value) =>
-                          field.onChange(value === "yes")
-                        }
-                        defaultValue={
-                          field.value === true
-                            ? "yes"
-                            : field.value === false
-                            ? "no"
-                            : undefined
-                        }
-                      >
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="yes" id="yes" />
-                          <Label className="text-xs font-normal" htmlFor="yes">
-                            Yes
-                          </Label>
-                        </div>
-                      </RadioGroup>
+                      <Checkbox
+                        checked={field.value || false}
+                        onCheckedChange={field.onChange}
+                        className="size-3 rounded-full border border-gray-400 data-[state=checked]:bg-transparent data-[state=checked]:border-primary-300 flex items-center justify-center [&_svg]:hidden relative data-[state=checked]:after:content-[''] data-[state=checked]:after:absolute data-[state=checked]:after:inset-0.5 data-[state=checked]:after:rounded-full data-[state=checked]:after:bg-primary-300"
+                      />
                     </FormControl>
                   </FormItem>
                 )}

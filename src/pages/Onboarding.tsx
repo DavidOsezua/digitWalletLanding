@@ -238,6 +238,8 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     hasAnnualIncomeAbove250k: true,
     netAsset: true,
     netIncome: true,
+    assesmentDate: true,
+    assesmentSignature: true,
   }),
 
   10: formSchema.pick({
@@ -245,12 +247,16 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     percentageInvestedInLast12Months: true,
     intendsToInvestLessThan10PercentInHighRiskAssets: true,
     percentageIntendToInvestInNext12Months: true,
+    assesmentDate: true,
+    assesmentSignature: true,
   }),
 
   11: formSchema.pick({
     qualifiedAsSophisticatedInvestor: true,
     nameOfAuthorizedFirm: true,
     qualifiedAsSophisticatedInvestorNotAppliedToMe: true,
+    assesmentDate: true,
+    assesmentSignature: true,
   }),
 };
 

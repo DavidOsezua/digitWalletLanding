@@ -14,10 +14,9 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
   const [, setSearchParams] = useSearchParams();
 
   const { watch } = form;
-  const firstName = watch("firstName");
-  const lastName = watch("lastName");
+  const firstName = watch("undertakerFirstName");
+  const lastName = watch("undertakerLastName");
   const fullName = `${firstName || ""} ${lastName || ""}`.trim() || "User";
-  
 
   return (
     <>
