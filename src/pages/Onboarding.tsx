@@ -293,7 +293,6 @@ const Onboarding = () => {
   );
 
   const [step, setStep] = useState(currentStep);
-  const schemaForStep = stepSchemas[stepIndex] ?? null;
   const businessForm = useForm<FormSchema>({
     resolver: resolver,
     defaultValues: {
@@ -399,7 +398,6 @@ const Onboarding = () => {
   });
 
   useEffect(() => {
-    
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [step]);
   return (

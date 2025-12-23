@@ -9,7 +9,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import type { FormSchema } from "@/pages/Onboarding";
 import toast from "react-hot-toast";
 import { useOnboard } from "@/hooks/useMutations";
