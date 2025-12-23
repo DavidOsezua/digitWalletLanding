@@ -72,7 +72,13 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                           onValueChange={(value) =>
                             field.onChange(value === "yes")
                           }
-                          defaultValue={field.value ? "yes" : "no"}
+                          defaultValue={
+                            field.value === true
+                              ? "yes"
+                              : field.value === false
+                              ? "no"
+                              : undefined
+                          }
                         >
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="yes" />
@@ -146,7 +152,13 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                           onValueChange={(value) =>
                             field.onChange(value === "yes")
                           }
-                          defaultValue={field.value ? "yes" : "no"}
+                          defaultValue={
+                            field.value === true
+                              ? "yes"
+                              : field.value === false
+                              ? "no"
+                              : undefined
+                          }
                         >
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="yes" />
@@ -196,6 +208,42 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
               )}
             </div>
 
+            <div className="flex items-center space-x-2">
+              <FormField
+                control={form.control}
+                name="qualifiedAsHNINotAppliedToMe"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="inline-block ">
+                      C) None of these apply to me.
+                    </FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        className="mt-2.5"
+                        onValueChange={(value) =>
+                          field.onChange(value === "yes")
+                        }
+                        defaultValue={
+                          field.value === true
+                            ? "yes"
+                            : field.value === false
+                            ? "no"
+                            : undefined
+                        }
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="yes" id="yes" />
+                          <Label className="text-xs font-normal" htmlFor="yes">
+                            Yes
+                          </Label>
+                        </div>
+                      </RadioGroup>
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
+
             {/* Confirmation Statement */}
             <div className="mt-8 space-y-4">
               <p>Please confirm the following statement:</p>
@@ -222,7 +270,8 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                       <Input
                         type="date"
                         className="border-[#DAE1EA66]"
-                        {...field}
+                        value={field.value}
+                        onChange={(e) => field.onChange(e.target.value)}
                       />
                     </FormControl>
                     <FormMessage />

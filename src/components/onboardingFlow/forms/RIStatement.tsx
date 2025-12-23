@@ -71,7 +71,13 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                           onValueChange={(value) =>
                             field.onChange(value === "yes")
                           }
-                          defaultValue={field.value ? "yes" : "no"}
+                          defaultValue={
+                            field.value === true
+                              ? "yes"
+                              : field.value === false
+                              ? "no"
+                              : undefined
+                          }
                         >
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="yes" />
@@ -148,7 +154,13 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                           onValueChange={(value) =>
                             field.onChange(value === "yes")
                           }
-                          defaultValue={field.value ? "yes" : "no"}
+                          defaultValue={
+                            field.value === true
+                              ? "yes"
+                              : field.value === false
+                              ? "no"
+                              : undefined
+                          }
                         >
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="yes" />

@@ -141,6 +141,7 @@ const formSchema = z.object({
   percentageInvestedInLast12Months: z.coerce.number().optional(),
   intendsToInvestLessThan10PercentInHighRiskAssets: z.boolean(),
   percentageIntendToInvestInNext12Months: z.coerce.number().optional(),
+  qualifiedAsHNINotAppliedToMe: z.boolean().optional(),
 
   qualifiedAsSophisticatedInvestor: z.boolean(),
   nameOfAuthorizedFirm: z.string().optional(),
@@ -376,6 +377,8 @@ const Onboarding = () => {
         user?.onboarding?.hasAnnualIncomeAbove250k || undefined,
       netAsset: user?.onboarding?.netAsset || 0,
       netIncome: user?.onboarding?.netIncome || 0,
+      qualifiedAsHNINotAppliedToMe:
+        user?.onboarding?.qualifiedAsHNINotAppliedToMe || undefined,
       hasInvestedLessThan10PercentInHighRiskAssets:
         user?.onboarding?.hasInvestedLessThan10PercentInHighRiskAssets ||
         undefined,

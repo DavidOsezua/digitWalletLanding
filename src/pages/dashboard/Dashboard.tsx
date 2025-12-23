@@ -16,6 +16,7 @@ const Dashboard = () => {
   }, [user?.lastAttemptedAt]);
   const isWaitingPeriod =
     user?.totalAttempts === 2 && elapsedTime < 60 * 60 * 24;
+  console.log(user);
   return (
     <div className="w-full">
       <div
@@ -72,7 +73,8 @@ const Dashboard = () => {
             {isWaitingPeriod && (
               <div className="mt-2">
                 You have exceeded the maximum number of attempts. Please try
-                again in {Math.ceil((60 * 60 * 24 - elapsedTime) / 60)}.
+                again in {Math.ceil((60 * 60 * 24 - elapsedTime) / 60 / 60)}{" "}
+                hours.
               </div>
             )}
             <Button

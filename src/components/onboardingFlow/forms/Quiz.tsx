@@ -45,16 +45,19 @@ type QuizFormData = z.infer<typeof quizSchema>;
 export const Quiz: FC<StepProps> = ({ setStep }) => {
   const { quizResponse } = useQuizStore();
   const { user } = useAuthStore();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [quizResponse, user]);
   if (quizResponse === null) {
     return <QuizForm setStep={setStep} />;
   }
-  if (quizResponse?.score.passed) {
+  if (quizResponse?.score.passed || user?.hasPassedQuiz) {
     return <QuizSuccess score={quizResponse.score.scorePercentage} />;
   }
-  if (!quizResponse?.score.passed && user?.totalAttempts === 1) {
+  if (user?.totalAttempts === 1) {
     return <QuizFailFirstAttempt />;
   }
-  if (!quizResponse?.score.passed && user?.totalAttempts === 2) {
+  if (user?.totalAttempts === 2) {
     return <QuizFailSecondAttempt />;
   }
   return <QuizForm setStep={setStep} />;
@@ -195,6 +198,7 @@ const QuizItem = ({
 };
 
 const QuizSuccess = ({ score }: { score: number }) => {
+  console.log(score);
   const { user } = useAuthStore();
   const navigate = useNavigate();
   useEffect(() => {

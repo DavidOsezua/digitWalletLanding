@@ -17,6 +17,7 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
   const firstName = watch("firstName");
   const lastName = watch("lastName");
   const fullName = `${firstName || ""} ${lastName || ""}`.trim() || "User";
+  
 
   return (
     <>

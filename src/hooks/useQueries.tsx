@@ -14,7 +14,6 @@ export const useGetQuiz = () =>
     queryFn: getQuiz,
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
-    refetchOnMount: false,
+    refetchOnMount: true,
     refetchInterval: false,
-    staleTime: Infinity,
   });

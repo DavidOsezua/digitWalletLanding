@@ -15,18 +15,19 @@ const InvestorStatementResult: FC<StepProps> = ({ setStep }) => {
     console.log(values);
     const hniPassed =
       values.investorType === "high-net-worth" &&
-      values.hasAnnualIncomeAbove100k === false &&
-      values.hasAnnualIncomeAbove250k === false;
+      values.hasAnnualIncomeAbove100k !== false &&
+      values.hasAnnualIncomeAbove250k !== false &&
+      values.qualifiedAsHNINotAppliedToMe !== true;
 
     const siPassed =
       values.investorType === "sophisticated" &&
-      values.qualifiedAsSophisticatedInvestor === false &&
+      values.qualifiedAsSophisticatedInvestor !== false &&
       values.qualifiedAsSophisticatedInvestorNotAppliedToMe === true;
 
     const riPassed =
       values.investorType === "restricted" &&
-      values.hasInvestedLessThan10PercentInHighRiskAssets === false &&
-      values.intendsToInvestLessThan10PercentInHighRiskAssets === false;
+      values.hasInvestedLessThan10PercentInHighRiskAssets !== false &&
+      values.intendsToInvestLessThan10PercentInHighRiskAssets !== false;
 
     return hniPassed || siPassed || riPassed;
   })();
