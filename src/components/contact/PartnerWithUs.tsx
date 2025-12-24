@@ -1,7 +1,6 @@
-import { HandshakeIcon, Headset } from "lucide-react";
 import { useState } from "react";
 import CustomerSupport from "../SvgComponent/CustomerSupport";
-import Office from "../SvgComponent/Office";
+
 import BusinessInquires from "../SvgComponent/BusinessInquires";
 
 const PartnerWithUs = () => {

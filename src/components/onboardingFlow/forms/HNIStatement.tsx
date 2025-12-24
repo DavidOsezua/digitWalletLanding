@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { SignaturePad } from "@/components/SignaturePad";
+import { Checkbox } from "@/components/ui/checkbox";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -72,7 +73,13 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                           onValueChange={(value) =>
                             field.onChange(value === "yes")
                           }
-                          defaultValue={field.value ? "yes" : "no"}
+                          defaultValue={
+                            field.value === true
+                              ? "yes"
+                              : field.value === false
+                              ? "no"
+                              : undefined
+                          }
                         >
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="yes" />
@@ -146,7 +153,13 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                           onValueChange={(value) =>
                             field.onChange(value === "yes")
                           }
-                          defaultValue={field.value ? "yes" : "no"}
+                          defaultValue={
+                            field.value === true
+                              ? "yes"
+                              : field.value === false
+                              ? "no"
+                              : undefined
+                          }
                         >
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="yes" />
@@ -196,6 +209,30 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
               )}
             </div>
 
+            <div className="flex items-center space-x-2">
+              <FormField
+                control={form.control}
+                name="qualifiedAsHNINotAppliedToMe"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="inline-block ">
+                      C) None of these apply to me.
+                    </FormLabel>
+                    <FormControl>
+                      <div className="flex items-center gap-2">
+                        <Checkbox
+                          checked={field.value || false}
+                          onCheckedChange={field.onChange}
+                          className="size-3 rounded-full border border-gray-400 data-[state=checked]:bg-transparent data-[state=checked]:border-primary-300 flex items-center justify-center [&_svg]:hidden relative data-[state=checked]:after:content-[''] data-[state=checked]:after:absolute data-[state=checked]:after:inset-0.5 data-[state=checked]:after:rounded-full data-[state=checked]:after:bg-primary-300"
+                        />
+                        <span className="text-xs">Yes</span>
+                      </div>
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
+
             {/* Confirmation Statement */}
             <div className="mt-8 space-y-4">
               <p>Please confirm the following statement:</p>
@@ -222,7 +259,8 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                       <Input
                         type="date"
                         className="border-[#DAE1EA66]"
-                        {...field}
+                        value={field.value}
+                        onChange={(e) => field.onChange(e.target.value)}
                       />
                     </FormControl>
                     <FormMessage />

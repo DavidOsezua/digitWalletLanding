@@ -15,18 +15,19 @@ const InvestorStatementResult: FC<StepProps> = ({ setStep }) => {
     console.log(values);
     const hniPassed =
       values.investorType === "high-net-worth" &&
-      values.hasAnnualIncomeAbove100k === false &&
-      values.hasAnnualIncomeAbove250k === false;
+      values.hasAnnualIncomeAbove100k !== false &&
+      values.hasAnnualIncomeAbove250k !== false &&
+      values.qualifiedAsHNINotAppliedToMe !== true;
 
     const siPassed =
       values.investorType === "sophisticated" &&
-      values.qualifiedAsSophisticatedInvestor === false &&
-      values.qualifiedAsSophisticatedInvestorNotAppliedToMe === true;
+      values.qualifiedAsSophisticatedInvestor !== false &&
+      values.qualifiedAsSophisticatedInvestorNotAppliedToMe !== true;
 
     const riPassed =
       values.investorType === "restricted" &&
-      values.hasInvestedLessThan10PercentInHighRiskAssets === false &&
-      values.intendsToInvestLessThan10PercentInHighRiskAssets === false;
+      values.hasInvestedLessThan10PercentInHighRiskAssets !== false &&
+      values.intendsToInvestLessThan10PercentInHighRiskAssets !== false;
 
     return hniPassed || siPassed || riPassed;
   })();
@@ -76,7 +77,15 @@ const InvestorStatmentPassed: FC<StepProps> = ({ setStep }) => {
         take care with your answers. If you get too many incorrect, you may not
         be able to continue investing on DigitWallet
       </p>
-      <div className="mt-6 flex items-center justify-end">
+      <div className="mt-6 flex items-center justify-between">
+        <Button
+          type="button"
+          variant={"outline"}
+          onClick={() => setStep("business-form-8")}
+          className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
+        >
+          Go Back
+        </Button>
         <Button
           type="button"
           variant={"outline"}

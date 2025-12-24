@@ -141,6 +141,7 @@ const formSchema = z.object({
   percentageInvestedInLast12Months: z.coerce.number().optional(),
   intendsToInvestLessThan10PercentInHighRiskAssets: z.boolean(),
   percentageIntendToInvestInNext12Months: z.coerce.number().optional(),
+  qualifiedAsHNINotAppliedToMe: z.boolean().optional(),
 
   qualifiedAsSophisticatedInvestor: z.boolean(),
   nameOfAuthorizedFirm: z.string().optional(),
@@ -237,6 +238,8 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     hasAnnualIncomeAbove250k: true,
     netAsset: true,
     netIncome: true,
+    assesmentDate: true,
+    assesmentSignature: true,
   }),
 
   10: formSchema.pick({
@@ -244,12 +247,16 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     percentageInvestedInLast12Months: true,
     intendsToInvestLessThan10PercentInHighRiskAssets: true,
     percentageIntendToInvestInNext12Months: true,
+    assesmentDate: true,
+    assesmentSignature: true,
   }),
 
   11: formSchema.pick({
     qualifiedAsSophisticatedInvestor: true,
     nameOfAuthorizedFirm: true,
     qualifiedAsSophisticatedInvestorNotAppliedToMe: true,
+    assesmentDate: true,
+    assesmentSignature: true,
   }),
 };
 
@@ -376,6 +383,8 @@ const Onboarding = () => {
         user?.onboarding?.hasAnnualIncomeAbove250k || undefined,
       netAsset: user?.onboarding?.netAsset || 0,
       netIncome: user?.onboarding?.netIncome || 0,
+      qualifiedAsHNINotAppliedToMe:
+        user?.onboarding?.qualifiedAsHNINotAppliedToMe || undefined,
       hasInvestedLessThan10PercentInHighRiskAssets:
         user?.onboarding?.hasInvestedLessThan10PercentInHighRiskAssets ||
         undefined,

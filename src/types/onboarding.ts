@@ -144,6 +144,7 @@ export interface OnboardingResponse {
     percentageInvestedInLast12Months: number;
     intendsToInvestLessThan10PercentInHighRiskAssets: boolean;
     percentageIntendToInvestInNext12Months: number;
+    qualifiedAsHNINotAppliedToMe: boolean;
     qualifiedAsSophisticatedInvestor: boolean;
     nameOfAuthorizedFirm: string;
     qualifiedAsSophisticatedInvestorNotAppliedToMe: boolean;

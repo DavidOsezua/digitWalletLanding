@@ -45,16 +45,19 @@ type QuizFormData = z.infer<typeof quizSchema>;
 export const Quiz: FC<StepProps> = ({ setStep }) => {
   const { quizResponse } = useQuizStore();
   const { user } = useAuthStore();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [quizResponse, user]);
   if (quizResponse === null) {
     return <QuizForm setStep={setStep} />;
   }
-  if (quizResponse?.score.passed) {
+  if (quizResponse?.score.passed || user?.hasPassedQuiz) {
     return <QuizSuccess score={quizResponse.score.scorePercentage} />;
   }
-  if (!quizResponse?.score.passed && user?.totalAttempts === 1) {
+  if (user?.totalAttempts === 1) {
     return <QuizFailFirstAttempt />;
   }
-  if (!quizResponse?.score.passed && user?.totalAttempts === 2) {
+  if (user?.totalAttempts === 2) {
     return <QuizFailSecondAttempt />;
   }
   return <QuizForm setStep={setStep} />;
@@ -208,7 +211,7 @@ const QuizSuccess = ({ score }: { score: number }) => {
         Thanks for completing your Appropriateness Assesment
       </h3>
       <div className="mt-4 font-semibold text-xl">
-        Result: Passed ({score}%)
+        Result: Passed ({score.toFixed(2)}%)
       </div>
       <p className="mt-4">
         You've demonstrated a sufficient understanding of the risks involved in
@@ -226,7 +229,7 @@ const QuizSuccess = ({ score }: { score: number }) => {
       </p>
       <div className="mt-6 flex justify-end">
         <Button
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate("/myaccount/dashboard")}
           className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
         >
           Done
