@@ -8,10 +8,8 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import Onboarding from "./pages/Onboarding";
-
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
-
 import Home from "./pages/Home";
 import UkFinance from "./components/onboardingFlow/UkFinance";
 import MainLayout from "./layout.tsx/MainLayout";
@@ -26,12 +24,17 @@ import ContactUsPage from "./pages/ContactUsPage";
 import Account from "./pages/dashboard/Account";
 import Profile from "./pages/dashboard/Profile";
 import PayWithCryptoPage from "./pages/PayWithCryptoPage";
+import RiskSummayPage from "./pages/RiskSummayPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfUsePage from "./pages/TermsOfUsePage";
+import CompliancePage from "./pages/CompliancePage";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         {/* Main Layout - Pages with Navbar, DisclaimerBanner, Footer, Warning */}
+
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
 
@@ -39,7 +42,10 @@ const App = () => {
           <Route path="/ukfinance" element={<UkFinance />} />
 
           <Route path="/contact" element={<ContactUsPage />} />
-          {/* <Route path="/about" /> */}
+          <Route path="/risksummary" element={<RiskSummayPage />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicyPage />} />
+          <Route path="/termsofuse" element={<TermsOfUsePage />} />
+          <Route path="/compliance" element={<CompliancePage />} />
         </Route>
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/buyandsell" element={<BuyAndSellPage />} />

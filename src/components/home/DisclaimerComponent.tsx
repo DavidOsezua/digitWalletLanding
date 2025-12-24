@@ -4,7 +4,7 @@ export default function DisclaimerComponent() {
   return (
     <div className="flex items-center justify-center p-8">
       <div
-        className="max-w-7xl w-full rounded-lg p-4 md:p-8"
+        className="max-w-7xl w-full rounded-sm p-4 md:p-8"
         style={{
           border: "1px solid transparent",
           background: `

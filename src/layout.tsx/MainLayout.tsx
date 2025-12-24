@@ -4,10 +4,12 @@ import DisclaimerBanner from "../components/DisclaimerBanner";
 import Footer from "../components/home/Footer";
 import Warning from "../components/Warning";
 import MainFooter from "../components/MainFooter";
+import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0F1326" }}>
+      <ScrollToTop />
       {/* Navbar */}
       <Navbar />
 
