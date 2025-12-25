@@ -6,6 +6,7 @@ import DisclaimerBanner from "@/components/DisclaimerBanner";
 import Footer from "@/components/home/Footer";
 import MainFooter from "@/components/MainFooter";
 import Navbar from "@/components/Navbar";
+import ScrollToTop from "@/components/ScrollToTop";
 import Bitcoin from "@/components/SvgComponent/Bitcoin";
 import Dollar from "@/components/SvgComponent/Dollar";
 import ETH from "@/components/SvgComponent/ETH";
@@ -36,6 +37,7 @@ const AboutUsPage = () => {
           backgroundSize: "100%  655px",
         }}
       >
+        <ScrollToTop />
         <Navbar />
         <DisclaimerBanner />
         <About />

@@ -3,6 +3,7 @@ import Warning from "../components/Warning";
 import Footer from "../components/home/Footer";
 import DisclaimerBanner from "../components/DisclaimerBanner";
 import Navbar from "../components/Navbar";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -21,6 +22,7 @@ const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
           backgroundSize: "100%  552px",
         }}
       >
+        <ScrollToTop />
         <Navbar />
         <DisclaimerBanner />
         {children}

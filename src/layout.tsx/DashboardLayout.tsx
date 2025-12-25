@@ -8,6 +8,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/DashboardSidebar";
 import { useAuthStore } from "@/store/authStore";
 import { useEffect } from "react";
+import ScrollToTop from "../components/ScrollToTop";
 
 const DashboardLayout = () => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const DashboardLayout = () => {
 
   return (
     <div className="min-h-screen " style={{ backgroundColor: "#0F1326" }}>
+      <ScrollToTop />
       {/* Navbar */}
       <Navbar />
 

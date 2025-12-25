@@ -1,4 +1,5 @@
 import { Outlet, Link, useLocation, NavLink } from "react-router";
+import ScrollToTop from "../components/ScrollToTop";
 
 const LoginLayout = () => {
   const location = useLocation();
@@ -10,6 +11,7 @@ const LoginLayout = () => {
       className="min-h-screen relative flex items-center  justify-center py-8 px-4"
       style={{ backgroundColor: "#0F1326" }}
     >
+      <ScrollToTop />
       <div className="absolute top-1/4 max-w-7xl mx-auto">
         <img src="/DigitWallet2.png" alt="" className="w-full h-auto" />
       </div>
