@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useOnboard } from "@/hooks/useMutations";
 import toast from "react-hot-toast";
 import { useSearchParams } from "react-router";
+import { SignaturePad } from "@/components/SignaturePad";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -71,7 +72,7 @@ export const BusinessForm6: FC<StepProps> = ({ setStep }) => {
               general special terms. I also give my consent to the use of this
               account.
             </p>
-            <div className="flex gap-3 *:grow">
+            <div className="grid grid-cols-2 gap-3 ">
               <FormField
                 control={form.control}
                 name="undertakerFirstName"
@@ -79,7 +80,11 @@ export const BusinessForm6: FC<StepProps> = ({ setStep }) => {
                   <FormItem>
                     <FormLabel>First name</FormLabel>
                     <FormControl>
-                      <Input className="border-[#DAE1EA66]" {...field} />
+                      <Input
+                        className="border-[#DAE1EA66]"
+                        placeholder="Enter your first name"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -92,36 +97,45 @@ export const BusinessForm6: FC<StepProps> = ({ setStep }) => {
                   <FormItem>
                     <FormLabel>Last name</FormLabel>
                     <FormControl>
-                      <Input className="border-[#DAE1EA66]" {...field} />
+                      <Input
+                        className="border-[#DAE1EA66]"
+                        placeholder="Enter your last name"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="undertakerDate"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Today's date</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="date"
+                        className="border-[#DAE1EA66]"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <div />
+              <SignaturePad label="Signature" name="assesmentSignature" />
             </div>
-            <FormField
-              control={form.control}
-              name="undertakerDate"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Today's date</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="date"
-                      className="border-[#DAE1EA66]"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
           </div>
           <div className="mt-4 flex items-center justify-between">
             <Button
               type="button"
               variant={"outline"}
-              onClick={() => setStep("business-form-5")}
+              onClick={() => {
+                setStep("business-form-5");
+                setSearchParams({ s: "5" });
+              }}
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Go Back

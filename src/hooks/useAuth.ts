@@ -22,7 +22,6 @@ export const useLogin = () => {
         ? error.response?.data?.message || "Login failed. Please try again."
         : "Login failed. Please try again.";
       toast.error(errorMessage);
-      console.error("Login Failed:", error);
     },
   });
 };
@@ -42,7 +41,6 @@ export const useSignUp = () => {
           "Registration failed. Please try again."
         : "Registration failed. Please try again.";
       toast.error(errorMessage);
-      console.error("Signup Failed:", error);
     },
   });
 };

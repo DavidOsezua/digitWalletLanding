@@ -9,7 +9,7 @@ import { BusinessForm5 } from "@/components/onboardingFlow/forms/BusinessForm5";
 import { BusinessForm6 } from "@/components/onboardingFlow/forms/BusinessForm6";
 import { BusinessForm7 } from "@/components/onboardingFlow/forms/BusinessForm7";
 import { BusinessForm8 } from "@/components/onboardingFlow/forms/BusinessForm8";
-import z, { ZodObject } from "zod";
+import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { HNIStatement } from "@/components/onboardingFlow/forms/HNIStatement";
 import { RIStatement } from "@/components/onboardingFlow/forms/RIStatement";
@@ -40,7 +40,7 @@ const stepMapping: Record<number, string> = {
   13: "quiz",
 };
 
-const formSchema = z.object({
+const baseSchema = z.object({
   stepCompleted: z.number(),
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
@@ -48,30 +48,36 @@ const formSchema = z.object({
   phoneNumber: z.string().min(1, "Phone number is required"),
   dateOfBirth: z.string().min(1, "Date of birth is required"),
   addressLine1: z.string().min(1, "Address line 1 is required"),
-  addressLine2: z.string().min(1, "Address line 2 is required"),
+  addressLine2: z.string().optional(),
   city: z.string().min(1, "City is required"),
   state: z.string().min(1, "State is required"),
   zipCode: z.string().min(1, "Zip code is required"),
   country: z.string().min(1, "Country is required"),
   citizenship: z.string().min(1, "Citizenship is required"),
   accountType: z.string().min(1, "Account type is required"),
-  companyType: z.string().min(1, "Company type is required"),
-  companyName: z.string().min(1, "Company name is required"),
-  companyNumber: z.string().min(1, "Company number is required"),
-  dateOfIncorporation: z.string().min(1, "Date of incorporation is required"),
-
-  companyAddress1: z.string().min(1, "Company address line 1 is required"),
-  companyAddress2: z.string().min(1, "Company address line 2 is required"),
-  companyCity: z.string().min(1, "Company city is required"),
-  companyState: z.string().min(1, "Company state is required"),
-  companyZipCode: z.string().min(1, "Company zip code is required"),
-  companyCountry: z.string().min(1, "Company country is required"),
-  positionInCompany: z.string().min(1, "Position in company is required"),
-  percentageOfOwnership: z.coerce
-    .number()
-    .min(0, "Percentage of ownership is required"),
-  ipAddress: z.string().min(1, "IP address is required"),
-  website: z.string().min(1, "Website is required"),
+  companyType: z.string().optional(),
+  companyName: z.string().optional(),
+  companyNumber: z.string().optional(),
+  dateOfIncorporation: z.string().optional(),
+  companyAddress1: z.string().optional(),
+  companyAddress2: z.string().optional(),
+  companyCity: z.string().optional(),
+  companyState: z.string().optional(),
+  companyZipCode: z.string().optional(),
+  companyCountry: z.string().optional(),
+  positionInCompany: z.string().optional(),
+  percentageOfOwnership: z.preprocess(
+    (val) => (val === "" || val == null ? undefined : Number(val)),
+    z
+      .number()
+      .refine((val) => !isNaN(val) && val >= 0, {
+        message:
+          "Percentage of ownership must be a valid number greater than or equal to 0",
+      })
+      .optional()
+  ),
+  ipAddress: z.string().optional(),
+  website: z.string().optional(),
   employmentStatus: z.string().min(1, "Employment status is required"),
   jobRole: z.string().min(1, "Job role is required"),
   annualIncome: z.coerce.number().min(0, "Annual income is required"),
@@ -82,9 +88,7 @@ const formSchema = z.object({
 
   hasRelativeHoldPoliticalPosition: z.boolean(),
   doesMemberBelongsToPEP: z.boolean(),
-  politicalPositionDetails: z
-    .string()
-    .min(1, "Political position details is required"),
+  politicalPositionDetails: z.string().optional(),
   currencies: z.enum(["GBP", "EUR", "USD"]),
   purposeOfAccount: z.string().min(1, "Purpose of account is required"),
   expectedAnnualVolume: z.coerce
@@ -97,34 +101,22 @@ const formSchema = z.object({
     .number()
     .min(0, "Expected number of monthly transactions is required"),
   isAccountHolderBeneficialOwner: z.boolean(),
-  nationality: z.string().min(1, "Nationality is required"),
-  natureOfRelationWithAccountHolder: z
-    .string()
-    .min(1, "Nature of relation with account holder is required"),
-  beneficiaryFirstName: z.string().min(1, "Beneficiary first name is required"),
-  beneficiaryLastName: z.string().min(1, "Beneficiary last name is required"),
+  nationality: z.string().optional(),
+  natureOfRelationWithAccountHolder: z.string().optional(),
+  beneficiaryFirstName: z.string().optional(),
+  beneficiaryLastName: z.string().optional(),
 
   proofOfIdentity: z.string().min(1, "Proof of identity is required"),
   proofOfAddress: z.string().optional(),
   proofOfFunds1: z.string().min(1, "Proof of funds 1 is required"),
   proofOfFunds2: z.string().min(1, "Proof of funds 2 is required"),
-  companyProofOfAddress: z
-    .string()
-    .min(1, "Company proof of address is required"),
-  certificateOfIncorporation: z
-    .string()
-    .min(1, "Certificate of incorporation is required"),
-  articlesOfAssociation: z
-    .string()
-    .min(1, "Articles of association is required"),
-  registerOfDirectors: z.string().min(1, "Register of directors is required"),
-  authorizedSignatoryList: z
-    .string()
-    .min(1, "Authorized signatory list is required"),
-  shareholderList: z.string().min(1, "Shareholder list is required"),
-  organizationalChartOfOwnership: z
-    .string()
-    .min(1, "Organizational chart of ownership is required"),
+  companyProofOfAddress: z.string().optional(),
+  certificateOfIncorporation: z.string().optional(),
+  articlesOfAssociation: z.string().optional(),
+  registerOfDirectors: z.string().optional(),
+  authorizedSignatoryList: z.string().optional(),
+  shareholderList: z.string().optional(),
+  organizationalChartOfOwnership: z.string().optional(),
 
   undertakerFirstName: z.string().min(1, "Undertaker first name is required"),
   undertakerLastName: z.string().min(1, "Undertaker last name is required"),
@@ -150,9 +142,83 @@ const formSchema = z.object({
   assesmentDate: z.string().min(1, "Assessment date is required"),
   assesmentSignature: z.string().min(1, "Assessment signature is required"),
 });
-// Step-specific schemas (pick from formSchema and extend with step-specific rules if needed)
-const stepSchemas: Record<number, ZodObject<any>> = {
-  1: formSchema.pick({
+
+// Full schema with conditional logic for final validation
+const formSchema = baseSchema.superRefine((data, ctx) => {
+  if (data.accountType !== "company") {
+    return;
+  }
+
+  const companyRequiredFields: (keyof typeof data)[] = [
+    "companyType",
+    "companyName",
+    "companyNumber",
+    "dateOfIncorporation",
+    "companyAddress1",
+    "companyAddress2",
+    "companyCity",
+    "companyState",
+    "companyZipCode",
+    "companyCountry",
+    "positionInCompany",
+    "percentageOfOwnership",
+    "ipAddress",
+    "website",
+    "companyProofOfAddress",
+    "certificateOfIncorporation",
+    "articlesOfAssociation",
+    "shareholderList",
+    "organizationalChartOfOwnership",
+    "registerOfDirectors",
+    "authorizedSignatoryList",
+  ];
+
+  companyRequiredFields.forEach((field) => {
+    let isMissing = false;
+    if (field === "percentageOfOwnership") {
+      isMissing = data[field] === undefined || isNaN(data[field] as number);
+    } else {
+      // Assuming string fields
+      isMissing =
+        !data[field] ||
+        (typeof data[field] === "string" && data[field].trim() === "");
+    }
+
+    if (isMissing) {
+      const fieldName = field as string;
+      const messages: Record<string, string> = {
+        companyType: "Company type is required",
+        companyName: "Company name is required",
+        companyNumber: "Company number is required",
+        dateOfIncorporation: "Date of incorporation is required",
+        companyAddress1: "Company address line 1 is required",
+        companyAddress2: "Company address line 2 is required",
+        companyCity: "Company city is required",
+        companyState: "Company state is required",
+        companyZipCode: "Company zip code is required",
+        companyCountry: "Company country is required",
+        positionInCompany: "Position in company is required",
+        percentageOfOwnership: "Percentage of ownership is required",
+        ipAddress: "IP address is required",
+        website: "Website is required",
+        companyProofOfAddress: "Company proof of address is required",
+        certificateOfIncorporation: "Certificate of incorporation is required",
+        articlesOfAssociation: "Articles of association is required",
+        shareholderList: "Shareholder list is required",
+        organizationalChartOfOwnership:
+          "Organizational chart of ownership is required",
+      };
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: messages[fieldName] || `${fieldName} is required`,
+        path: [fieldName],
+      });
+    }
+  });
+});
+
+const stepSchemas: Record<number, z.ZodType<any>> = {
+  1: baseSchema.pick({
     firstName: true,
     lastName: true,
     email: true,
@@ -172,7 +238,7 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     dateOfIncorporation: true,
   }),
 
-  2: formSchema.pick({
+  2: baseSchema.pick({
     companyAddress1: true,
     companyAddress2: true,
     companyCity: true,
@@ -190,13 +256,13 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     descriptionOfBusinessActivity: true,
   }),
 
-  3: formSchema.pick({
+  3: baseSchema.pick({
     hasRelativeHoldPoliticalPosition: true,
     doesMemberBelongsToPEP: true,
     politicalPositionDetails: true,
   }),
 
-  4: formSchema.pick({
+  4: baseSchema.pick({
     currencies: true,
     purposeOfAccount: true,
     expectedAnnualVolume: true,
@@ -207,7 +273,7 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     natureOfRelationWithAccountHolder: true,
   }),
 
-  5: formSchema.pick({
+  5: baseSchema.pick({
     proofOfIdentity: true,
     proofOfAddress: true,
     proofOfFunds1: true,
@@ -221,19 +287,19 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     organizationalChartOfOwnership: true,
   }),
 
-  6: formSchema.pick({
+  6: baseSchema.pick({
     undertakerFirstName: true,
     undertakerLastName: true,
     undertakerDate: true,
   }),
 
-  7: formSchema.pick({}),
+  7: z.object({}),
 
-  8: formSchema.pick({
+  8: baseSchema.pick({
     investorType: true,
   }),
 
-  9: formSchema.pick({
+  9: baseSchema.pick({
     hasAnnualIncomeAbove100k: true,
     hasAnnualIncomeAbove250k: true,
     netAsset: true,
@@ -242,7 +308,7 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     assesmentSignature: true,
   }),
 
-  10: formSchema.pick({
+  10: baseSchema.pick({
     hasInvestedLessThan10PercentInHighRiskAssets: true,
     percentageInvestedInLast12Months: true,
     intendsToInvestLessThan10PercentInHighRiskAssets: true,
@@ -251,7 +317,7 @@ const stepSchemas: Record<number, ZodObject<any>> = {
     assesmentSignature: true,
   }),
 
-  11: formSchema.pick({
+  11: baseSchema.pick({
     qualifiedAsSophisticatedInvestor: true,
     nameOfAuthorizedFirm: true,
     qualifiedAsSophisticatedInvestorNotAppliedToMe: true,

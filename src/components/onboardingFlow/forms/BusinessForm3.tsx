@@ -115,6 +115,8 @@ export const BusinessForm3: FC<StepProps> = ({ setStep }) => {
                 )}
               />
             </div>
+            {/* {form.watch("hasRelativeHoldPoliticalPosition") ||
+              (form.watch("doesMemberBelongsToPEP") && ( */}
             <FormField
               control={form.control}
               name="politicalPositionDetails"
@@ -133,12 +135,16 @@ export const BusinessForm3: FC<StepProps> = ({ setStep }) => {
                 </FormItem>
               )}
             />
+            {/* ))} */}
           </div>
           <div className="mt-4 flex items-center justify-between">
             <Button
               type="button"
               variant={"outline"}
-              onClick={() => setStep("business-form-2")}
+              onClick={() => {
+                setStep("business-form-2");
+                setSearchParams({ s: "2" });
+              }}
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Go Back

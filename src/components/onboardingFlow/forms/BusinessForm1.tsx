@@ -52,7 +52,6 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
     "dateOfIncorporation",
   ] as const;
   const onSubmit = async (data: Partial<FormSchema>) => {
-    console.log(data);
     const isValid = await form.trigger(stepFields);
     if (!isValid) {
       toast.error("Please fill all required fields correctly.");
@@ -291,7 +290,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
               name="citizenship"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Country</FormLabel>
+                  <FormLabel>Citizenship</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -316,7 +315,7 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
           </div>
           <div className="mt-6 space-y-4">
             <h3>Account Setup</h3>
-            <div className="flex gap-3 *:w-1/2">
+            <div className="grid grid-cols-2 gap-3 ">
               <FormField
                 control={form.control}
                 name="accountType"
@@ -341,98 +340,102 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="companyType"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Company Type</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="w-full border-[#DAE1EA66]">
-                          <SelectValue placeholder="Select company type" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="plc">
-                          Public Limited Company (PLC)
-                        </SelectItem>
-                        <SelectItem value="ltd">
-                          Limited Liability Company (LTD)
-                        </SelectItem>
-                        <SelectItem value="llp">
-                          Limited Liability Partnership (LLP)
-                        </SelectItem>
-                        <SelectItem value="rc">Royal Charter (RC)</SelectItem>
-                        <SelectItem value="cic">
-                          Community Interest Company (CIC)
-                        </SelectItem>
-                        <SelectItem value="rtm">
-                          Right to Manage Company (RTM)
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <FormField
-              control={form.control}
-              name="companyName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Company Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      className="border-[#DAE1EA66]"
-                      placeholder="Please input N/A if not applicable"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
+              {form.watch("accountType") === "business" && (
+                <>
+                  <FormField
+                    control={form.control}
+                    name="companyType"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Company Type</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger className="w-full border-[#DAE1EA66]">
+                              <SelectValue placeholder="Select company type" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="plc">
+                              Public Limited Company (PLC)
+                            </SelectItem>
+                            <SelectItem value="ltd">
+                              Limited Liability Company (LTD)
+                            </SelectItem>
+                            <SelectItem value="llp">
+                              Limited Liability Partnership (LLP)
+                            </SelectItem>
+                            <SelectItem value="rc">
+                              Royal Charter (RC)
+                            </SelectItem>
+                            <SelectItem value="cic">
+                              Community Interest Company (CIC)
+                            </SelectItem>
+                            <SelectItem value="rtm">
+                              Right to Manage Company (RTM)
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="companyName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Company Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            className="border-[#DAE1EA66]"
+                            placeholder="Enter company name"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="companyNumber"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Company Number</FormLabel>
+                        <FormControl>
+                          <Input
+                            className="border-[#DAE1EA66]"
+                            placeholder="Enter company number"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="dateOfIncorporation"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Date of Incorporation</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="date"
+                            className="border-[#DAE1EA66]"
+                            placeholder="Enter date of incorporation"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </>
               )}
-            />
-            <div className="flex gap-3 *:w-1/2">
-              <FormField
-                control={form.control}
-                name="companyNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Company Number</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="border-[#DAE1EA66]"
-                        placeholder="Please input N/A if not applicable"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="dateOfIncorporation"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Date of Incorporation</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="date"
-                        className="border-[#DAE1EA66]"
-                        placeholder="Please input N/A if not applicable"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
             </div>
           </div>
           <div className="mt-4 flex items-center justify-between">

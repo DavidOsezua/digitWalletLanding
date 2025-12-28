@@ -20,11 +20,21 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
 
   return (
     <>
-      <div className="text-white bg-[#161b33] rounded-xl p-6">
+      <Button
+        variant={"ghost"}
+        onClick={() => {
+          setStep("business-form-6");
+          setSearchParams({ s: "6" });
+        }}
+        className="mb-4"
+      >
+        Go Back
+      </Button>
+      <div className="text-white bg-[#161b33] rounded-xl px-6 pb-6 ">
         <p className="text-lg font-medium mb-4">
           {fullName}, this is a high-risk investment. How would you feel if you
           lost the money you're about to invest? Take 2 minutes to{" "}
-          <Link to="/risk-assessment" className="text-[#6294FF] underline">
+          <Link to="/risk-summary" className="text-[#6294FF] underline">
             learn more
           </Link>
           .

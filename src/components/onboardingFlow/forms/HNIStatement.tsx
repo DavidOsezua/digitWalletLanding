@@ -17,6 +17,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { SignaturePad } from "@/components/SignaturePad";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useSearchParams } from "react-router";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -25,10 +26,12 @@ type StepProps = {
 export const HNIStatement: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const [, setSearchParams] = useSearchParams();
 
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 9 });
+      setSearchParams({ s: "9" });
       setStep("statement-result");
     } catch (error) {
       if (error instanceof Error) {
@@ -45,7 +48,7 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
             High-Net-Worth Investor Statement
           </h3>
           <div className="space-y-6 text-sm text-dark-text-100 ">
-            <p className="">
+            <p>
               Please confirm whether you qualify as a high-net-worth investor on
               the basis that <span className="font-bold">A</span> and
               <span className="font-bold"> B</span> apply to you
@@ -102,31 +105,30 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                   )}
                 />
               </div>
-              {form.watch("hasAnnualIncomeAbove100k") && (
-                <div className="">
-                  <FormField
-                    control={form.control}
-                    name="netIncome"
-                    render={({ field }) => (
-                      <FormItem className="mt-2.5">
-                        <FormLabel>
-                          Please specify your income (as defined above) to the
-                          nearest £10,000 in the last financial year
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            type="number"
-                            className="border-[#DAE1EA66] w-48"
-                            placeholder="Enter amount"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              )}
+
+              <div>
+                <FormField
+                  control={form.control}
+                  name="netIncome"
+                  render={({ field }) => (
+                    <FormItem className="mt-2.5">
+                      <FormLabel>
+                        If yes, please specify your income (as defined above) to
+                        the nearest £10,000 in the last financial year
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          className="border-[#DAE1EA66] w-48"
+                          placeholder="Enter amount"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
 
             {/* B. Net Assets */}
@@ -182,31 +184,31 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                   )}
                 />
               </div>
-              {form.watch("hasAnnualIncomeAbove250k") && (
-                <div className="">
-                  <FormField
-                    control={form.control}
-                    name="netAsset"
-                    render={({ field }) => (
-                      <FormItem className="mt-2.5 text-xs">
-                        <FormLabel>
-                          Please specify your net assets (as defined above) to
-                          the nearest £10,000 in the last financial year.
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            type="number"
-                            className="border-[#DAE1EA66] w-48"
-                            placeholder="Enter amount"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              )}
+
+              <div>
+                <FormField
+                  control={form.control}
+                  name="netAsset"
+                  render={({ field }) => (
+                    <FormItem className="mt-2.5 text-xs">
+                      <FormLabel>
+                        If yes, please specify your net assets (as defined
+                        above) to the nearest £10,000 in the last financial
+                        year
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          className="border-[#DAE1EA66] w-48"
+                          placeholder="Enter amount"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
 
             <div className="flex items-center space-x-2">
@@ -221,6 +223,10 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                     <FormControl>
                       <div className="flex items-center gap-2">
                         <Checkbox
+                          disabled={
+                            form.watch("hasAnnualIncomeAbove250k") === true ||
+                            form.watch("hasAnnualIncomeAbove100k") === true
+                          }
                           checked={field.value || false}
                           onCheckedChange={field.onChange}
                           className="size-3 rounded-full border border-gray-400 data-[state=checked]:bg-transparent data-[state=checked]:border-primary-300 flex items-center justify-center [&_svg]:hidden relative data-[state=checked]:after:content-[''] data-[state=checked]:after:absolute data-[state=checked]:after:inset-0.5 data-[state=checked]:after:rounded-full data-[state=checked]:after:bg-primary-300"
@@ -277,7 +283,10 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
             <Button
               type="button"
               variant="outline"
-              onClick={() => setStep("business-form-8")}
+              onClick={() => {
+                setStep("business-form-8");
+                setSearchParams({ s: "8" });
+              }}
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Go Back

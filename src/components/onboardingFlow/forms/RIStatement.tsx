@@ -44,7 +44,7 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
             Restricted Investor Statement
           </h3>
           <div className="space-y-6 text-sm text-dark-text-100 ">
-            <p className="">
+            <p>
               Please confirm whether you qualify as a restricted investor on the
               basis that <span className="font-bold">A</span> and{" "}
               <span className="font-bold">B</span> apply to you.
@@ -67,7 +67,7 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                       </FormLabel>
                       <FormControl>
                         <RadioGroup
-                          className="mt-2.5"
+                          className="mt-4"
                           onValueChange={(value) =>
                             field.onChange(value === "yes")
                           }
@@ -102,32 +102,31 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                   )}
                 />
               </div>
-              {form.watch("hasInvestedLessThan10PercentInHighRiskAssets") && (
-                <div className="">
-                  <FormField
-                    control={form.control}
-                    name="percentageInvestedInLast12Months"
-                    render={({ field }) => (
-                      <FormItem className="mt-4">
-                        <FormLabel>
-                          Over the last twelve months roughly what percentage of
-                          your net assets have you invested in high-risk
-                          investments (as defined below)?
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            type="number"
-                            className="border-[#DAE1EA66] w-48"
-                            placeholder="Enter amount"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              )}
+
+              <div>
+                <FormField
+                  control={form.control}
+                  name="percentageInvestedInLast12Months"
+                  render={({ field }) => (
+                    <FormItem className="mt-4">
+                      <FormLabel>
+                        If yes, over the last twelve months roughly what
+                        percentage of your net assets have you invested in
+                        high-risk investments (as defined below)?
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          className="border-[#DAE1EA66] w-48"
+                          placeholder="Enter amount"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
 
             {/* B. Net Assets */}
@@ -185,33 +184,31 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                   )}
                 />
               </div>
-              {form.watch(
-                "intendsToInvestLessThan10PercentInHighRiskAssets"
-              ) && (
-                <div className="">
-                  <FormField
-                    control={form.control}
-                    name="percentageIntendToInvestInNext12Months"
-                    render={({ field }) => (
-                      <FormItem className="mt-2.5 text-xs">
-                        <FormLabel>
-                          Please specify your net assets (as defined above) to
-                          the nearest £10,000 in the last financial year.
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            type="number"
-                            className="border-[#DAE1EA66] w-48"
-                            placeholder="Enter amount"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              )}
+
+              <div>
+                <FormField
+                  control={form.control}
+                  name="percentageIntendToInvestInNext12Months"
+                  render={({ field }) => (
+                    <FormItem className="mt-4 text-xs">
+                      <FormLabel>
+                        If yes, in the next twelve months roughly what
+                        percentage of your net assets do you intend to invest in
+                        high-risk investments (as defined below)?
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          className="border-[#DAE1EA66] w-48"
+                          placeholder="Enter amount"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
 
             {/* Confirmation Statement */}
@@ -229,12 +226,12 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                 withdrawals) or any rights under qualifying contracts of
                 insurance.
                 <br />
-                For the purpose of this statement, high-risk investments are:
-                peer-to-peer (P2P) loans, investments based crowdfunding, units
-                in a long term asset fund, cryptoassets (such as bitcoin);
-                cryptoasset exchange traded notes; and unlisted debt and equity
-                (such as companies not listed on an exchange like the London
-                Stock Exchange).
+                For the purpose of this statement,{" "}
+                <strong>high-risk investments are</strong>: peer-to-peer (P2P)
+                loans, investments based crowdfunding, units in a long term
+                asset fund, cryptoassets (such as bitcoin); cryptoasset exchange
+                traded notes; and unlisted debt and equity (such as companies
+                not listed on an exchange like the London Stock Exchange).
                 <br /> I confirm I qualify as a restricted investor on the basis
                 that the following applies to me: Over the last 12 months I have
                 invested the previously mentioned percentage of my net assets in
