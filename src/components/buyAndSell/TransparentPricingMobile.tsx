@@ -1,6 +1,4 @@
 import Buy from "../SvgComponent/Buy";
-import ForBusiness from "../SvgComponent/ForBusiness";
-import ForIndividuals from "../SvgComponent/ForIndividuals";
 import Line from "../SvgComponent/Line";
 import RightArrow from "../SvgComponent/RightArrow";
 import Sell from "../SvgComponent/Sell";
