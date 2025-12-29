@@ -211,99 +211,106 @@ export const BusinessForm4: FC<StepProps> = ({ setStep }) => {
                 </FormItem>
               )}
             />
-            <div className="flex gap-3 *:w-1/2">
-              <FormField
-                control={form.control}
-                name="nationality"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Nationality</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="w-full border-[#DAE1EA66]">
-                          <SelectValue placeholder="Please select" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {nationalities.map((nationality) => (
-                          <SelectItem
-                            key={nationality.value}
-                            value={nationality.value}
-                          >
-                            {nationality.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="natureOfRelationWithAccountHolder"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      Nature of the relationship with the account holder
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        className="border-[#DAE1EA66]"
-                        placeholder="Enter description"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="flex gap-3 *:w-1/2">
-              <FormField
-                control={form.control}
-                name="beneficiaryFirstName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>First name</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="John"
-                        {...field}
-                        className="border-[#DAE1EA66]"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="beneficiaryLastName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Last name</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="border-[#DAE1EA66]"
-                        placeholder="Doe"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+            {!form.watch("isAccountHolderBeneficialOwner") && (
+              <>
+                <div className="flex gap-3 *:w-1/2">
+                  <FormField
+                    control={form.control}
+                    name="nationality"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Nationality</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger className="w-full border-[#DAE1EA66]">
+                              <SelectValue placeholder="Please select" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {nationalities.map((nationality) => (
+                              <SelectItem
+                                key={nationality.value}
+                                value={nationality.value}
+                              >
+                                {nationality.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="natureOfRelationWithAccountHolder"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Nature of the relationship with the account holder
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            className="border-[#DAE1EA66]"
+                            placeholder="Enter description"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="flex gap-3 *:w-1/2">
+                  <FormField
+                    control={form.control}
+                    name="beneficiaryFirstName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>First name</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="John"
+                            {...field}
+                            className="border-[#DAE1EA66]"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="beneficiaryLastName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Last name</FormLabel>
+                        <FormControl>
+                          <Input
+                            className="border-[#DAE1EA66]"
+                            placeholder="Doe"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </>
+            )}
           </div>
           <div className="mt-4 flex items-center justify-between">
             <Button
               type="button"
               variant={"outline"}
-              onClick={() => setStep("business-form-3")}
+              onClick={() => {
+                setStep("business-form-3");
+                setSearchParams({ s: "3" });
+              }}
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Go Back

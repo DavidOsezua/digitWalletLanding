@@ -3,7 +3,6 @@ import { useState, type FC } from "react";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -38,7 +37,6 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
   ] as const;
 
   const onSubmit = async (data: Partial<FormSchema>) => {
-    console.log("Validation errors:", form.formState.errors);
     const isValid = await form.trigger(stepFields);
     if (!isValid) {
       toast.error("Please fill all required fields correctly.");
@@ -76,16 +74,12 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                     />
                   </FormControl>
                   <FormMessage />
-                  <FormDescription>
-                    Please upload any of your documents if you are applying as
-                    individual
-                  </FormDescription>
                 </FormItem>
               )}
             />
             <FormField
               control={form.control}
-              name="companyProofOfAddress"
+              name="proofOfAddress"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
@@ -99,11 +93,6 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                     />
                   </FormControl>
                   <FormMessage />
-                  <FormDescription>
-                    Please upload any of your documents if you are applying as
-                    individual (e.g., utility bill, bank statement issued within
-                    last 3 months)
-                  </FormDescription>
                 </FormItem>
               )}
             />
@@ -121,12 +110,6 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                     />
                   </FormControl>
                   <FormMessage />
-                  <FormDescription>
-                    Please upload TWO proofs of funds/wealth (Bank statement,
-                    investment confirmations, service agreements, invoices,
-                    payslips, loan agreements, sale agreements, dividend
-                    statements etc)
-                  </FormDescription>
                 </FormItem>
               )}
             />
@@ -144,80 +127,89 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                     />
                   </FormControl>
                   <FormMessage />
-                  <FormDescription>
-                    Please upload TWO proofs of funds/wealth (Bank statement,
-                    investment confirmations, service agreements, invoices,
-                    payslips, loan agreements, sale agreements, dividend
-                    statements etc)
-                  </FormDescription>
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="certificateOfIncorporation"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    Upload your Certificate of Incorporation
-                  </FormLabel>
-                  <FormControl>
-                    <FileUpload
-                      inputId="certificateOfIncorporation-upload"
-                      onChange={(url) => field.onChange(url)}
-                      accept="image/*,application/pdf"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                  <FormDescription>
-                    Please upload N/A if you are applying as individual
-                  </FormDescription>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="articlesOfAssociation"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Upload your Articles of Association</FormLabel>
-                  <FormControl>
-                    <FileUpload
-                      inputId="articlesOfAssociation-upload"
-                      onChange={(url) => field.onChange(url)}
-                      accept="image/*,application/pdf"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                  <FormDescription>
-                    Please upload N/A if you are applying as individual (signed
-                    by director or authorised signatory signed by director)
-                  </FormDescription>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="registerOfDirectors"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    Upload your Register of Directors (signed by a director)
-                  </FormLabel>
-                  <FormControl>
-                    <FileUpload
-                      inputId="registerOfDirectors-upload"
-                      onChange={(url) => field.onChange(url)}
-                      accept="image/*,application/pdf"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                  <FormDescription>
-                    Please upload N/A if you are applying as individual
-                  </FormDescription>
-                </FormItem>
-              )}
-            />
+            {form.getValues("accountType") === "business" && (
+              <>
+                <FormField
+                  control={form.control}
+                  name="companyProofOfAddress"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Upload your company's proof of registered address (e.g.
+                        a bill or bank statement issued within the last 3
+                        months)
+                      </FormLabel>
+                      <FormControl>
+                        <FileUpload
+                          inputId="companyProofOfAddress-upload"
+                          onChange={(url) => field.onChange(url)}
+                          accept="image/*,application/pdf"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="certificateOfIncorporation"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Upload your Certificate of Incorporation
+                      </FormLabel>
+                      <FormControl>
+                        <FileUpload
+                          inputId="certificateOfIncorporation-upload"
+                          onChange={(url) => field.onChange(url)}
+                          accept="image/*,application/pdf"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="articlesOfAssociation"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Upload your Articles of Association</FormLabel>
+                      <FormControl>
+                        <FileUpload
+                          inputId="articlesOfAssociation-upload"
+                          onChange={(url) => field.onChange(url)}
+                          accept="image/*,application/pdf"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="registerOfDirectors"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Upload your Register of Directors (signed by a director)
+                      </FormLabel>
+                      <FormControl>
+                        <FileUpload
+                          inputId="registerOfDirectors-upload"
+                          onChange={(url) => field.onChange(url)}
+                          accept="image/*,application/pdf"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
+            )}
             <FormField
               control={form.control}
               name="authorizedSignatoryList"
@@ -235,63 +227,61 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                     />
                   </FormControl>
                   <FormMessage />
-                  <FormDescription>
-                    Please upload N/A if you are applying as individual
-                  </FormDescription>
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="shareholderList"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    Upload your shareholder list (signed by a director)
-                  </FormLabel>
-                  <FormControl>
-                    <FileUpload
-                      inputId="shareholderList-upload"
-                      onChange={(url) => field.onChange(url)}
-                      accept="image/*,application/pdf"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                  <FormDescription>
-                    Please upload N/A if you are applying as individual
-                  </FormDescription>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="organizationalChartOfOwnership"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    Upload your Company organizational chart with percentage of
-                    ownership
-                  </FormLabel>
-                  <FormControl>
-                    <FileUpload
-                      inputId="organizationalChartOfOwnership-upload"
-                      onChange={(url) => field.onChange(url)}
-                      accept="image/*,application/pdf"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                  <FormDescription>
-                    Please upload N/A if you are applying as individual
-                  </FormDescription>
-                </FormItem>
-              )}
-            />
+            {form.getValues("accountType") === "business" && (
+              <>
+                <FormField
+                  control={form.control}
+                  name="shareholderList"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Upload your shareholder list (signed by a director)
+                      </FormLabel>
+                      <FormControl>
+                        <FileUpload
+                          inputId="shareholderList-upload"
+                          onChange={(url) => field.onChange(url)}
+                          accept="image/*,application/pdf"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="organizationalChartOfOwnership"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Upload your Company organizational chart with percentage
+                        of ownership
+                      </FormLabel>
+                      <FormControl>
+                        <FileUpload
+                          inputId="organizationalChartOfOwnership-upload"
+                          onChange={(url) => field.onChange(url)}
+                          accept="image/*,application/pdf"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
+            )}
           </div>
           <div className="mt-4 flex items-center justify-between">
             <Button
               type="button"
               variant={"outline"}
-              onClick={() => setStep("business-form-4")}
+              onClick={() => {
+                setStep("business-form-4");
+                setSearchParams({ s: "4" });
+              }}
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Go Back
@@ -351,12 +341,10 @@ const FileUpload: FC<FileUploadProps> = ({
           setCurrentUrl(url);
           onChange(url);
         } else {
-          console.error("Upload failed:", data);
           toast.error("Upload failed. Please try again.");
         }
       })
-      .catch((err) => {
-        console.error("Upload error:", err);
+      .catch(() => {
         toast.error("Upload failed. Please try again.");
       })
       .finally(() => setIsUploading(false));

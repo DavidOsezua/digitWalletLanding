@@ -102,29 +102,27 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
                   )}
                 />
               </div>
-              {form.watch("qualifiedAsSophisticatedInvestor") && (
-                <div className="">
-                  <FormField
-                    control={form.control}
-                    name="nameOfAuthorizedFirm"
-                    render={({ field }) => (
-                      <FormItem className="mt-2.5">
-                        <FormLabel>
-                          What is the name of the authorised firm?
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            className="border-[#DAE1EA66] w-48"
-                            placeholder="Enter amount"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              )}
+              <div className="">
+                <FormField
+                  control={form.control}
+                  name="nameOfAuthorizedFirm"
+                  render={({ field }) => (
+                    <FormItem className="mt-2.5">
+                      <FormLabel>
+                        WhaIf yes, what is the name of the authorised firm? 
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          className="border-[#DAE1EA66] w-48"
+                          placeholder="Enter amount"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
             <div className="flex items-center space-x-2">
               <FormField
@@ -138,6 +136,10 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
                     <FormControl>
                       <div className="flex items-center gap-2">
                         <Checkbox
+                          disabled={
+                            isSaving ||
+                            form.watch("qualifiedAsSophisticatedInvestor")
+                          }
                           checked={field.value || false}
                           onCheckedChange={field.onChange}
                           className="size-3 rounded-full border border-gray-400 data-[state=checked]:bg-transparent data-[state=checked]:border-primary-300 flex items-center justify-center [&_svg]:hidden relative data-[state=checked]:after:content-[''] data-[state=checked]:after:absolute data-[state=checked]:after:inset-0.5 data-[state=checked]:after:rounded-full data-[state=checked]:after:bg-primary-300"

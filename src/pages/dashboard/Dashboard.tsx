@@ -16,7 +16,6 @@ const Dashboard = () => {
   }, [user?.lastAttemptedAt]);
   const isWaitingPeriod =
     user?.totalAttempts === 2 && elapsedTime < 60 * 60 * 24;
-  console.log(user);
   return (
     <div className="w-full">
       <div

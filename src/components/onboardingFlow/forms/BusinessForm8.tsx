@@ -2,7 +2,6 @@ import { useFormContext } from "react-hook-form";
 import { type FC } from "react";
 import {
   Form,
-  FormControl,
   FormField,
   FormItem,
   FormLabel,
@@ -82,24 +81,53 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
                   <FormLabel>
                     To begin with, what kind of investor are you?
                   </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger className="w-full border-[#DAE1EA66]">
-                        <SelectValue placeholder="Please select" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
+                  <Select value={field.value} onValueChange={field.onChange}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select investor type">
+                        {field.value === "high-net-worth" &&
+                          "High-net-worth Investor"}
+                        {field.value === "sophisticated" &&
+                          "Sophisticated Investor"}
+                        {field.value === "restricted" && "Restricted Investor"}
+                      </SelectValue>
+                    </SelectTrigger>
+                    <SelectContent className="max-w-2xl">
                       <SelectItem value="high-net-worth">
-                        High-net-worth Investor
+                        <div className="flex flex-col">
+                          <span className="font-medium">
+                            High-net-worth Investor
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            You have an annual salary of £100k or more OR net
+                            assets of £250k or more
+                          </span>
+                        </div>
                       </SelectItem>
                       <SelectItem value="sophisticated">
-                        Sophisticated Investor
+                        <div className="flex flex-col">
+                          <span className="font-medium">
+                            Sophisticated Investor
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            In the last 3 years you have received a certificate
+                            from an authorised firm confirming you understand
+                            the risks involved with cryptocurrency investments.
+                          </span>
+                        </div>
                       </SelectItem>
                       <SelectItem value="restricted">
-                        Restricted Investor
+                        <div className="flex flex-col">
+                          <span className="font-medium">
+                            Restricted Investor
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            In the last 12 months, you invested 10% or less of
+                            your net assets in high-risk investments AND in the
+                            next 12 months you intend to limit your investment
+                            in high-risk investments to less than 10% of your
+                            total net assets
+                          </span>
+                        </div>
                       </SelectItem>
                     </SelectContent>
                   </Select>
@@ -123,7 +151,10 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
             <Button
               type="button"
               variant={"outline"}
-              onClick={() => setStep("business-form-7")}
+              onClick={() => {
+                setStep("business-form-7");
+                setSearchParams({ s: "7" });
+              }}
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Go Back

@@ -1,5 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import { useRef, useState, type FC } from "react";
+import { useRef, useState, useEffect, type FC } from "react";
 import {
   FormField,
   FormItem,
@@ -18,17 +18,28 @@ export const SignaturePad: FC<{ name: keyof FormSchema; label: string }> = ({
 }) => {
   const form = useFormContext<FormSchema>();
   const [isEmpty, setIsEmpty] = useState(true);
-  const [editMode, setEditMode] = useState(false); // New: Toggle between view/edit
+  const [editMode, setEditMode] = useState(false);
+  const [showCanvas, setShowCanvas] = useState(false);
 
   const sigCanvasRef = useRef<SignatureCanvas>(null);
 
-  const currentValue = form.watch(name) as string; // Watch for base64 changes
+  const currentValue = form.watch(name) as string;
+
+  // Reset showCanvas when value changes (e.g., from BE load)
+  useEffect(() => {
+    if (currentValue) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setShowCanvas(false);
+      setEditMode(false);
+    }
+  }, [currentValue]);
 
   const clearSignature = () => {
     sigCanvasRef.current?.clear();
     form.setValue(name, undefined);
     setIsEmpty(true);
-    setEditMode(true); // Switch to edit after clear
+    setShowCanvas(true); // Ensure canvas shows after clear
+    setEditMode(true);
   };
 
   const saveSignature = () => {
@@ -36,20 +47,25 @@ export const SignaturePad: FC<{ name: keyof FormSchema; label: string }> = ({
     if (dataURL && !isEmpty) {
       form.setValue(name, dataURL);
       toast.success("Signature saved!");
-      setEditMode(false); // Switch to view after save
+      setShowCanvas(false); // Switch back to view mode after save
+      setEditMode(false);
     } else {
       toast.error("Please draw your signature first.");
     }
   };
 
   const editSignature = () => {
-    form.setValue(name, undefined); 
+    form.setValue(name, undefined);
+    setShowCanvas(true);
     setEditMode(true);
     setIsEmpty(true);
   };
 
-  // If value exists from BE (base64), show image; else show canvas
-  if (currentValue && !editMode) {
+  const handlePlaceholderClick = () => {
+    setShowCanvas(true);
+  };
+
+  if (currentValue && !editMode && !showCanvas) {
     return (
       <FormField
         control={form.control}
@@ -87,7 +103,36 @@ export const SignaturePad: FC<{ name: keyof FormSchema; label: string }> = ({
     );
   }
 
-  // Edit mode: Show canvas
+  if (!showCanvas) {
+    // Initial placeholder design
+    return (
+      <FormField
+        control={form.control}
+        name={name}
+        render={() => (
+          <FormItem>
+            <FormLabel>{label}</FormLabel>
+            <FormControl>
+              <div
+                className="border-2 border-[#DAE1EA66] rounded p-6 bg-dark-primary-50 flex flex-col items-center justify-center text-bg min-h-23 max-w-70 cursor-pointer hover:bg-dark-primary-50/90 transition-colors"
+                onClick={handlePlaceholderClick}
+              >
+                <p className="text-gray-600 text-center  text-sm font-medium">
+                  Sign here
+                </p>
+                <div>
+                  <img src="/signature.svg" alt="signature" />
+                </div>
+              </div>
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+    );
+  }
+
+  // Canvas mode
   return (
     <FormField
       control={form.control}
@@ -117,7 +162,7 @@ export const SignaturePad: FC<{ name: keyof FormSchema; label: string }> = ({
                   Clear
                 </Button>
                 <Button type="button" size="sm" onClick={saveSignature}>
-                  Sign Here
+                  Save Signature
                 </Button>
               </div>
             </div>

@@ -12,7 +12,6 @@ const InvestorStatementResult: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const isPassed = (() => {
     const values = form.getValues();
-    console.log(values);
     const hniPassed =
       values.investorType === "high-net-worth" &&
       values.hasAnnualIncomeAbove100k !== false &&
