@@ -6,7 +6,7 @@ interface BannerProps {
 
 const Banner = ({ title, descriptiton, descriptiton2 }: BannerProps) => {
   return (
-    <section className="py-8">
+    <section className="py-8 px-4 md:px-0">
       <div
         className="max-w-7xl mx-auto  rounded-3xl"
         style={{

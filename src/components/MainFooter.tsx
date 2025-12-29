@@ -16,12 +16,12 @@ const MainFooter = () => {
   ];
 
   const legalLinks = [
-    { name: "Risk Summary", path: "/risksummary" },
-    { name: "Privacy Policy", path: "/privacypolicy" },
-    { name: "Terms of Use", path: "/termsofuse" },
-    { name: "Compliance", path: "/compliance" },
-    { name: "Information Security", path: "/" },
-    { name: "Fees", path: "/" },
+    { name: "Risk Summary", path: "/risksummary", isRoute: true },
+    { name: "Privacy Policy", path: "/privacypolicy", isRoute: true },
+    { name: "Terms of Use", path: "/termsofuse", isRoute: true },
+    { name: "Compliance", path: "/compliance", isRoute: true },
+    { name: "Information Security", path: "/doc/DigitWallet-Information-Security-Policy.pdf", isRoute: false },
+    { name: "Fees", path: "/doc/DigitWallet-Fees.pdf", isRoute: false },
   ];
 
   const contactLinks = [
@@ -104,12 +104,23 @@ const MainFooter = () => {
             <ul className="space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.path}>
-                  <NavLink
-                    to={link.path}
-                    className="text-white hover:text-primary-300 transition-colors text-sm"
-                  >
-                    {link.name}
-                  </NavLink>
+                  {link.isRoute ? (
+                    <NavLink
+                      to={link.path}
+                      className="text-white hover:text-primary-300 transition-colors text-sm"
+                    >
+                      {link.name}
+                    </NavLink>
+                  ) : (
+                    <a
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-primary-300 transition-colors text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

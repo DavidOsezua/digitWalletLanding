@@ -1,12 +1,12 @@
 const StartNow = () => {
   return (
-    <div className="w-full px-4 md:px-8 py-8 bg-bg-body">
+    <div className="w-full px-4 md:px-8 py-4 bg-bg-body">
       <div className="max-w-7xl mx-auto">
         {/* Two-column grid */}
         <div className="grid grid-cols-1 h-full md:grid-cols-2 gap-6">
           {/* Card 1 - Simple Pricing */}
           <div
-            className="rounded-md h-full p-8 md:p-10 relative bg-gradient-alternate"
+            className="rounded-md h-full p-4 md:p-10 relative bg-gradient-alternate"
             style={{
               border: "1px solid transparent",
               background: `
@@ -29,7 +29,7 @@ const StartNow = () => {
                 Recipients will get the exact amount you have requested
               </p>
             </div>
-            <div className="absolute bottom-5">
+            <div className="flex items-end">
               <button
                 className="px-6 py-2.5 rounded-full font-medium text-sm transition-opacity hover:opacity-90"
                 style={{
@@ -44,7 +44,7 @@ const StartNow = () => {
 
           {/* Card 2 - Unlock the Power */}
           <div
-            className="rounded-md p-8 md:p-10 h-full relative bg-gradient-alternate"
+            className="rounded-md p-4 md:p-10 h-full relative bg-gradient-alternate"
             style={{
               border: "1px solid transparent",
               background: `
@@ -61,7 +61,7 @@ const StartNow = () => {
               invoice that you or your company needs to settle in fiat, and pay
               them with your crypto. We'll take care of paying them in fiat.
             </p>
-            <div className="absolute bottom-5">
+            <div className="">
               <button
                 className="px-6 py-2.5 rounded-full font-medium text-sm transition-opacity hover:opacity-90"
                 style={{

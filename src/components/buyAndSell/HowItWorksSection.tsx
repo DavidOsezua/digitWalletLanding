@@ -23,7 +23,7 @@ const HowItWorksSection = ({
   rightCards,
 }: HowItWorksSectionProps) => {
   return (
-    <div className=" text-white py-4  bg-bg-body md:py-16 px-3 md:px-8">
+    <div className=" text-white pb-16  bg-bg-body md:py-16 px-3 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-30 items-start">
           {/* Left Side - Text Content */}

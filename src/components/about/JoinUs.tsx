@@ -1,6 +1,8 @@
+import { useMobile } from "@/hooks/useMobile";
 import Button from "../Button";
 
 const JoinUs = () => {
+  const isMobile = useMobile();
   return (
     <section className="py-12 px-4  relative overflow-hidden bg-bg-body">
       {/* Background decorative elements */}
@@ -10,12 +12,12 @@ const JoinUs = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
-          <div className="space-y-12 relative z-10">
-            <h2 className="text-white text-[32px] lg:text-[40px] font-medium leading-tight">
+          <div className="space-y-6 md:space-y-12 relative z-10">
+            <h2 className="text-white text-[24px] md:text-[32px] lg:text-[40px] font-medium leading-tight">
               Ready to Join a Professional Crypto Ecosystem?
             </h2>
 
-            <div className="space-y-4 text-white text-[20px] max-w-130">
+            <div className="space-y-4 text-white text-base md:text-[20px] max-w-130">
               <p>
                 Explore how DigitWalletHub can support your financial goals.
               </p>
@@ -32,9 +34,15 @@ const JoinUs = () => {
           </div>
 
           {/* Right Side - Invoice Dashboard Card */}
-          <div className="max-w-100 mx-auto">
-            <img src="/joinUs.webp" alt="" />
-          </div>
+          {isMobile ? (
+            <div className="max-w-100 mx-auto">
+              <img src="/flag.webp" alt="" />
+            </div>
+          ) : (
+            <div className="max-w-100 mx-auto">
+              <img src="/joinUs.webp" alt="" />
+            </div>
+          )}
         </div>
       </div>
     </section>

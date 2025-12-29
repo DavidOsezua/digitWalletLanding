@@ -18,7 +18,7 @@ const TransparentPricingDesktop = () => {
         <Sell />
         <h3 className="text-[32px] font-medium text-bg-secondary">Sell</h3>
         <p className="max-w-100 w-full text-black/59">
-          Dig
+          DigitWallet fee: 0.50%-1.75%
         </p>
 
         <p className="text-black/59 font-semibold">Transaction amount:</p>

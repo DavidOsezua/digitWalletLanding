@@ -1,4 +1,3 @@
-
 import Fiat from "../SvgComponent/Fiat";
 import Invoice from "../SvgComponent/Invoice";
 import SendCrypto from "../SvgComponent/SendCrypto";
@@ -10,22 +9,22 @@ const FourSteps = () => {
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header Section */}
 
-        <span className="text-[10px] font-medium md:text-sm text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full">
+        <span className="text-[10px] mb-4 inline-block font-medium md:text-sm text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full">
           How Does It Work?
         </span>
-        <div className="flex w-full justify-between items-center">
+        <div className="md:flex w-full justify-between items-center space-y-4 md:space-y-0">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white">
             Pay Bills with Crypto in
             <br />
             Four Steps
           </h2>
           <div className="max-w-md">
-            <p className="text-white text-right text-sm md:text-base mb-6">
+            <p className="text-white md:text-right text-sm md:text-base mb-6">
               Sign up, upload your invoice, send crypto, and we'll handle the
               fiat transfer to your recipient's bank — fast, compliant, and
               hassle-free.
             </p>
-            <div className="flex justify-end">
+            <div className="md:flex justify-end ">
               <button
                 className="px-6 py-2.5 rounded-full font-medium text-sm text-white cursor-pointer"
                 style={{
@@ -40,9 +39,9 @@ const FourSteps = () => {
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-10 gap-2">
+        <div className="grid w-full grid-cols-1 md:grid-cols-10 gap-2">
           {/* Card 1 - Sign up for DigitWallet */}
-          <div className="rounded-2xl p-6 md:px-8 md:py-12 relative overflow-hidden col-span-4 bg-gradient-blue-2">
+          <div className="rounded-2xl p-6 md:px-8 md:py-12 relative overflow-hidden w-full md:col-span-4 bg-gradient-blue-2">
             {/* Icon in top right */}
             <div className="absolute top-6 right-6">
               <div
@@ -56,7 +55,7 @@ const FourSteps = () => {
             </div>
 
             {/* Content */}
-            <div className="pr-16">
+            <div className="pr-12 md:pr-16">
               <h3 className="text-xl md:text-2xl font-semibold text-text-dark-text mb-4">
                 Sign up for DigitWallet
               </h3>
@@ -70,7 +69,7 @@ const FourSteps = () => {
           </div>
 
           {/* Card 2 - Send crypto */}
-          <div className="rounded-2xl p-6 md:px-8 md:py-12 relative overflow-hidden col-span-6 bg-gradient-blue-2">
+          <div className="rounded-2xl w-full p-6 md:px-8 md:py-12 relative overflow-hidden md:col-span-6 bg-gradient-blue-2">
             {/* Icon in top right */}
             <div className="absolute top-6 right-6">
               <div
@@ -84,7 +83,7 @@ const FourSteps = () => {
             </div>
 
             {/* Content */}
-            <div className="pr-16">
+            <div className="pr-12 md:pr-16">
               <h3 className="text-xl md:text-2xl font-semibold text-text-dark-text mb-4">
                 Send crypto
               </h3>
@@ -98,7 +97,7 @@ const FourSteps = () => {
           </div>
 
           {/* Card 3 - Add your invoice */}
-          <div className="rounded-2xl md:px-8 md:py-20 relative overflow-hidden col-span-6 bg-gradient-blue-2">
+          <div className="rounded-2xl w-full p-6 md:px-8 md:py-20 relative overflow-hidden md:col-span-6 bg-gradient-blue-2">
             {/* Icon in top right */}
             <div className="absolute top-6 right-6">
               <div
@@ -112,7 +111,7 @@ const FourSteps = () => {
             </div>
 
             {/* Content */}
-            <div className="pr-16">
+            <div className="pr-12 md:pr-16">
               <h3 className="text-xl md:text-2xl font-semibold text-dark-text mb-4">
                 Add your invoice
               </h3>
@@ -132,7 +131,7 @@ const FourSteps = () => {
           </div>
 
           {/* Card 4 - Recipient gets fiat */}
-          <div className="rounded-2xl md:px-8 md:py-12 relative overflow-hidden col-span-4 bg-gradient-blue-2 ">
+          <div className="rounded-2xl w-full p-6 md:px-8 md:py-12 relative overflow-hidden md:col-span-4 bg-gradient-blue-2 ">
             {/* Icon in top right */}
             <div className="absolute top-6 right-6">
               <div
@@ -146,7 +145,7 @@ const FourSteps = () => {
             </div>
 
             {/* Content */}
-            <div className="pr-16">
+            <div className="pr-12 md:pr-16">
               <h3 className="text-xl md:text-2xl font-semibold text-text-dark-text mb-4">
                 Recipient gets fiat
               </h3>

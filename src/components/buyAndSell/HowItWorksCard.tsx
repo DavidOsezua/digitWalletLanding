@@ -19,7 +19,7 @@ const HowItWorksCard = ({
           {currencies && currencies.length > 0 && (
             <div className="flex gap-1">
               {currencies.map((Currency, index) => (
-                <Currency key={index} className="w-4 h-4 md:w-6 md:h-6" />
+                <Currency key={index} className="max-w-4 md:max-w-6" />
               ))}
             </div>
           )}

@@ -1,9 +1,8 @@
-const USDC = () => {
+const USDC = ({ className = "", maxWidth = "100%" }) => {
   return (
-    <div>
+    <div style={{ width: "100%", maxWidth: maxWidth }}>
       <svg
-        width="24"
-        height="24"
+        className={`w-full h-auto ${className}`}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -4,36 +4,73 @@ import Footer from "../components/home/Footer";
 import DisclaimerBanner from "../components/DisclaimerBanner";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
+import ProgressiveBackgroundImage from "@/components/ProgressiveBackgroundImage";
+import { useIsMobile } from "@/hooks/use-mobile";
+import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 
 const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
+  const isMobile = useIsMobile();
   return (
-    <section className="bg-gradient-selected2 relative">
-      {/* Top-left Flashlight Effect */}
-      <div
-        className="absolute -top-96 -left-96 w-200 h-200 rounded-full blur-3xl opacity-30 pointer-events-none z-0"
-        style={{ backgroundColor: "#7A72FF" }}
-      ></div>
-      <div
-        className=""
-        style={{
-          backgroundImage: `url("/buyAndSellHero.webp")`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center top",
-          backgroundSize: "100%  552px",
-        }}
-      >
-        <ScrollToTop />
-        <Navbar />
-        <DisclaimerBanner />
-        {children}
+    <>
+      {isMobile ? (
+        <section className="bg-gradient-selected2 relative">
+          {/* Top-left Flashlight Effect */}
+          <div
+            className="absolute -top-96 -left-96 w-200 h-200 rounded-full blur-3xl opacity-30 pointer-events-none z-0"
+            style={{ backgroundColor: "#7A72FF" }}
+          ></div>
+          <ProgressiveBackgroundImage
+            src={"/solutionsLayoutMobile.webp"}
+            placeholderSrc={"/solutionsLayoutMobile-placeholder.webp"}
+            style={{
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center top",
+              backgroundSize: "100%  502px",
+            }}
+          >
+            <ScrollToTop />
+            <Navbar />
+            <DisclaimerBanner />
+            {children}
 
-        <div className="bg-bg-body pt-8">
-          <MainFooter />
-          <Warning />
-          <Footer />
-        </div>
-      </div>
-    </section>
+            <div className="bg-bg-body pt-8">
+              <DisclaimerComponent />
+              <MainFooter />
+              <Warning />
+              <Footer />
+            </div>
+          </ProgressiveBackgroundImage>
+        </section>
+      ) : (
+        <section className="bg-gradient-selected2 relative">
+          {/* Top-left Flashlight Effect */}
+          <div
+            className="absolute -top-96 -left-96 w-200 h-200 rounded-full blur-3xl opacity-30 pointer-events-none z-0"
+            style={{ backgroundColor: "#7A72FF" }}
+          ></div>
+          <ProgressiveBackgroundImage
+            src={"/buyAndSellHero.webp"}
+            placeholderSrc={"/buyAndSellHero-placeholder.webp"}
+            style={{
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center top",
+              backgroundSize: "100%  552px",
+            }}
+          >
+            <ScrollToTop />
+            <Navbar />
+            <DisclaimerBanner />
+            {children}
+
+            <div className="bg-bg-body pt-8">
+              <MainFooter />
+              <Warning />
+              <Footer />
+            </div>
+          </ProgressiveBackgroundImage>
+        </section>
+      )}
+    </>
   );
 };
 

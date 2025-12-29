@@ -42,10 +42,10 @@ const WhyChoose = () => {
           <span className=" text-[10px] font-medium md:text-sm text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full  ">
             Why Choose DigitWalletHub
           </span>
-          <h2 className="text-white mt-4 text-[40px] font-medium leading-tight ">
+          <h2 className="text-white mt-4 text-[24px] md:text-[40px] font-medium leading-tight ">
             Built for Speed, Scale & Support
           </h2>
-          <p className="text-white/80 text-lg  max-w-3xl">
+          <p className="text-white/80 text-[14px] md:text-lg  max-w-3xl">
             From real-time transactions to multi-currency support and 24/7
             assistance — our platform is designed to grow with your needs.
           </p>
@@ -54,7 +54,7 @@ const WhyChoose = () => {
 
         {/* Feature Cards */}
         <div
-          className="grid gap-3 grid-cols-4 p-4"
+          className="grid gap-3 grid-cols-1 md:grid-cols-4 p-4"
           style={{
             backgroundImage: `url("/bg.png")`,
             backgroundSize: "cover",
@@ -80,10 +80,10 @@ const WhyChoose = () => {
 
         {/* Call to Action Section */}
         <div className="space-y-4">
-          <h2 className="text-white text-[40px] font-medium leading-tight ">
+          <h2 className="text-white text-[24px] md:text-[40px] font-medium leading-tight ">
             Ready to Make Your Crypto Work for You?
           </h2>
-          <p className="text-white/80 text-lg  max-w-3xl">
+          <p className="text-white/80 text-[14px] md:text-lg  max-w-3xl">
             Experience fiat-crypto conversions with DigitWallet. Sign up today
             to unlock the full potential of your digital assets.
           </p>

@@ -36,10 +36,10 @@ const CryptoWhyChooseUs = () => {
           <span className=" text-[10px] font-medium md:text-sm text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full  ">
             Why Choose DigitWalletHub
           </span>
-          <h2 className="text-white mt-4 text-[40px] font-medium leading-tight ">
+          <h2 className="text-white mt-4 text-[24px] md:text-[40px] font-medium leading-tight ">
             Built for Speed, Scale & Support
           </h2>
-          <p className="text-white/80 text-lg  max-w-3xl">
+          <p className="text-white/80 text-[15px] md:text-lg  max-w-3xl">
             From real-time transactions to multi-currency support and 24/7
             assistance — our platform is designed to grow with your needs.
           </p>
@@ -48,7 +48,7 @@ const CryptoWhyChooseUs = () => {
 
         {/* Feature Cards */}
         <div
-          className="grid gap-4 grid-cols-3 p-4"
+          className="grid gap-4 grid-cols-1 md:grid-cols-3 p-4"
           style={{
             backgroundImage: `url("/bg.png")`,
             backgroundSize: "cover",
@@ -77,15 +77,15 @@ const CryptoWhyChooseUs = () => {
           <span className=" text-[10px] font-medium md:text-sm text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full  ">
             Suitable For
           </span>
-          <h2 className="text-white mt-4 text-[40px] font-medium leading-tight ">
+          <h2 className="text-white mt-4  text-[24px] md:text-[40px] font-medium leading-tight ">
             Built for Businesses of All Kinds
           </h2>
-          <p className="text-white/80 text-lg  max-w-3xl">
+          <p className="text-white/80 text-[15px] md:text-lg  max-w-3xl">
             Whether you’re a freelancer, e-commerce brand, or enterprise
             platform — our crypto payment solution adapts to your needs.
           </p>
 
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               "Real Estate",
               "Luxury Goods",
@@ -114,10 +114,10 @@ const CryptoWhyChooseUs = () => {
 
         {/* Call to Action Section */}
         <div className="space-y-4">
-          <h2 className="text-white text-[40px] font-medium leading-tight ">
+          <h2 className="text-white text-[24px] md:text-[40px] font-medium leading-tight ">
             Take Your Business To The Next Level
           </h2>
-          <p className="text-white/80 text-lg  max-w-3xl">
+          <p className="text-white/80 text-[15px] md:text-lg  max-w-3xl">
             Contact us today to create your crypto payment link or explore our
             API solution for customer deposits and withdrawals
           </p>

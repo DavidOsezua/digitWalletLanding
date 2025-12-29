@@ -10,18 +10,18 @@ const CustodySecureOption = () => {
       <div className="max-w-7xl mx-auto pt-4 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end space-y-3 mb-4">
-          <h2 className="text-[32px] max-w-150 md:leading-16 lg:text-5xl font-semibold tracking-wide text-white ">
+          <h2 className="text-[24px] md:text-[32px] max-w-150 md:leading-16 lg:text-5xl font-semibold tracking-wide text-white ">
             Secure Custody You Can Trust
           </h2>
 
           <div className="max-w-md space-y-3">
-            <p className="text-gray-300 text-sm lg:text-base text-right ">
+            <p className="text-gray-300 text-sm lg:text-base md:text-right ">
               DigitWallet protects your crypto assets with Ledger hardware
               wallets and a custody infrastructure—tailored for individuals and
               businesses alike.
             </p>
 
-            <div className="flex justify-end">
+            <div className="flex md:justify-end">
               <button
                 className="px-6 py-2.5 rounded-full font-medium text-sm text-white cursor-pointer"
                 style={{

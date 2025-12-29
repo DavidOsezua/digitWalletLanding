@@ -2,6 +2,7 @@ import { useMobile } from "../../hooks/useMobile";
 import TwoVerticalLines from "../SvgComponent/TwoVerticalLines";
 import WeServeArrow from "../SvgComponent/WeServeArrow";
 import TransparentPricingDesktop from "./TransparentPricingDesktop";
+import TransparentPricingMobile from "./TransparentPricingMobile";
 
 const TransparentPricingSection = () => {
   const isMobile = useMobile();
@@ -9,9 +10,9 @@ const TransparentPricingSection = () => {
     <section className="px-4 bg-bg-body  lg:px-8 pt-8">
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
-        <div className="space-y-6">
-          <h2 className="text-4xl lg:text-[80px] text-nowrap font-[200px] tracking-wider text-center  text-white ">
-           Transparent Pricing, No Surprises
+        <div className="space-y-4 md:space-y-6">
+          <h2 className="text-[23px] lg:text-[80px] text-nowrap font-[200px] tracking-wider text-center  text-white ">
+            Transparent Pricing, No Surprises
           </h2>
           <div className="text-white flex justify-between items-center  font-medium bg-gradient-card-2 text-[16px] md:text-[28px] px-8 py-2 rounded-4xl">
             <p>Our Fees</p>
@@ -22,7 +23,11 @@ const TransparentPricingSection = () => {
           </div>
         </div>
 
-        {isMobile ? <div></div> : <TransparentPricingDesktop />}
+        {isMobile ? (
+          <TransparentPricingMobile />
+        ) : (
+          <TransparentPricingDesktop />
+        )}
 
         {/* The For Individual and For Business layout DESKTOP */}
 

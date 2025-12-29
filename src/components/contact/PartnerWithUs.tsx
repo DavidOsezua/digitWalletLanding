@@ -2,8 +2,15 @@ import { useState } from "react";
 import CustomerSupport from "../SvgComponent/CustomerSupport";
 
 import BusinessInquires from "../SvgComponent/BusinessInquires";
+import { useMobile } from "@/hooks/useMobile";
+import ForBusiness from "../SvgComponent/ForBusiness";
+import RightArrow from "../SvgComponent/RightArrow";
+import Line from "../SvgComponent/Line";
+import ForIndividuals from "../SvgComponent/ForIndividuals";
 
 const PartnerWithUs = () => {
+  const isMobile = useMobile();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -39,7 +46,7 @@ const PartnerWithUs = () => {
               We are here for you
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-[24px]  md:text-3xl font-bold text-white">
               Partner With Us
             </h2>
 
@@ -50,64 +57,126 @@ const PartnerWithUs = () => {
           </div>
 
           {/* Contact Cards */}
-          <div className="space-y-6 relative">
-            <div>
-              <img src="/contactimg.webp" alt="" />
-            </div>
-            {/* Business Inquiries Card */}
-            <div className="absolute top-5 right-5 max-w-80 space-y-4">
-              <div className="w-12 h-12 bg-primary-300/10 rounded-full flex items-center justify-center">
-                <BusinessInquires />
+          {isMobile ? (
+            <div className="relative block md:hidden  sm:min-h-150">
+              {/* Background Image */}
+              <div>
+                <img
+                  src="/contactImgMobile.webp"
+                  alt=""
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-white font-semibold text-lg">
-                  Business Inquiries
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  Interested in accepting crypto or custody solutions for your
-                  company?
-                </p>
-                <p className="text-white text-sm">
-                  Email:{" "}
-                  <a
-                    href="mailto:Sales@digitwallethub.com"
-                    className="text-primary-300 hover:underline"
-                  >
-                    Sales@digitwallethub.com
-                  </a>
-                </p>
-              </div>
-            </div>
 
-            {/* Customer Support Card */}
-            <div className="absolute max-w-80 bottom-15 left-10 space-y-4">
-              <div className="w-12 h-12 bg-primary-300/10 rounded-full flex items-center justify-center">
-                <CustomerSupport />
+              {/* For Individuals Card - Top Right */}
+              <div className="absolute top-[3%] sm:top-[5%] right-[1%] sm:right-[2%] p-3 sm:p-4 max-w-[75%] space-y-4  md:space-y-8">
+                <div className="w-12 h-12 bg-primary-300/10 rounded-full flex items-center justify-center">
+                  <BusinessInquires />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-white font-semibold text-lg">
+                    Business Inquiries
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Interested in accepting crypto or custody solutions for your
+                    company?
+                  </p>
+                  <p className="text-white text-sm">
+                    Email:{" "}
+                    <a
+                      href="mailto:Sales@digitwallethub.com"
+                      className="text-primary-300 hover:underline"
+                    >
+                      Sales@digitwallethub.com
+                    </a>
+                  </p>
+                </div>
               </div>
-              <div className="space-y-2">
-                <h3 className="text-white font-semibold text-lg">
-                  Customer Support
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  For help with your account or crypto transactions.
-                </p>
-                <p className="text-white text-sm">
-                  Email:{" "}
-                  <a
-                    href="mailto:support@digitwallethub.com"
-                    className="text-primary-300 hover:underline"
-                  >
-                    support@digitwallethub.com
-                  </a>
-                </p>
+
+              {/* For Businesses Card - Bottom Left */}
+              <div className="absolute bottom-[3%] sm:bottom-[15%] left-[1%] sm:left-[2%] p-3 sm:p-4 max-w-[75%]">
+                <div className="w-12 h-12 bg-primary-300/10 rounded-full flex items-center justify-center">
+                  <CustomerSupport />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-white font-semibold text-lg">
+                    Customer Support
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    For help with your account or crypto transactions.
+                  </p>
+                  <p className="text-white text-sm">
+                    Email:{" "}
+                    <a
+                      href="mailto:support@digitwallethub.com"
+                      className="text-primary-300 hover:underline"
+                    >
+                      support@digitwallethub.com
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="hidden md:block space-y-6 relative">
+              <div>
+                <img src="/contactimg.webp" alt="" />
+              </div>
+              {/* Business Inquiries Card */}
+              <div className="absolute top-5 right-5 max-w-80 space-y-4">
+                <div className="w-12 h-12 bg-primary-300/10 rounded-full flex items-center justify-center">
+                  <BusinessInquires />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-white font-semibold text-lg">
+                    Business Inquiries
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Interested in accepting crypto or custody solutions for your
+                    company?
+                  </p>
+                  <p className="text-white text-sm">
+                    Email:{" "}
+                    <a
+                      href="mailto:Sales@digitwallethub.com"
+                      className="text-primary-300 hover:underline"
+                    >
+                      Sales@digitwallethub.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* Customer Support Card */}
+              <div className="absolute max-w-80 bottom-15 left-10 space-y-4">
+                <div className="w-12 h-12 bg-primary-300/10 rounded-full flex items-center justify-center">
+                  <CustomerSupport />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-white font-semibold text-lg">
+                    Customer Support
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    For help with your account or crypto transactions.
+                  </p>
+                  <p className="text-white text-sm">
+                    Email:{" "}
+                    <a
+                      href="mailto:support@digitwallethub.com"
+                      className="text-primary-300 hover:underline"
+                    >
+                      support@digitwallethub.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Right Side - Contact Form */}
         <div
-          className=" rounded-2xl px-8 py-12"
+          className=" rounded-2xl px-2 md:px-8 py-12"
           style={{
             backgroundImage: `url("/contact.webp")`,
             backgroundSize: "cover",

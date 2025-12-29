@@ -66,7 +66,7 @@ const BenefitsAndFeatures = () => {
               Key Features & Benefits
             </span>
 
-            <div className="flex justify-between w-full">
+            <div className="md:flex justify-between w-full">
               <h2 className="text-white text-[32px] mt-4 lg:text-[40px] font-semibold leading-tight">
                 Why DigitWallet Custody
                 <br />
@@ -74,7 +74,7 @@ const BenefitsAndFeatures = () => {
               </h2>
 
               <div className="max-w-md">
-                <p className="text-white/80 text-right text-sm lg:text-base">
+                <p className="text-white/80 md:text-right text-sm lg:text-base">
                   From cold storage and multi-signature security to real-time
                   reporting and 24/7 monitoring, DigitWallet's custody solution
                   is designed to protect your assets while giving you full
@@ -89,7 +89,7 @@ const BenefitsAndFeatures = () => {
 
         {/* Feature Cards Grid */}
         <div className="space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-3 md:gap-4">
             {features.map((feature) => (
               <BenefitsAndFeaturesCard
                 key={feature.id}
@@ -99,7 +99,7 @@ const BenefitsAndFeatures = () => {
               />
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4">
             {features2.map((feature) => (
               <BenefitsAndFeaturesCard
                 key={feature.id}

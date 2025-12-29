@@ -61,11 +61,11 @@ const BuiltFor = () => {
             Who It's Built For
           </span>
 
-          <div className="flex justify-between">
-            <h2 className="text-white mt-4 text-[40px] max-w-131 font-medium leading-tight ">
+          <div className="md:flex justify-between space-y-3 md:space-y-0">
+            <h2 className="text-white mt-4 text-[24px] md:text-[40px] max-w-131 font-medium leading-tight ">
               DigitWallet Custody, Designed for All Holders
             </h2>
-            <p className="text-white/80 text-right text-lg  max-w-xl">
+            <p className="text-white/80 md:text-right text-lg  max-w-xl">
               Whether you’re an individual, a growing business, or a
               high-net-worth investor, DigitWallet provides tailored custody
               solutions to protect your crypto assets without compromising
@@ -77,7 +77,7 @@ const BuiltFor = () => {
 
         {/* Feature Cards */}
         <div
-          className="grid gap-4 grid-cols-3 p-4"
+          className="grid gap-2 md:gap-4 md:grid-cols-3 p-2 md:p-4"
           style={{
             backgroundImage: `url("/bg.png")`,
             backgroundSize: "cover",
@@ -108,11 +108,11 @@ const BuiltFor = () => {
             Start Now
           </span>
 
-          <div className="flex justify-between">
-            <h2 className="text-white mt-4 text-[40px] max-w-131 font-medium leading-tight ">
+          <div className="md:flex justify-between space-y-3 md:space-y-0">
+            <h2 className="text-white mt-4 text-[24px] md:text-[40px] max-w-131 font-medium leading-tight ">
               Get Started in 3 Steps
             </h2>
-            <p className="text-white/80 text-right text-lg  max-w-125">
+            <p className="text-white/80 md:text-right text-[15px] md:text-lg  max-w-125">
               Create your account, choose a custody plan, transfer your assets,
               and enjoy peace of mind with Ledger and DigitWallet’s trusted
               protection.
@@ -122,7 +122,7 @@ const BuiltFor = () => {
         </div>
 
         {/* Feature Cards */}
-        <div className="grid gap-4 grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {startingSteps.map((step) => (
             <div
               key={step.id}
@@ -143,13 +143,13 @@ const BuiltFor = () => {
 
         {/* Call to Action Section */}
         <div className="space-y-4">
-          <h2 className="text-white text-[40px] font-medium leading-tight ">
+          <h2 className="text-white text-[24px] md:text-[40px] font-medium leading-tight ">
             Ready to Safeguard Your Digital Assets?
           </h2>
-          <p className="text-white/80 text-lg  max-w-3xl">
+          <p className="text-white/80 text-[15px] md:text-lg  max-w-3xl">
             Don’t leave your crypto security to chance. Let DigitWallet provide
-            the protection and peace of mind your assets deserve. Get Started
-            Today and experience our custody services.
+            the protection and peace of mind your assets deserve. Get Started
+            Today and experience our custody services.
           </p>
           <Button buttonText="Get Started Now" />
         </div>

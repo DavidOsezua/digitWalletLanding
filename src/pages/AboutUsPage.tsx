@@ -6,6 +6,7 @@ import DisclaimerBanner from "@/components/DisclaimerBanner";
 import Footer from "@/components/home/Footer";
 import MainFooter from "@/components/MainFooter";
 import Navbar from "@/components/Navbar";
+import ProgressiveBackgroundImage from "@/components/ProgressiveBackgroundImage";
 import ScrollToTop from "@/components/ScrollToTop";
 import Bitcoin from "@/components/SvgComponent/Bitcoin";
 import Dollar from "@/components/SvgComponent/Dollar";
@@ -17,8 +18,10 @@ import Sell2 from "@/components/SvgComponent/Sell2";
 import USDC from "@/components/SvgComponent/USDC";
 import USDT from "@/components/SvgComponent/USDT";
 import Warning from "@/components/Warning";
+import { useMobile } from "@/hooks/useMobile";
 
 const AboutUsPage = () => {
+  const isMobile = useMobile();
   return (
     <section className="bg-gradient-selected2 relative">
       {/* Top-left Flashlight Effect */}
@@ -27,54 +30,105 @@ const AboutUsPage = () => {
         style={{ backgroundColor: "#7A72FF" }}
       ></div>
 
-      <div
-        className=""
-        style={{
-          backgroundImage: `url("/about.webp")`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center top",
-          objectFit: "cover",
-          backgroundSize: "100%  655px",
-        }}
-      >
-        <ScrollToTop />
-        <Navbar />
-        <DisclaimerBanner />
-        <About />
-        <Mission />
-        <HowItWorksSection
-          badge="Core Value"
-          title="What Makes Us Different"
-          description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
-          leftCard={{
-            icon: Sell2,
-            title: "Security First",
-            description: "Compliant custody with enterprise-grade protection.",
-            currencies: [Dollar, Euro, Pounds],
+      {isMobile ? (
+        <ProgressiveBackgroundImage
+          src="/aboutHeroMobile.webp"
+          placeholderSrc="/aboutHeroMobile-placeholder.webp"
+          style={{
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center top",
+            backgroundSize: "100%  655px",
           }}
-          rightCards={[
-            {
-              icon: Refresh,
+        >
+          <ScrollToTop />
+          <Navbar />
+          <DisclaimerBanner />
+          <About />
+          <Mission />
+          <HowItWorksSection
+            badge="Core Value"
+            title="What Makes Us Different"
+            description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
+            leftCard={{
+              icon: Sell2,
               title: "Security First",
               description:
                 "Compliant custody with enterprise-grade protection.",
-              currencies: [Bitcoin, ETH, USDT, USDC],
-            },
-            {
+              currencies: [Dollar, Euro, Pounds],
+            }}
+            rightCards={[
+              {
+                icon: Refresh,
+                title: "Security First",
+                description:
+                  "Compliant custody with enterprise-grade protection.",
+                currencies: [Bitcoin, ETH, USDT, USDC],
+              },
+              {
+                icon: Sell2,
+                title: "Cross-Sector Impact",
+                description: "Solutions for both individuals and businesses.",
+                currencies: [Bitcoin, ETH, USDT, USDC],
+              },
+            ]}
+          />
+          <JoinUs />
+          <div className="bg-bg-body pt-8 ">
+            <MainFooter />
+            <Warning />
+            <Footer />
+          </div>
+        </ProgressiveBackgroundImage>
+      ) : (
+        <ProgressiveBackgroundImage
+          src="/about.webp"
+          placeholderSrc="/about-placeholder.webp"
+          style={{
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center top",
+            backgroundSize: "100%  655px",
+          }}
+        >
+          <ScrollToTop />
+          <Navbar />
+          <DisclaimerBanner />
+          <About />
+          <Mission />
+          <HowItWorksSection
+            badge="Core Value"
+            title="What Makes Us Different"
+            description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
+            leftCard={{
               icon: Sell2,
-              title: "Cross-Sector Impact",
-              description: "Solutions for both individuals and businesses.",
-              currencies: [Bitcoin, ETH, USDT, USDC],
-            },
-          ]}
-        />
-        <JoinUs />
-        <div className="bg-bg-body pt-8 ">
-          <MainFooter />
-          <Warning />
-          <Footer />
-        </div>
-      </div>
+              title: "Security First",
+              description:
+                "Compliant custody with enterprise-grade protection.",
+              currencies: [Dollar, Euro, Pounds],
+            }}
+            rightCards={[
+              {
+                icon: Refresh,
+                title: "Security First",
+                description:
+                  "Compliant custody with enterprise-grade protection.",
+                currencies: [Bitcoin, ETH, USDT, USDC],
+              },
+              {
+                icon: Sell2,
+                title: "Cross-Sector Impact",
+                description: "Solutions for both individuals and businesses.",
+                currencies: [Bitcoin, ETH, USDT, USDC],
+              },
+            ]}
+          />
+          <JoinUs />
+          <div className="bg-bg-body pt-8 ">
+            <MainFooter />
+            <Warning />
+            <Footer />
+          </div>
+        </ProgressiveBackgroundImage>
+      )}
     </section>
   );
 };
