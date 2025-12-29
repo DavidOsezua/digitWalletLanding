@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 const DigitalFinance = () => {
   return (
     <div className=" text-white py-4 md:py-8 px-8">
@@ -27,9 +29,9 @@ const DigitalFinance = () => {
               <div className="  flex flex-col md:flex-row md:justify-between md:items-center gap-2 text-gray-300">
                 <span className="text-lg">24/7 Customer Support</span>
 
-                <button className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors">
+                <NavLink to="/myaccount" className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors inline-block text-center">
                   Get Started
-                </button>
+                </NavLink>
               </div>
 
               <div className="w-full bg-gradient-card-2 h-px"></div>

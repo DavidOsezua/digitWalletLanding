@@ -43,7 +43,7 @@ const CryptoWhyChooseUs = () => {
             From real-time transactions to multi-currency support and 24/7
             assistance — our platform is designed to grow with your needs.
           </p>
-          <Button buttonText="Get Started Now" />
+          <Button buttonText="Get Started Now" to="/myaccount" />
         </div>
 
         {/* Feature Cards */}
@@ -121,7 +121,7 @@ const CryptoWhyChooseUs = () => {
             Contact us today to create your crypto payment link or explore our
             API solution for customer deposits and withdrawals
           </p>
-          <Button buttonText="Get Started Now" />
+          <Button buttonText="Get Started Now" to="/myaccount" />
         </div>
       </div>
     </section>

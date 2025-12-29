@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 const StartNow = () => {
   return (
     <div className="w-full px-4 md:px-8 py-4 bg-bg-body">
@@ -30,15 +32,16 @@ const StartNow = () => {
               </p>
             </div>
             <div className="flex items-end">
-              <button
-                className="px-6 py-2.5 rounded-full font-medium text-sm transition-opacity hover:opacity-90"
+              <NavLink
+                to="/myaccount"
+                className="px-6 py-2.5 rounded-full font-medium text-sm transition-opacity hover:opacity-90 inline-block text-center"
                 style={{
                   backgroundColor: "var(--color-primary-300)",
                   color: "#0F1326",
                 }}
               >
                 Get Started Now
-              </button>
+              </NavLink>
             </div>
           </div>
 
@@ -62,15 +65,16 @@ const StartNow = () => {
               them with your crypto. We'll take care of paying them in fiat.
             </p>
             <div className="">
-              <button
-                className="px-6 py-2.5 rounded-full font-medium text-sm transition-opacity hover:opacity-90"
+              <NavLink
+                to="/myaccount"
+                className="px-6 py-2.5 rounded-full font-medium text-sm transition-opacity hover:opacity-90 inline-block text-center"
                 style={{
                   backgroundColor: "var(--color-primary-300)",
                   color: "#0F1326",
                 }}
               >
                 Get Started Now
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>

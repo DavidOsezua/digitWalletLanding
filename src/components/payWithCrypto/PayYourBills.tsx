@@ -27,7 +27,7 @@ const PayYourBills = () => {
               <p>All payments are processed using your Named IBAN</p>
             </div>
 
-            <Button buttonText="Get Started Now" />
+            <Button buttonText="Get Started Now" to="/myaccount" />
           </div>
 
           {/* Right Side - Invoice Dashboard Card */}

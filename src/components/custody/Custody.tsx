@@ -17,7 +17,7 @@ const Custody = () => {
           With DigitWallet’s custody services, your crypto is stored with your
           security in mind, and always accessible when you need it.
         </p>
-        <Button buttonText="Get Started Now" />
+        <Button buttonText="Get Started Now" to="/myaccount" />
       </div>
     </section>
   );
