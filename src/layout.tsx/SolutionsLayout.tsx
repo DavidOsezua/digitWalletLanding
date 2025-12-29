@@ -16,7 +16,7 @@ const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
         <section className="bg-gradient-selected2 relative">
           {/* Top-left Flashlight Effect */}
           <div
-            className="absolute -top-96 -left-96 w-200 h-200 rounded-full blur-3xl opacity-30 pointer-events-none z-0"
+            className="absolute -top-96 -left-96 w-120 md:w-200 h-150 md:h-200 rounded-full blur-3xl opacity-30 pointer-events-none z-0"
             style={{ backgroundColor: "#7A72FF" }}
           ></div>
           <ProgressiveBackgroundImage
