@@ -1,12 +1,7 @@
 import { useState } from "react";
 import CustomerSupport from "../SvgComponent/CustomerSupport";
-
 import BusinessInquires from "../SvgComponent/BusinessInquires";
 import { useMobile } from "@/hooks/useMobile";
-import ForBusiness from "../SvgComponent/ForBusiness";
-import RightArrow from "../SvgComponent/RightArrow";
-import Line from "../SvgComponent/Line";
-import ForIndividuals from "../SvgComponent/ForIndividuals";
 
 const PartnerWithUs = () => {
   const isMobile = useMobile();
