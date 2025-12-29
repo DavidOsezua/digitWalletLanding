@@ -144,7 +144,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                       </FormLabel>
                       <FormControl>
                         <FileUpload
-                          inputId="certificateOfIncorporation-upload"
+                          inputId="companyProofOfAddress-upload"
                           onChange={(url) => field.onChange(url)}
                           accept="image/*,application/pdf"
                         />
@@ -208,27 +208,30 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                     </FormItem>
                   )}
                 />
-                <FormField
-                  control={form.control}
-                  name="authorizedSignatoryList"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        Upload your copy of authorised signatory list (signed by
-                        a director)
-                      </FormLabel>
-                      <FormControl>
-                        <FileUpload
-                          inputId="authorizedSignatoryList-upload"
-                          onChange={(url) => field.onChange(url)}
-                          accept="image/*,application/pdf"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
+              </>
+            )}
+            <FormField
+              control={form.control}
+              name="authorizedSignatoryList"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>
+                    Upload your copy of authorised signatory list (signed by a
+                    director)
+                  </FormLabel>
+                  <FormControl>
+                    <FileUpload
+                      inputId="authorizedSignatoryList-upload"
+                      onChange={(url) => field.onChange(url)}
+                      accept="image/*,application/pdf"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {form.getValues("accountType") === "business" && (
+              <>
                 <FormField
                   control={form.control}
                   name="shareholderList"
