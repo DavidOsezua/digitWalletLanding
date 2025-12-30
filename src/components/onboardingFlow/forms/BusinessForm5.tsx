@@ -1,5 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import { useState, type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import {
   Form,
   FormControl,
@@ -69,6 +69,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                   <FormControl>
                     <FileUpload
                       inputId="proofOfIdentity-upload"
+                      value={field.value}
                       onChange={(url) => field.onChange(url)}
                       accept="image/*,application/pdf"
                     />
@@ -87,7 +88,8 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                   </FormLabel>
                   <FormControl>
                     <FileUpload
-                      inputId="companyProofOfAddress-upload"
+                      inputId="proofOfAddress-upload"
+                      value={field.value}
                       onChange={(url) => field.onChange(url)}
                       accept="image/*,application/pdf"
                     />
@@ -105,6 +107,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                   <FormControl>
                     <FileUpload
                       inputId="proofOfFunds1-upload"
+                      value={field.value}
                       onChange={(url) => field.onChange(url)}
                       accept="image/*,application/pdf"
                     />
@@ -122,6 +125,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                   <FormControl>
                     <FileUpload
                       inputId="proofOfFunds2-upload"
+                      value={field.value}
                       onChange={(url) => field.onChange(url)}
                       accept="image/*,application/pdf"
                     />
@@ -145,6 +149,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                       <FormControl>
                         <FileUpload
                           inputId="companyProofOfAddress-upload"
+                          value={field.value}
                           onChange={(url) => field.onChange(url)}
                           accept="image/*,application/pdf"
                         />
@@ -164,6 +169,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                       <FormControl>
                         <FileUpload
                           inputId="certificateOfIncorporation-upload"
+                          value={field.value}
                           onChange={(url) => field.onChange(url)}
                           accept="image/*,application/pdf"
                         />
@@ -181,6 +187,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                       <FormControl>
                         <FileUpload
                           inputId="articlesOfAssociation-upload"
+                          value={field.value}
                           onChange={(url) => field.onChange(url)}
                           accept="image/*,application/pdf"
                         />
@@ -200,6 +207,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                       <FormControl>
                         <FileUpload
                           inputId="registerOfDirectors-upload"
+                          value={field.value}
                           onChange={(url) => field.onChange(url)}
                           accept="image/*,application/pdf"
                         />
@@ -222,6 +230,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                   <FormControl>
                     <FileUpload
                       inputId="authorizedSignatoryList-upload"
+                      value={field.value}
                       onChange={(url) => field.onChange(url)}
                       accept="image/*,application/pdf"
                     />
@@ -243,6 +252,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                       <FormControl>
                         <FileUpload
                           inputId="shareholderList-upload"
+                          value={field.value}
                           onChange={(url) => field.onChange(url)}
                           accept="image/*,application/pdf"
                         />
@@ -263,6 +273,7 @@ export const BusinessForm5: FC<StepProps> = ({ setStep }) => {
                       <FormControl>
                         <FileUpload
                           inputId="organizationalChartOfOwnership-upload"
+                          value={field.value}
                           onChange={(url) => field.onChange(url)}
                           accept="image/*,application/pdf"
                         />
@@ -305,17 +316,24 @@ interface FileUploadProps {
   onChange: (url: string) => void;
   accept?: string;
   multiple?: boolean;
+  value?: string;
 }
 
 const FileUpload: FC<FileUploadProps> = ({
   inputId = "file-input",
   onChange,
+  value,
   accept = "image/*,application/pdf",
   multiple = false,
 }) => {
   const [dragActive, setDragActive] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [currentUrl, setCurrentUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCurrentUrl(value || null);
+  }, [value]);
 
   // Cloudinary config
   const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
@@ -339,7 +357,7 @@ const FileUpload: FC<FileUploadProps> = ({
         if (data.secure_url) {
           const url = data.secure_url;
           setCurrentUrl(url);
-          onChange(url);
+          onChange?.(url);
         } else {
           toast.error("Upload failed. Please try again.");
         }
