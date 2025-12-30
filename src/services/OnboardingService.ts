@@ -3,6 +3,7 @@ import type {
   OnboardingResponse,
 } from "@/types/onboarding";
 import { apiInstance } from "./api";
+import axios from "axios";
 
 export const onboard = async (
   credentials: OnboardingCredentials
@@ -11,5 +12,15 @@ export const onboard = async (
     "/user/onboard",
     credentials
   );
+  return response.data;
+};
+
+export const getIpAdress = async (): Promise<{ ip: string }> => {
+  const response = await axios
+    .get<{ ip: string }>("https://api.ipify.org/?format=json")
+    .catch((error) => {
+      console.error(error);
+      throw error;
+    });
   return response.data;
 };

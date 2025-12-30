@@ -71,6 +71,7 @@ export interface OnboardingCredentials {
   qualifiedAsSophisticatedInvestorNotAppliedToMe?: boolean;
   assesmentDate?: string;
   assesmentSignature?: string;
+  isCompleted?: boolean;
 }
 export interface OnboardingResponse {
   onboarding: {

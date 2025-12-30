@@ -16,7 +16,7 @@ import { RIStatement } from "@/components/onboardingFlow/forms/RIStatement";
 import { SIStatement } from "@/components/onboardingFlow/forms/SIStatement";
 import { Quiz } from "@/components/onboardingFlow/forms/Quiz";
 import { useAuthStore } from "@/store/authStore";
-import { useGetUser } from "@/hooks/useQueries";
+import { useGetIp, useGetUser } from "@/hooks/useQueries";
 import InvestorStatementResult from "@/components/onboardingFlow/forms/InvestorStatementResult";
 
 type StepProps = {
@@ -331,6 +331,8 @@ export type FormSchema = z.infer<typeof formSchema>;
 const Onboarding = () => {
   const { user } = useAuthStore();
   useGetUser();
+  const { data: ip } = useGetIp();
+
   const [searchParams] = useSearchParams();
   const stepParam = searchParams.get("s") || "0";
   const stepIndex = Number(stepParam);
@@ -395,7 +397,7 @@ const Onboarding = () => {
       companyCountry: user?.onboarding?.companyCountry || undefined,
       positionInCompany: user?.onboarding?.positionInCompany || undefined,
       percentageOfOwnership: user?.onboarding?.percentageOfOwnership || 0,
-      ipAddress: user?.onboarding?.ipAddress || undefined,
+      ipAddress: ip?.ip || undefined,
       website: user?.onboarding?.website || undefined,
       employmentStatus: user?.onboarding?.employmentStatus || undefined,
       jobRole: user?.onboarding?.jobRole || undefined,
@@ -471,6 +473,12 @@ const Onboarding = () => {
       assesmentSignature: user?.onboarding?.assesmentSignature || undefined,
     },
   });
+
+  useEffect(() => {
+    if (ip?.ip) {
+      businessForm.setValue("ipAddress", ip.ip);
+    }
+  }, [ip, businessForm]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
