@@ -3,6 +3,7 @@ import Rectangle2 from "../SvgComponent/Rectangle2";
 import Rectangle1 from "../SvgComponent/Rectangle1";
 import Ellipse from "../SvgComponent/Ellipse";
 import Currencies from "../Currencies";
+import { NavLink } from "react-router";
 
 const Hero = () => {
   return (
@@ -71,7 +72,7 @@ const Hero = () => {
                 color: "#0F1326",
               }}
             >
-              Open An Account
+              <NavLink to={"/myaccount"}>Open An Account</NavLink>
             </motion.button>
 
             {/* Supported Currency */}

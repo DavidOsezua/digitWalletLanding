@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
 import { useAuthStore } from "../store/authStore";
 import { useLogout } from "../hooks/useAuth";
 
@@ -161,8 +161,9 @@ const MobileNav = ({
                 >
                   Login
                 </NavLink>
-                <button
-                  className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
+                <Link
+                  to="/myaccount"
+                  className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity inline-block text-center"
                   style={{
                     backgroundColor: "var(--color-primary-300)",
                     color: "#0F1326",
@@ -170,7 +171,7 @@ const MobileNav = ({
                   onClick={toggleMobileMenu}
                 >
                   Get Started
-                </button>
+                </Link>
               </>
             )}
           </div>

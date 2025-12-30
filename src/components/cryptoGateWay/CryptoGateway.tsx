@@ -16,7 +16,7 @@ const CryptoGateway = () => {
           Accept crypto payments from customers or business partners with a
           payment link and pay your business invoices with cryptocurrencies.
         </p>
-        <Button buttonText="Get Started Now" />
+        <Button buttonText="Get Started Now" to="/myaccount" />
       </div>
     </section>
   );

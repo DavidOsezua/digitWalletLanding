@@ -47,6 +47,7 @@ const App = () => {
           <Route path="/termsofuse" element={<TermsOfUsePage />} />
           <Route path="/compliance" element={<CompliancePage />} />
         </Route>
+
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/buyandsell" element={<BuyAndSellPage />} />
         <Route path="/cryptogateway" element={<CryptoGateWayPage />} />

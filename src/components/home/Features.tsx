@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router";
 import RightArrow from "../SvgComponent/RightArrow";
 import AccountsSvg from "../SvgComponent/AccountsSvg";
 import Clock from "../SvgComponent/Clock";
@@ -37,15 +38,16 @@ const Features = () => {
               crypto, safeguard your crypto, pay and, send money to friends and
               more — all in one place.
             </p>
-            <button
-              className="px-6 py-2.5 rounded-full font-medium text-sm text-white"
+            <NavLink
+              to="/myaccount"
+              className="px-6 py-2.5 rounded-full font-medium text-sm text-white inline-block text-center"
               style={{
                 backgroundImage:
                   "linear-gradient(to bottom, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
               }}
             >
               Get Started
-            </button>
+            </NavLink>
           </div>
         </div>
 

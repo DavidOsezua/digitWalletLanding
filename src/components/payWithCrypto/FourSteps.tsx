@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import Fiat from "../SvgComponent/Fiat";
 import Invoice from "../SvgComponent/Invoice";
 import SendCrypto from "../SvgComponent/SendCrypto";
@@ -25,15 +26,16 @@ const FourSteps = () => {
               hassle-free.
             </p>
             <div className="md:flex justify-end ">
-              <button
-                className="px-6 py-2.5 rounded-full font-medium text-sm text-white cursor-pointer"
+              <NavLink
+                to="/myaccount"
+                className="px-6 py-2.5 rounded-full font-medium text-sm text-white cursor-pointer inline-block text-center"
                 style={{
                   backgroundImage:
                     "linear-gradient(to bottom, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
                 }}
               >
                 Get Started
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>

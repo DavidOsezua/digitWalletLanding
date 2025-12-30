@@ -242,7 +242,7 @@ const Navbar = () => {
 
                 {/* Get Started Button */}
                 <Link
-                  to="/auth/signup"
+                  to="/myaccount"
                   className="px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
                   style={{
                     backgroundColor: "var(--color-primary-300)",

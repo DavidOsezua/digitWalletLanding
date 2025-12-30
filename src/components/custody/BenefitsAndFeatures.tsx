@@ -83,7 +83,7 @@ const BenefitsAndFeatures = () => {
               </div>
             </div>
 
-            <Button buttonText="Get Started Now" />
+            <Button buttonText="Get Started Now" to="/myaccount" />
           </div>
         </div>
 

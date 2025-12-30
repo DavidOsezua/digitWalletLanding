@@ -49,7 +49,7 @@ const WhyChoose = () => {
             From real-time transactions to multi-currency support and 24/7
             assistance — our platform is designed to grow with your needs.
           </p>
-          <Button buttonText="Get Started Now" />
+          <Button buttonText="Get Started Now" to="/myaccount" />
         </div>
 
         {/* Feature Cards */}
@@ -87,7 +87,7 @@ const WhyChoose = () => {
             Experience fiat-crypto conversions with DigitWallet. Sign up today
             to unlock the full potential of your digital assets.
           </p>
-          <Button buttonText="Get Started Now" />
+          <Button buttonText="Get Started Now" to="/myaccount" />
         </div>
       </div>
     </section>

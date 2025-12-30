@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router";
 import HardwareWallet from "../SvgComponent/HardwareWallet";
 import MultiSignature from "../SvgComponent/MultiSignature";
 import SecureVault from "../SvgComponent/SecureVault";
@@ -22,15 +23,16 @@ const CustodySecureOption = () => {
             </p>
 
             <div className="flex md:justify-end">
-              <button
-                className="px-6 py-2.5 rounded-full font-medium text-sm text-white cursor-pointer"
+              <NavLink
+                to="/myaccount"
+                className="px-6 py-2.5 rounded-full font-medium text-sm text-white cursor-pointer inline-block text-center"
                 style={{
                   backgroundImage:
                     "linear-gradient(to bottom, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
                 }}
               >
                 Get Started
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>

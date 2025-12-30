@@ -16,7 +16,7 @@ const PayWithCrypto = () => {
           Use your crypto to pay fiat invoices, bills and transfer money to bank
           accounts.
         </p>
-        <Button buttonText="Get Started Now" />
+        <Button buttonText="Get Started Now" to="/myaccount" />
       </div>
     </section>
   );

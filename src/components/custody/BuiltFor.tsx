@@ -72,7 +72,7 @@ const BuiltFor = () => {
               accessibility or control.
             </p>
           </div>
-          <Button buttonText="Get Started Now" />
+          <Button buttonText="Get Started Now" to="/myaccount" />
         </div>
 
         {/* Feature Cards */}
@@ -118,7 +118,7 @@ const BuiltFor = () => {
               protection.
             </p>
           </div>
-          <Button buttonText="Get Started Now" />
+          <Button buttonText="Get Started Now" to="/myaccount" />
         </div>
 
         {/* Feature Cards */}
@@ -151,7 +151,7 @@ const BuiltFor = () => {
             the protection and peace of mind your assets deserve. Get Started
             Today and experience our custody services.
           </p>
-          <Button buttonText="Get Started Now" />
+          <Button buttonText="Get Started Now" to="/myaccount" />
         </div>
       </div>
     </section>

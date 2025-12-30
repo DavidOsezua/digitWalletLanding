@@ -19,7 +19,7 @@ const BuyAndSell = () => {
           Convert your fiat into cryptocurrency with DigitWallet’s solution,
           designed for both businesses and individuals
         </p>
-        <Button buttonText="Get Started Now" />
+        <Button buttonText="Get Started Now" to="/myaccount" />
       </div>
     </section>
   );
