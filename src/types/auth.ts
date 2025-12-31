@@ -34,3 +34,5 @@ export interface AuthResponse {
 export interface SignUpResponse {
   message: string;
 }
+
+

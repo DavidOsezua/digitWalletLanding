@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run optimize-images:*)"
+      "Bash(npm run optimize-images:*)",
+      "Bash(npm install:*)"
     ]
   }
 }

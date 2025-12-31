@@ -1,11 +1,7 @@
-import { Outlet, Link, useLocation, NavLink } from "react-router";
+import { Outlet, NavLink } from "react-router";
 import ScrollToTop from "../components/ScrollToTop";
 
 const LoginLayout = () => {
-  const location = useLocation();
-  const isLogin = location.pathname === "/auth/login";
-  const isSignup = location.pathname === "/auth/signup";
-
   return (
     <div
       className="min-h-screen relative flex items-center  justify-center py-8 px-4"
@@ -29,30 +25,6 @@ const LoginLayout = () => {
         <NavLink to={"/"} className="flex">
           <img src="/logo.svg" alt="" />
         </NavLink>
-
-        {/* Tabs */}
-        <div className="flex gap-1 border-dark-stroke3 border-[0.8px] p-1 rounded-[5px] max-w-61.25">
-          <Link
-            to="/auth/login"
-            className={`flex-1 justify-center items-center flex py-3 rounded-sm font-semibold transition-colors text-[12px] ${
-              isLogin
-                ? "bg-primary-300 text-dark-text "
-                : "bg-transparent text-dark-text-300"
-            }`}
-          >
-            Login
-          </Link>
-          <Link
-            to="/auth/signup"
-            className={`flex-1 justify-center items-center flex rounded-sm font-semibold transition-colors text-[12px] ${
-              isSignup
-                ? "bg-primary-300 text-dark-text "
-                : "bg-transparent text-dark-text-300"
-            }`}
-          >
-            Sign Up
-          </Link>
-        </div>
 
         {/* Render child route (Login or Signup component) */}
         <Outlet />

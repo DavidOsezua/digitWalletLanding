@@ -33,3 +33,8 @@ export const getUser = async (): Promise<{ user: User }> => {
   useAuthStore.setState({ user: response.data.user });
   return response.data;
 };
+
+export const forgotPassword = async():Promise<{user:User}>=>{
+  const response = await apiInstance.get<{user:User}>("/auth/forget-password");
+  
+}

@@ -8,8 +8,6 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import Onboarding from "./pages/Onboarding";
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
 import Home from "./pages/Home";
 import UkFinance from "./components/onboardingFlow/UkFinance";
 import MainLayout from "./layout.tsx/MainLayout";
@@ -28,6 +26,11 @@ import RiskSummayPage from "./pages/RiskSummayPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfUsePage from "./pages/TermsOfUsePage";
 import CompliancePage from "./pages/CompliancePage";
+import LoginPage from "./pages/auth/LoginPage";
+import SignUpPage from "./pages/auth/SignUpPage";
+import ForgotPassword from "./features/authentication/ForgotPassword";
+import ResetPassword from "./features/authentication/ResetPassword";
+import VerifyOtp from "./features/authentication/VerifyOtp";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -57,8 +60,11 @@ const App = () => {
         {/* Auth Layout - Login/Signup pages */}
         <Route path="/auth" element={<LoginLayout />}>
           <Route index element={<Navigate to="/auth/login" replace />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="signup" element={<SignUpPage />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route path="reset-password" element={<ResetPassword />} />
+          <Route path="verify-otp" element={<VerifyOtp />} />
         </Route>
 
         {/* Dashboard Layout */}
