@@ -14,6 +14,7 @@ const imagesToOptimize = [
   "cryptoGateway.webp",
   "digitWallet.webp",
   "aboutHeroMobile.webp",
+  "bg2.webp",
 ];
 
 async function createPlaceholder(imageName) {

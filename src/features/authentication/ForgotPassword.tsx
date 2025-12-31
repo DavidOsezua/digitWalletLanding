@@ -5,6 +5,7 @@ import FormInput from "./components/FormInput";
 import FormButton from "./components/FormButton";
 import { emailRules } from "./utils/validationRules";
 import { useForgotPasswordStore } from "../../store/forgotPasswordStore";
+import { useValidateEmail } from "../../hooks/useForgotPassword";
 
 type ForgotPasswordFormData = {
   email: string;
@@ -13,6 +14,7 @@ type ForgotPasswordFormData = {
 const ForgotPassword = () => {
   const navigate = useNavigate();
   const { setEmail } = useForgotPasswordStore();
+  const { mutate: validateEmail, isPending } = useValidateEmail();
   const {
     register,
     handleSubmit,
@@ -21,7 +23,8 @@ const ForgotPassword = () => {
 
   const onSubmit = (data: ForgotPasswordFormData) => {
     setEmail(data.email);
-    navigate("/auth/reset-password");
+    // Validate email exists in database before proceeding
+    validateEmail(data.email);
   };
 
   return (
@@ -52,7 +55,9 @@ const ForgotPassword = () => {
           error={errors.email}
         />
 
-        <FormButton type="submit">Continue</FormButton>
+        <FormButton type="submit" isLoading={isPending}>
+          {isPending ? "Validating..." : "Continue"}
+        </FormButton>
       </form>
     </>
   );

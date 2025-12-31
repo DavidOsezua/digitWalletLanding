@@ -19,22 +19,22 @@ const FAQSection = () => {
     {
       question: "Can I accept crypto as a business?",
       answer:
-        "Yes, DigitWallet provides business solutions that allow you to accept cryptocurrency payments. Our automated system converts and settles payments in fiat currency on your behalf.",
+        "Yes, businesses can accept crypto payments and receive fiat payouts. Our platform supports seamless crypto-to-fiat conversion with compliance and settlement tools tailored for merchants",
     },
     {
       question: "Is my wallet insured?",
       answer:
-        "Yes, your wallet is protected with advanced security measures and insurance coverage to safeguard your assets against unauthorized access and theft.",
+        "Yes. We partner with leading custody providers to offer institutional-grade security and insurance for digital assets held in your wallet.",
     },
     {
       question: "How long do payouts take?",
       answer:
-        "Payouts are typically processed within 24-48 hours. The exact timing depends on the payment method and your bank's processing times.",
+        "Payouts are typically processed within 24–48 hours, depending on the currency and destination. Real-time tracking is available in your dashboard.",
     },
     {
       question: "Is KYC required?",
       answer:
-        "Yes, KYC (Know Your Customer) verification is required to comply with regulatory standards and ensure the security of all transactions on our platform.",
+        "Yes, completing KYC is required to comply with regulatory standards and ensure secure transactions for all users.",
     },
   ];
 
