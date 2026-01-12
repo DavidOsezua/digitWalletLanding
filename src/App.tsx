@@ -7,6 +7,7 @@ import {
 } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
+import { useState, useEffect } from "react";
 import Onboarding from "./pages/Onboarding";
 import Home from "./pages/Home";
 import UkFinance from "./components/onboardingFlow/UkFinance";
@@ -31,8 +32,34 @@ import SignUpPage from "./pages/auth/SignUpPage";
 import ForgotPassword from "./features/authentication/ForgotPassword";
 import ResetPassword from "./features/authentication/ResetPassword";
 import VerifyOtp from "./features/authentication/VerifyOtp";
+import BlockedAccess from "./components/blocked/BlockedAccess";
+import { checkUserLocation } from "./utils/geolocation";
 
 const App = () => {
+  const [isBlocked, setIsBlocked] = useState<boolean>(false);
+  const [isChecking, setIsChecking] = useState<boolean>(true);
+
+  useEffect(() => {
+    const performLocationCheck = async () => {
+      try {
+        const result = await checkUserLocation();
+        setIsBlocked(result.isBlocked);
+      } catch (error) {
+        console.error("Location check error:", error);
+        // On error, allow access (fail-open)
+        setIsBlocked(false);
+      } finally {
+        setIsChecking(false);
+      }
+    };
+
+    performLocationCheck();
+  }, []);
+
+  const blockedRouter = createBrowserRouter(
+    createRoutesFromElements(<Route path="*" element={<BlockedAccess />} />)
+  );
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -82,11 +109,21 @@ const App = () => {
   );
 
   const queryClient = new QueryClient();
+
+  // Show loading state while checking location
+  if (isChecking) {
+    return (
+      <div className="min-h-screen bg-[#0a0e27] flex items-center justify-center">
+        <div className="text-white text-lg">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative">
       <QueryClientProvider client={queryClient}>
         <Toaster position="top-right" />
-        <RouterProvider router={router} />
+        <RouterProvider router={isBlocked ? blockedRouter : router} />
       </QueryClientProvider>
     </div>
   );
