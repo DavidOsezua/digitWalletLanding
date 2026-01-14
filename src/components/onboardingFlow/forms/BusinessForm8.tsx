@@ -48,7 +48,7 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
       return;
     }
     try {
-      await save({ ...data, stepCompleted: 9, isCompleted: true });
+      await save({ ...data, stepCompleted: 9,  });
       if (investorType === "high-net-worth") {
         setSearchParams({ s: "9" });
         setStep("hni-statement");

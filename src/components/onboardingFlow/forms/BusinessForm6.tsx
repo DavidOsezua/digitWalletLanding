@@ -38,7 +38,7 @@ export const BusinessForm6: FC<StepProps> = ({ setStep }) => {
       return;
     }
     try {
-      await save({ ...data, stepCompleted: 6 });
+      await save({ ...data, stepCompleted: 6, isCompleted: true });
       setSearchParams({ s: "7" });
       setStep("business-form-7");
     } catch (error) {
