@@ -30,7 +30,7 @@ const BuyAndSellFeatures = () => {
 
           {/* Same-day Settlement Card - Spans 2 columns */}
           <div className="bg-gradient-blue-2 relative rounded-2xl p-6 flex flex-col lg:col-span-2 overflow-hidden">
-            <div className="flex flex-col justify-center gap-12 mb-auto">
+            <div className="flex flex-col justify-center gap-12 mb-auto z-10">
               <Settlement />
 
               <h3 className="text-gray-900 font-semibold text-lg mb-4">

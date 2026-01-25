@@ -90,7 +90,7 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="md:col-span-3 h-120.25 md:h-157.25 p-6 lg:p-8 rounded-2xl relative overflow-hidden bg-gradient-blue-2"
+              className="md:col-span-3 h-120.25 md:h-157.25 p-6 lg:p-8 rounded-2xl overflow-hidden bg-gradient-blue-2 flex flex-col"
               style={{
                 border: "1px solid var(--color-border-navbar)",
               }}
@@ -114,7 +114,7 @@ const Features = () => {
               </p>
 
               {/* Account Dashboard Preview */}
-              <div className="absolute bottom-0 right-0 w-[calc(100%-48px)]">
+              <div className="mt-auto">
                 <img
                   src="/accounts.png"
                   alt="Account Dashboard"
