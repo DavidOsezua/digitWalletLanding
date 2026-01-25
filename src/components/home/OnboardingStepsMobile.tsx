@@ -61,8 +61,8 @@ const OnboardingStepsMobile = () => {
                   </h3>
 
                   <p className="text-gray-400 text-sm  leading-relaxed">
-                    Sign up today and follow our onboarding flow to provide your
-                    KYC information. Get started today — minimize complexity.
+                    Once your DigitWallet account is approved you are ready to
+                    whitelist your wallet and beginning exchanging.
                   </p>
                 </div>
               </div>

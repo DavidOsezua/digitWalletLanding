@@ -24,7 +24,7 @@ const BuiltFor = () => {
     },
     {
       id: 3,
-      title: "Receive High-Net-Worth Investors",
+      title: "High-Net-Worth Investors",
       description:
         "Protect significant digital wealth with advanced solutions.",
       icon: <HighNetWorthInvestors />,

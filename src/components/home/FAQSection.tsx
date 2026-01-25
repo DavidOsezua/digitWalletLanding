@@ -12,9 +12,9 @@ const FAQSection = () => {
 
   const faqs: FAQItem[] = [
     {
-      question: "How do I create a wallet?",
+      question: "How do I trade?",
       answer:
-        'Simply click on "Create My Wallet" and follow the guided steps to register with your basic KYC information. The process takes just a few minutes to complete.',
+        "You have the option of trading and transactiong via our online platform or you can execute your transcations with your dedicated account manager via our secure channels.",
     },
     {
       question: "Can I accept crypto as a business?",
@@ -22,14 +22,9 @@ const FAQSection = () => {
         "Yes, businesses can accept crypto payments and receive fiat payouts. Our platform supports seamless crypto-to-fiat conversion with compliance and settlement tools tailored for merchants",
     },
     {
-      question: "Is my wallet insured?",
+      question: "How long do payouts take ?",
       answer:
-        "Yes. We partner with leading custody providers to offer institutional-grade security and insurance for digital assets held in your wallet.",
-    },
-    {
-      question: "How long do payouts take?",
-      answer:
-        "Payouts are typically processed within 24–48 hours, depending on the currency and destination. Real-time tracking is available in your dashboard.",
+        "Payouts typically are processed within minutes, depending on the currency and destination. Real-time tracking is available in your dashboard",
     },
     {
       question: "Is KYC required?",

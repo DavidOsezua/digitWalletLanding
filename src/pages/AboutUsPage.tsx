@@ -37,7 +37,7 @@ const AboutUsPage = () => {
           style={{
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center top",
-            backgroundSize: "100%  655px",
+            backgroundSize: "100%  700px",
           }}
         >
           <ScrollToTop />

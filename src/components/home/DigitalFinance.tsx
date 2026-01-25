@@ -29,18 +29,21 @@ const DigitalFinance = () => {
               <div className="  flex flex-col md:flex-row md:justify-between md:items-center gap-2 text-gray-300">
                 <span className="text-lg">24/7 Customer Support</span>
 
-                <NavLink to="/myaccount" className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors inline-block text-center">
+                <NavLink
+                  to="/myaccount"
+                  className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors inline-block text-center"
+                >
                   Get Started
                 </NavLink>
               </div>
 
               <div className="w-full bg-gradient-card-2 h-px"></div>
 
-              <p className="text-gray-400 text-sm">
+              {/* <p className="text-gray-400 text-sm">
                 Join others who trust DigitalWallet to power their crypto
                 transactions
-              </p>
-
+              </p> */}
+              {/* 
               <div className="flex items-center gap-3 pt-2 md:pt-4">
                 <div className="flex -space-x-2">
                   <div className="w-10 h-10 rounded-full bg-linear-to-r from-gray-300 to-gray-400 border-2 border-slate-950"></div>
@@ -55,7 +58,7 @@ const DigitalFinance = () => {
                   </p>
                   <p className="text-gray-400">transactions</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 import CustomerSupport from "../SvgComponent/CustomerSupport";
 import BusinessInquires from "../SvgComponent/BusinessInquires";
 import { useMobile } from "@/hooks/useMobile";
 
 const PartnerWithUs = () => {
   const isMobile = useMobile();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -13,6 +16,8 @@ const PartnerWithUs = () => {
     subject: "",
     message: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,10 +29,47 @@ const PartnerWithUs = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
+
+    // Validate required fields
+    if (!formData.firstName || !formData.email || !formData.message) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "support@digitwallethub.com",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success("Message sent successfully! We'll get back to you soon.");
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -127,8 +169,7 @@ const PartnerWithUs = () => {
                     Business Inquiries
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    Interested in accepting crypto or custody solutions for your
-                    company?
+                     Interested in partnering with DigitWallet or utilizing our services?
                   </p>
                   <p className="text-white text-sm">
                     Email:{" "}
@@ -255,7 +296,7 @@ const PartnerWithUs = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Enter Your Name"
+                  placeholder="Enter Your Subject title"
                   className="w-full border border-dark-stroke3 rounded-md px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary-300 transition-colors"
                 />
               </div>
@@ -266,7 +307,7 @@ const PartnerWithUs = () => {
                   htmlFor="message"
                   className="block text-gray-400 text-sm"
                 >
-                  Subject
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -282,13 +323,15 @@ const PartnerWithUs = () => {
               {/* Submit Button */}
               <div className="flex justify-end">
                 <button
-                  className="px-6 py-2.5 rounded-full font-medium text-sm text-white"
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-6 py-2.5 rounded-full font-medium text-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     backgroundImage:
                       "linear-gradient(to bottom, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
                   }}
                 >
-                  Submit
+                  {isSubmitting ? "Sending..." : "Submit"}
                 </button>
               </div>
             </form>

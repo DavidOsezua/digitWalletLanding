@@ -25,7 +25,7 @@ const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
             style={{
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center top",
-              backgroundSize: "100%  502px",
+              backgroundSize: "100%  552px",
             }}
           >
             <ScrollToTop />

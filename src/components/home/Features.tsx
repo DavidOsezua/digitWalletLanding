@@ -194,10 +194,10 @@ const Features = () => {
               </div>
 
               <h3 className="text-xl md:text-2xl font-bold text-dark-text mb-2">
-                Secure and Reliable
+                Security Focused
               </h3>
               <p className="text-dark-text text-xs md:text-sm mb-4 md:mb-6 max-w-50">
-                Benefit from advanced security measures to protect your
+                Benefit from advanced security measures to safeguard your
                 financial data.
               </p>
 

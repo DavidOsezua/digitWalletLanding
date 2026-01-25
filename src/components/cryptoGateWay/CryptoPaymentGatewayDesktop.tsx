@@ -24,9 +24,9 @@ const CryptoPaymentGatewayDesktop = () => {
         <Buy />
 
         <p className="text-black/59 font-semibold max-w-112.5">
-          Accept Crypto Payments & Process Withdrawals via API – For businesses
-          with custom needs – utilize our API solutions to handle customer
-          deposits and process withdrawals.
+          Enjoy tailored automatic withdrawals to your company bank account, no
+          need to worry about manually issuing withdrawal requests using our
+          software.
         </p>
       </div>
 
