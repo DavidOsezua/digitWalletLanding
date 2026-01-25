@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import CustomerSupport from "../SvgComponent/CustomerSupport";
@@ -7,7 +7,6 @@ import { useMobile } from "@/hooks/useMobile";
 
 const PartnerWithUs = () => {
   const isMobile = useMobile();
-  const formRef = useRef<HTMLFormElement>(null);
 
   const [formData, setFormData] = useState({
     firstName: "",
