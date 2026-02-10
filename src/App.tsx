@@ -62,11 +62,18 @@ const App = () => {
         {/* Allow auth routes even when blocked */}
         <Route path="/auth" element={<LoginLayout />}>
           <Route index element={<Navigate to="/auth/login" replace />} />
+
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="reset-password" element={<ResetPassword />} />
           <Route path="verify-otp" element={<VerifyOtp />} />
+        </Route>
+
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+
+          <Route path="/onboarding" element={<Onboarding />} />
         </Route>
 
         {/* Allow dashboard routes even when blocked */}
@@ -82,8 +89,8 @@ const App = () => {
 
         {/* All other routes show blocked page */}
         <Route path="*" element={<BlockedAccess />} />
-      </>
-    )
+      </>,
+    ),
   );
 
   const router = createBrowserRouter(
@@ -130,8 +137,8 @@ const App = () => {
           <Route path="account" element={<Account />} />
           <Route path="profile" element={<Profile />} />
         </Route>
-      </>
-    )
+      </>,
+    ),
   );
 
   const queryClient = new QueryClient();
