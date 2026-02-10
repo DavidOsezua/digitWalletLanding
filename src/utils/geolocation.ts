@@ -11,8 +11,8 @@ export interface GeolocationResponse {
   reason?: string;
 }
 
-const LOCATION_STORAGE_KEY = 'user_location_check';
-const BLOCKED_COUNTRY_CODE = 'GB'; // United Kingdom ISO code
+const LOCATION_STORAGE_KEY = "user_location_check";
+const BLOCKED_COUNTRY_CODE = "GB"; // United Kingdom ISO code
 
 /**
  * Check if user's location from the UK
@@ -39,17 +39,17 @@ export const checkUserLocation = async (): Promise<{
     }
 
     // Fetch geolocation data from API
-    const response = await fetch('https://ipapi.co/json/');
+    const response = await fetch("https://ipapi.co/json/");
 
     if (!response.ok) {
-      throw new Error('Failed to fetch location data');
+      throw new Error("Failed to fetch location data");
     }
 
     const data: GeolocationResponse = await response.json();
 
     // Check if API returned an error
     if (data.error) {
-      throw new Error(data.reason || 'Geolocation API error');
+      throw new Error(data.reason || "Geolocation API error");
     }
 
     const countryCode = data.country_code;
@@ -60,7 +60,7 @@ export const checkUserLocation = async (): Promise<{
       JSON.stringify({
         countryCode,
         timestamp: Date.now(),
-      })
+      }),
     );
 
     return {
@@ -68,14 +68,14 @@ export const checkUserLocation = async (): Promise<{
       countryCode,
     };
   } catch (error) {
-    console.error('Geolocation check failed:', error);
+    console.error("Geolocation check failed:", error);
 
     // On error, allow access (fail-open strategy)
     // Alternative: You could fail-closed by returning isBlocked: true
     return {
       isBlocked: false,
       countryCode: null,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: error instanceof Error ? error.message : "Unknown error",
     };
   }
 };

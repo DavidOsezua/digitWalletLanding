@@ -57,7 +57,33 @@ const App = () => {
   }, []);
 
   const blockedRouter = createBrowserRouter(
-    createRoutesFromElements(<Route path="*" element={<BlockedAccess />} />)
+    createRoutesFromElements(
+      <>
+        {/* Allow auth routes even when blocked */}
+        <Route path="/auth" element={<LoginLayout />}>
+          <Route index element={<Navigate to="/auth/login" replace />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="signup" element={<SignUpPage />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route path="reset-password" element={<ResetPassword />} />
+          <Route path="verify-otp" element={<VerifyOtp />} />
+        </Route>
+
+        {/* Allow dashboard routes even when blocked */}
+        <Route path="/myaccount" element={<DashboardLayout />}>
+          <Route
+            index
+            element={<Navigate to="/myaccount/dashboard" replace />}
+          />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="account" element={<Account />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+
+        {/* All other routes show blocked page */}
+        <Route path="*" element={<BlockedAccess />} />
+      </>
+    )
   );
 
   const router = createBrowserRouter(
