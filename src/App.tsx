@@ -71,9 +71,10 @@ const App = () => {
         </Route>
 
       
-          
+            <Route path="/onboarding" element={<MainLayout />}>
 
           <Route path="/onboarding" element={<Onboarding />} />
+          </Route>
      
         {/* Allow dashboard routes even when blocked */}
         <Route path="/myaccount" element={<DashboardLayout />}>
