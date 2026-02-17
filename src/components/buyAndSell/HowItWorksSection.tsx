@@ -3,7 +3,7 @@ import HowItWorksCard from "./HowItWorksCard";
 interface CardData {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
-  description: string;
+  description?: string;
   currencies?: React.ComponentType<{ className?: string }>[];
 }
 
