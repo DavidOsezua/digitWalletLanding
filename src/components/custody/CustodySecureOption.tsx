@@ -12,7 +12,7 @@ const CustodySecureOption = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end space-y-3 mb-4">
           <h2 className="text-[24px] md:text-[32px] max-w-150 md:leading-16 lg:text-5xl font-semibold tracking-wide text-white ">
-            Secure Custody You Can Trust
+       Custody For You
           </h2>
 
           <div className="max-w-md space-y-3">
@@ -114,7 +114,7 @@ const CustodySecureOption = () => {
           >
             <div className="flex items-start justify-between mb-6">
               <h3 className="text-2xl font-bold text-gray-900">
-                Secure Vault Storage
+                Vault Storage
               </h3>
               <SecureVault />
             </div>

@@ -48,6 +48,7 @@ const AboutUsPage = () => {
           <HowItWorksSection
             badge="Core Value"
             title="What Makes Us Different"
+            variant="about"
             description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
             leftCard={{
               icon: Sell2,
@@ -97,12 +98,13 @@ const AboutUsPage = () => {
           <HowItWorksSection
             badge="Core Value"
             title="What Makes Us Different"
+            variant="about"
             description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
             leftCard={{
               icon: Sell2,
-              title: "Security First",
-              description:
-                "Compliant custody with enterprise-grade protection.",
+              title: "Solution Focused",
+              // description:
+              //   "Compliant custody with enterprise-grade protection.",
               currencies: [Dollar, Euro, Pounds],
             }}
             rightCards={[

@@ -25,8 +25,7 @@ const BuiltFor = () => {
     {
       id: 3,
       title: "High-Net-Worth Investors",
-      description:
-        "Protect significant digital wealth with advanced solutions.",
+      description: "Hold significant digital wealth with advanced solutions.",
       icon: <HighNetWorthInvestors />,
     },
   ];
@@ -66,10 +65,8 @@ const BuiltFor = () => {
               DigitWallet Custody, Designed for All Holders
             </h2>
             <p className="text-white/80 md:text-right text-lg  max-w-xl">
-              Whether you’re an individual, a growing business, or a
-              high-net-worth investor, DigitWallet provides tailored custody
-              solutions to protect your crypto assets without compromising
-              accessibility or control.
+              Create your account, choose a custody plan, transfer your assets,
+              and enjoy peace of mind with DigitWallets and Ledgers features.
             </p>
           </div>
           <Button buttonText="Get Started Now" to="/myaccount" />
@@ -114,8 +111,7 @@ const BuiltFor = () => {
             </h2>
             <p className="text-white/80 md:text-right text-[15px] md:text-lg  max-w-125">
               Create your account, choose a custody plan, transfer your assets,
-              and enjoy peace of mind with Ledger and DigitWallet’s trusted
-              protection.
+              and enjoy peace of mind with DigitWallets and Ledgers features.
             </p>
           </div>
           <Button buttonText="Get Started Now" to="/myaccount" />
@@ -148,8 +144,8 @@ const BuiltFor = () => {
           </h2>
           <p className="text-white/80 text-[15px] md:text-lg  max-w-3xl">
             Don’t leave your crypto security to chance. Let DigitWallet provide
-            the protection and peace of mind your assets deserve. Get Started
-            Today and experience our custody services.
+            the tools and peace of mind your assets deserve.Get Started Today
+            and experience our custody services.
           </p>
           <Button buttonText="Get Started Now" to="/myaccount" />
         </div>

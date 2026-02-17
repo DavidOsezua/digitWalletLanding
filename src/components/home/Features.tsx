@@ -165,7 +165,7 @@ const Features = () => {
                   <Clock className="max-w-6" />
 
                   <p className="text-dark-text text-[10px] md:text-xs leading-tight">
-                    Access to view your funds any time, any
+                    Access to view your funds any time
                   </p>
                 </div>
               </div>

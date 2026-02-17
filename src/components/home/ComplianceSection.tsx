@@ -35,7 +35,7 @@ const ComplianceSection = () => {
               <ComplianceCard
                 icon={Compliance}
                 title="Compliance & Security"
-                description="ensures your transactions and assets meet strict compliance standards."
+                description="Ensures your transactions and assets meet strict compliance standards."
               />
             </div>
           </div>

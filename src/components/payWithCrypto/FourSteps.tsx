@@ -154,11 +154,11 @@ const FourSteps = () => {
               <div className="text-black/59">
                 <div className="space-y-3 text-sm">
                   <p>
-                    Once we will have received your crypto, you will receive a
-                    notification to confirm it
+                    Once we have received your crypto, you will receive a
+                    notification to confirm it.
                   </p>
                   <p>
-                    After that, we'll convert your crypto into the chosen fiat
+                    After that, we’ll convert your crypto into the chosen fiat
                     currency. You will receive a second notification as soon as
                     your bank transfer has been sent.
                   </p>

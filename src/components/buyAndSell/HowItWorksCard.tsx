@@ -1,7 +1,9 @@
 interface HowItWorksCardProps {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
-  description: string;
+  description?: string;
+  center?: boolean;
+  variant?: "default" | "about";
   currencies?: React.ComponentType<{ className?: string }>[];
 }
 
@@ -9,8 +11,12 @@ const HowItWorksCard = ({
   icon: Icon,
   title,
   description,
+  center,
+  variant = "default",
   currencies,
 }: HowItWorksCardProps) => {
+  const isAbout = variant === "about";
+
   return (
     <div className="relative">
       <div className=" relative z-10 max-w-120 mx-auto bg-gradient-blue-2 h-42.5 md:h-52.25 rounded-2xl p-4 md:p-8 shadow-xl flex flex-col  items-center w-full justify-center">
@@ -25,20 +31,33 @@ const HowItWorksCard = ({
           )}
         </div>
 
-        <div className="flex flex-row items-center justify-center gap-4 w-full">
-          <div className="shrink-0">
-            <Icon className="max-w-10 md:max-w-20" />
-          </div>
-
-          <div className="text-left flex-1">
-            <h3 className="text-slate-900 font-semibold text-[16px] md:text-xl mb-2">
+        {isAbout ? (
+          <div className="flex flex-row items-center justify-center gap-6 w-full">
+            <div className="shrink-0">
+              <Icon className="max-w-10 md:max-w-16" />
+            </div>
+            <h3 className="text-slate-900 font-semibold text-[22px] md:text-3xl text-center">
               {title}
             </h3>
-            <p className="text-black/59 text-sm max-w-75.25 mx-auto md:mx-0">
-              {description}
-            </p>
           </div>
-        </div>
+        ) : (
+          <div className="flex flex-row items-center justify-center gap-4 w-full">
+            <div className="shrink-0">
+              <Icon className="max-w-10 md:max-w-20" />
+            </div>
+
+            <div className="text-left flex-1">
+              <h3
+                className={`text-slate-900 font-semibold text-[20px]  mb-2  ${center && "text-center md:text-3xl"}`}
+              >
+                {title}
+              </h3>
+              <p className="text-black/59 text-sm max-w-75.25 mx-auto md:mx-0">
+                {description}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Decorative border effect */}

@@ -17,9 +17,9 @@ const Warning = () => {
             cryptocurrency can fluctuate and capital may be lost, without
             recourse to financial regulators. Fees apply to transactions on
             DigitWallet and tax (including Capital Gains Tax) may be payable on
-            profits.
+            profits. The tax applied on profits depend on the individual
+            circumstances of each client and may be subject to change in future.
           </p>
-
           <p className="text-[16px] md:text-[18px]">
             DigitWallet s.r.o (21437301) with its registered office address:
             Varšavská 715/36, Vinohrady, 120 00 Praha 2, Czech Republic
@@ -27,13 +27,11 @@ const Warning = () => {
             the commercial register, kept by the Municipal Court in Prague,
             Section C, File 401727.
           </p>
-
           <p className="text-[16px] md:text-[18px]">
             Payment services offered in the DigitWallet platform are provided by
             third parties, licensed to operate in all jurisdictions in which
             DigitWallet operates.
           </p>
-
           <p className="text-[16px] md:text-[18px]">
             The availability of the products, features, and services on the
             DigitWallet platform is subject to jurisdictional limitations.
@@ -41,7 +39,6 @@ const Warning = () => {
             on the DigitWallet platform in certain jurisdictions due to
             potential or actual regulatory restrictions.
           </p>
-
           <p className="text-[16px] md:text-[18px]">
             The web content provided by DigitWallet is for educational purposes
             only. The information and tools provided neither are, nor should be
@@ -49,7 +46,6 @@ const Warning = () => {
             recommendation, to buy, sell or hold any digital asset or to open a
             particular account or engage in any specific investment strategy.
           </p>
-
           <p className="text-[16px] md:text-[18px]">
             Digital asset markets are highly volatile and can lead to loss of
             funds.

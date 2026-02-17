@@ -28,13 +28,13 @@ const Mission = () => {
               </h3>
               <p className="text-white text-base md:text-[20px] font-light leading-relaxed">
                 At DigitWallet, our mission is clear: To empower businesses and
-                investors with secure, innovative, and reliable cryptocurrency
-                solutions. We aim to bridge the gap between traditional finance
-                and digital assets, providing institutions with the tools and
-                services they need to thrive in the ever-evolving world of
-                decentralized finance. From crypto custody to prime brokerage,
-                we are committed to building trust in this new financial
-                ecosystem, one secure transaction at a time.
+                investors with innovative cryptocurrency solutions. We aim to
+                bridge the gap between traditional finance and digital assets,
+                providing institutions with the tools and services they need to
+                thrive in the ever-evolving world of decentralised finance. From
+                crypto custody to prime brokerage, we are committed to building
+                trust in this new financial ecosystem, one transaction at a
+                time.
               </p>
             </div>
 
@@ -55,10 +55,10 @@ const Mission = () => {
                 and institutions. We envision a world where businesses of all
                 sizes can seamlessly integrate digital assets into their
                 financial operations, unlocking new opportunities for growth and
-                innovation. We see DigitWallet as the trusted partner that
-                institutions turn to — offering solutions that are not just
-                secure and compliant but also future-proof and tailored to meet
-                the demands of the digital economy.
+                innovation. We see DigitWallet at the forefront of this
+                transformation, offering solutions that are compliant focused
+                but also future-proof and tailored to meet the demands of the
+                digital economy.
               </p>
             </div>
           </div>
@@ -83,16 +83,20 @@ const Mission = () => {
               <p className="md:text-[20px] text-base font-light">
                 Founded by a team of financial experts and blockchain
                 enthusiasts, DigitWallet was created to address the growing need
-                for compliant and reliable cryptocurrency services for
-                individuals and the corporate sectors. We noticed a gap in the
-                market — while digital assets were becoming mainstream,
-                businesses struggled to find trusted platforms that combined
-                security with institutional-grade services. Thus, DigitWallet
-                was born with the goal of revolutionizing how companies and
-                investors manage their digital assets.
+                for compliant cryptocurrency services for individuals and the
+                corporate sectors. We noticed a gap in the market – while
+                digital assets were becoming mainstream, businesses struggled to
+                find trusted platforms that combined robust security with a
+                personalised service. Thus, DigitWallet was born, with the goal
+                of revolutionising how companies and investors manage their
+                digital wealth. Today, we continue to push the boundaries of
+                what’s possible, offering everything from custody and treasury
+                management to crypto-backed loans. Our dedication to innovation
+                ensures that we stay ahead of industry trends and deliver value
+                to our clients, no matter how fast the market evolves.
               </p>
               <p className="md:text-[20px] text-base font-light">
-                Today, we continue to push the boundaries of what's possible,
+                Today, we continue to push the boundaries of what’s possible,
                 offering everything from custody and treasury management to
                 crypto-backed loans. Our dedication to innovation ensures that
                 we stay ahead of industry trends and deliver value to our

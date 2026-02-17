@@ -18,15 +18,14 @@ const JoinUs = () => {
             </h2>
 
             <div className="space-y-4 text-white text-base md:text-[20px] max-w-130">
-              <p>
-                Explore how DigitWalletHub can support your financial goals.
-              </p>
+              <p>Explore how DigitWallet can support your financial goals.</p>
               <p>
                 Send funds to business partners, contractors, or suppliers in
                 crypto while they receive fiat into their bank account
               </p>
               <p>
-                Payouts are processed with a Named IBAN under your business name
+                Pay-ins and Payouts are processed with a Named IBAN under your
+                business name
               </p>
             </div>
 

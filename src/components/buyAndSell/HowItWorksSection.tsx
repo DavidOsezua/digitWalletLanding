@@ -11,6 +11,7 @@ interface HowItWorksSectionProps {
   badge?: string;
   title: string;
   description: string;
+  variant?: "default" | "about";
   leftCard: CardData;
   rightCards: CardData[];
 }
@@ -19,6 +20,7 @@ const HowItWorksSection = ({
   badge = "How it works",
   title,
   description,
+  variant = "default",
   leftCard,
   rightCards,
 }: HowItWorksSectionProps) => {
@@ -45,6 +47,7 @@ const HowItWorksSection = ({
               <HowItWorksCard
                 icon={leftCard.icon}
                 title={leftCard.title}
+                variant={variant}
                 description={leftCard.description}
                 currencies={leftCard.currencies}
               />
@@ -59,6 +62,7 @@ const HowItWorksSection = ({
                   icon={card.icon}
                   title={card.title}
                   description={card.description}
+                  variant={variant}
                   currencies={card.currencies}
                 />
               </div>

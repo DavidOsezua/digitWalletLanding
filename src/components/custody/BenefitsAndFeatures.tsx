@@ -14,7 +14,7 @@ const BenefitsAndFeatures = () => {
       icon: ColdStorage,
       title: "Cold Storage",
       description:
-        "Your assets are stored offline, in cold storage solutions, protecting them from cyberattacks",
+        "Your assets are stored offline, in cold storage solutions, safeguarding them from cyberattacks",
     },
     {
       id: 2,
