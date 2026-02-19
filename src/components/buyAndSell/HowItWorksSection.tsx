@@ -20,7 +20,7 @@ const HowItWorksSection = ({
   badge = "How it works",
   title,
   description,
-  variant = "default",
+  variant = "about",
   leftCard,
   rightCards,
 }: HowItWorksSectionProps) => {

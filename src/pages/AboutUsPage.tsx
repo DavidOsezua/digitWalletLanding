@@ -52,7 +52,7 @@ const AboutUsPage = () => {
             description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
             leftCard={{
               icon: Sell2,
-              title: "Security First",
+              title: "Solution Focused",
               description:
                 "Compliant custody with enterprise-grade protection.",
               currencies: [Dollar, Euro, Pounds],
@@ -103,8 +103,8 @@ const AboutUsPage = () => {
             leftCard={{
               icon: Sell2,
               title: "Solution Focused",
-              // description:
-              //   "Compliant custody with enterprise-grade protection.",
+              description:
+                "Compliant custody with enterprise-grade protection.",
               currencies: [Dollar, Euro, Pounds],
             }}
             rightCards={[
