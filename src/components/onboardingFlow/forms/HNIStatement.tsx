@@ -114,7 +114,7 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                     <FormItem className="mt-2.5">
                       <FormLabel>
                         If yes, please specify your income (as defined above) to
-                        the nearest £100,000 in the last financial year
+                        the nearest £10,000 in the last financial year
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -196,7 +196,8 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                     <FormItem className="mt-2.5 text-xs">
                       <FormLabel>
                         If yes, please specify your net assets (as defined
-                        above) to the nearest £10,000 in the last financial year
+                        above) to the nearest £100,000 in the last financial
+                        year
                       </FormLabel>
                       <FormControl>
                         <Input
