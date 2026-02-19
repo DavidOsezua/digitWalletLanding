@@ -50,7 +50,7 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
                 setSearchParams({ s: "8" });
               }}
               type="button"
-              className="mt-2 bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
+              className="mt-2 bg-primary-300 text-white font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
               style={{
                 background:
                   "linear-gradient(123.04deg, #3A436D 1.64%, #4D698B 98.52%)",
@@ -62,7 +62,7 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
           <div>
             <div className="text-lg">No</div>
             <Button
-              className="mt-2 bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
+              className="mt-2 bg-primary-300 text-white font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
               style={{
                 background:
                   "linear-gradient(123.04deg, #3A436D 1.64%, #4D698B 98.52%)",

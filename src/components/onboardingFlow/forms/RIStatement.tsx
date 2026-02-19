@@ -234,7 +234,7 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                 investments. Doing so could expose you to significant losses.
                 <br />
                 For the purpose of this statement,{" "}
-                <strong>net assets do NOT include:</strong>
+                <strong>net assets do NOT include: </strong>
                 your home (primary residence) your pension (or any pension
                 withdrawals) or any rights under qualifying contracts of
                 insurance.
