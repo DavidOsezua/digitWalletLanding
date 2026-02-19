@@ -156,6 +156,15 @@ export const BusinessForm1: FC<StepProps> = ({ setStep }) => {
                       <Input
                         className="border-[#DAE1EA66]"
                         type="date"
+                        max={
+                          new Date(
+                            new Date().setFullYear(
+                              new Date().getFullYear() - 18,
+                            ),
+                          )
+                            .toISOString()
+                            .split("T")[0]
+                        }
                         {...field}
                       />
                     </FormControl>

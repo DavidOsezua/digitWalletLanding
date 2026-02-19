@@ -74,7 +74,7 @@ const baseSchema = z.object({
         message:
           "Percentage of ownership must be a valid number greater than or equal to 0",
       })
-      .optional()
+      .optional(),
   ),
   ipAddress: z.string().optional(),
   website: z.string().optional(),
@@ -364,7 +364,7 @@ const Onboarding = () => {
   const resolver = useMemo(
     () =>
       stepSchemas[stepIndex] ? zodResolver(stepSchemas[stepIndex]) : undefined,
-    [stepIndex]
+    [stepIndex],
   );
 
   const [step, setStep] = useState(currentStep);
@@ -485,7 +485,7 @@ const Onboarding = () => {
   }, [step]);
   return (
     <div className="py-6 px-4">
-      <div className="rounded-xl p-4 md:p-6 max-w-3xl mx-auto border border-[#49525333] text-white bg-[#161b33]">
+      <div className="rounded-xl p-4 md:p-6 max-w-3xl mx-auto border border-[#49525333] text-white bg-[#161b33] relative overflow-hidden">
         {step === "quiz" ? (
           <Quiz setStep={setStep} />
         ) : (
@@ -518,20 +518,25 @@ const Confirm: FC<StepProps> = ({ setStep }) => {
 
   return (
     <>
-      <h3 className="lg:text-4xl text-2xl text-white">
+      <h3 className="lg:text-4xl text-2xl font-semibold text-white">
         Do you wish to continue with your investment journey?
       </h3>
 
       <p className="mt-4">
         You will now be entered into a 24 hour cooling-off period as required by
-        UK regulations. Please feel free to browse, but during this 24 hour
-        cooling-off period you will not be able to engage with our services.
-        <br />
+        UK regulations.
+        <div className="mt-4" /> Please feel free to browse, but during this 24
+        hour cooling-off period you will not be able to engage with our
+        services.
+        <div className="mt-4" />
         While you wait, we will ask you to complete a few steps. You must
         complete these to enable you to engage with our services.
       </p>
 
-      <Link className="font-semibold mt-2 text-[#6294FF]" to="/ukfinance">
+      <Link
+        className="font-semibold mt-4 text-[#6294FF] inline-block"
+        to="/ukfinance"
+      >
         Click to learn more
       </Link>
 

@@ -30,7 +30,7 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
 
   const investorDetails = {
     "high-net-worth":
-      "High-net-worth Investor: You have an annual salary of £100k or more OR net assets of £250k or more",
+      "High-net-worth Investor: You have an annual income of £100k or more OR net assets of £250k or more",
     sophisticated:
       "Sophisticated Investor: In the last 3 years you have received a certificate from an authorised firm confirming you understand the risks involved with cryptocurrency investments.",
     restricted:
@@ -48,7 +48,7 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
       return;
     }
     try {
-      await save({ ...data, stepCompleted: 9,  });
+      await save({ ...data, stepCompleted: 9 });
       if (investorType === "high-net-worth") {
         setSearchParams({ s: "9" });
         setStep("hni-statement");
@@ -98,7 +98,7 @@ export const BusinessForm8: FC<StepProps> = ({ setStep }) => {
                             High-net-worth Investor
                           </span>
                           <span className="text-sm text-muted-foreground">
-                            You have an annual salary of £100k or more OR net
+                            You have an annual income of £100k or more OR net
                             assets of £250k or more
                           </span>
                         </div>

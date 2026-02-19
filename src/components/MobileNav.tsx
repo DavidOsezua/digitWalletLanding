@@ -115,7 +115,7 @@ const MobileNav = ({
                 {/* User Info */}
                 <div className="flex items-center gap-2">
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-medium"
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-medium shrink-0"
                     style={{
                       backgroundColor: "var(--color-primary-300)",
                       color: "#0F1326",

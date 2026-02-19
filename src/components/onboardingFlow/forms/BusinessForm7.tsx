@@ -30,17 +30,18 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
       >
         Go Back
       </Button>
-      <div className="text-white bg-[#161b33] rounded-xl px-6 pb-6 ">
-        <p className="text-lg font-medium mb-4">
+      <div className="bg-primary-300 absolute inset-0 z-0" />
+      <div className="text-[#0F1326] rounded-xl px-6 pb-6 relative ">
+        <p className="text-lg font-bold mb-4">
           {fullName}, this is a high-risk investment. How would you feel if you
-          lost the money you're about to invest? Take 2 minutes to{" "}
-          <Link to="/risk-summary" className="text-[#6294FF] underline">
-            learn more
+          lost the money you're about to invest? {""}
+          <Link to="/risk-summary" className="text-[#0B58FF] underline">
+            Take 2 minutes to learn more
           </Link>
           .
         </p>
-        <p className="text-sm mb-4">Would you like to proceed?</p>
-        <div className="flex gap-4 justify-start text-sm mb-6">
+        <p className="text-sm font-medium mb-4">Would you like to proceed?</p>
+        <div className="flex gap-4 text-[#0F1326] font-medium justify-start text-sm mb-6">
           <div>
             <div className="text-lg">Yes</div>
             <Button
@@ -50,19 +51,29 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
               }}
               type="button"
               className="mt-2 bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
+              style={{
+                background:
+                  "linear-gradient(123.04deg, #3A436D 1.64%, #4D698B 98.52%)",
+              }}
             >
               Take the assesment
             </Button>
           </div>
           <div>
             <div className="text-lg">No</div>
-            <Button className="mt-2 bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90">
+            <Button
+              className="mt-2 bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors hover:bg-primary-300/90"
+              style={{
+                background:
+                  "linear-gradient(123.04deg, #3A436D 1.64%, #4D698B 98.52%)",
+              }}
+            >
               Close Account
             </Button>
           </div>
         </div>
         <div className="flex justify-end">
-          <Link to="/ukfinance" className="text-[#6294FF] font-regular text-xs">
+          <Link to="/ukfinance" className="text-[#0B58FF] font-regular text-xs">
             Checkout our website
           </Link>
         </div>

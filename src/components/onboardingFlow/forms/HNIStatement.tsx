@@ -50,10 +50,9 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
           <div className="space-y-6 text-sm text-dark-text-100 ">
             <p>
               Please confirm whether you qualify as a high-net-worth investor on
-              the basis that <span className="font-bold">A</span> and
-              <span className="font-bold"> B</span> apply to you
+              the basis that A or B apply to you
             </p>
-            <p>In the last financial year you have:</p>
+            <p>In the last financial year did you have:</p>
 
             {/* A. Annual Income */}
             <div className="space-y-2">
@@ -68,7 +67,8 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                         <span className="font-bold">
                           income of £100,000 or more
                         </span>
-                        ? (Does NOT include any one-off income)
+                        ? Income does <span className="font-bold">NOT</span>{" "}
+                        include any one-off pension withdrawals.
                       </FormLabel>
                       <FormControl>
                         <RadioGroup
@@ -80,8 +80,8 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                             field.value === true
                               ? "yes"
                               : field.value === false
-                              ? "no"
-                              : undefined
+                                ? "no"
+                                : undefined
                           }
                         >
                           <div className="flex items-center space-x-2">
@@ -114,14 +114,17 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                     <FormItem className="mt-2.5">
                       <FormLabel>
                         If yes, please specify your income (as defined above) to
-                        the nearest £10,000 in the last financial year
+                        the nearest £100,000 in the last financial year
                       </FormLabel>
                       <FormControl>
                         <Input
-                          type="number"
+                          type="text"
                           className="border-[#DAE1EA66] w-48"
-                          placeholder="Enter amount"
-                          {...field}
+                          placeholder="Enter here"
+                          onChange={(e) =>
+                            field.onChange(Number(e.target.value))
+                          }
+                          value={field.value || ""}
                         />
                       </FormControl>
                       <FormMessage />
@@ -159,8 +162,8 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                             field.value === true
                               ? "yes"
                               : field.value === false
-                              ? "no"
-                              : undefined
+                                ? "no"
+                                : undefined
                           }
                         >
                           <div className="flex items-center space-x-2">
@@ -193,15 +196,17 @@ export const HNIStatement: FC<StepProps> = ({ setStep }) => {
                     <FormItem className="mt-2.5 text-xs">
                       <FormLabel>
                         If yes, please specify your net assets (as defined
-                        above) to the nearest £10,000 in the last financial
-                        year
+                        above) to the nearest £10,000 in the last financial year
                       </FormLabel>
                       <FormControl>
                         <Input
-                          type="number"
+                          type="text"
                           className="border-[#DAE1EA66] w-48"
-                          placeholder="Enter amount"
-                          {...field}
+                          placeholder="Enter here"
+                          onChange={(e) =>
+                            field.onChange(Number(e.target.value))
+                          }
+                          value={field.value || ""}
                         />
                       </FormControl>
                       <FormMessage />

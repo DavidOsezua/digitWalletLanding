@@ -17,6 +17,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { SignaturePad } from "@/components/SignaturePad";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useSearchParams } from "react-router-dom";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -25,10 +26,12 @@ type StepProps = {
 export const SIStatement: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const [, setSearchParams] = useSearchParams();
 
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 9 });
+      setSearchParams({ s: "9" });
       setStep("statement-result");
     } catch (error) {
       if (error instanceof Error) {
@@ -45,12 +48,7 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
             Sophisticated Investor Statement
           </h3>
           <div className="space-y-6 text-sm text-dark-text-100 ">
-            <p className="">
-              Please confirm whether you qualify as a high-net-worth investor on
-              the basis that <span className="font-bold">A</span> and
-              <span className="font-bold"> B</span> apply to you
-            </p>
-            <p>In the last financial year you have:</p>
+            <p>In the last financial year did you have:</p>
 
             {/* A. Annual Income */}
             <div className="space-y-2">
@@ -77,8 +75,8 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
                             field.value === true
                               ? "yes"
                               : field.value === false
-                              ? "no"
-                              : undefined
+                                ? "no"
+                                : undefined
                           }
                         >
                           <div className="flex items-center space-x-2">
@@ -109,12 +107,12 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
                   render={({ field }) => (
                     <FormItem className="mt-2.5">
                       <FormLabel>
-                        WhaIf yes, what is the name of the authorised firm? 
+                        If yes, what is the name of the authorised firm?
                       </FormLabel>
                       <FormControl>
                         <Input
                           className="border-[#DAE1EA66] w-48"
-                          placeholder="Enter amount"
+                          placeholder="Enter here"
                           {...field}
                         />
                       </FormControl>
@@ -131,7 +129,7 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="inline-block ">
-                      This does not apply to me
+                      <strong>OR, </strong>This does not apply to me
                     </FormLabel>
                     <FormControl>
                       <div className="flex items-center gap-2">
@@ -193,7 +191,10 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
           <div className="mt-6 flex items-center justify-between">
             <Button
               type="button"
-              onClick={() => setStep("business-form-8")}
+              onClick={() => {
+                setSearchParams({ s: "7" });
+                setStep("business-form-7");
+              }}
               variant="outline"
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >

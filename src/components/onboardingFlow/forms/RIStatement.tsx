@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { SignaturePad } from "@/components/SignaturePad";
+import { useSearchParams } from "react-router-dom";
 
 type StepProps = {
   setStep: (step: string) => void;
@@ -24,10 +25,12 @@ type StepProps = {
 export const RIStatement: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const { mutateAsync: save, isPending: isSaving } = useOnboard();
+  const [, setSearchParams] = useSearchParams();
 
   const onSubmit = async (data: Partial<FormSchema>) => {
     try {
       await save({ ...data, stepCompleted: 9 });
+      setSearchParams({ s: "9" });
       setStep("statement-result");
     } catch (error) {
       if (error instanceof Error) {
@@ -46,10 +49,9 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
           <div className="space-y-6 text-sm text-dark-text-100 ">
             <p>
               Please confirm whether you qualify as a restricted investor on the
-              basis that <span className="font-bold">A</span> and{" "}
-              <span className="font-bold">B</span> apply to you.
+              basis that A <span className="font-bold">and</span> B apply to
+              you.
             </p>
-            <p>In the last financial year you have:</p>
 
             {/* A. Annual Income */}
             <div className="space-y-2">
@@ -62,8 +64,9 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                       <FormLabel className="inline-block ">
                         A. In the{" "}
                         <span className="font-bold">past twelve months</span>,
-                        have you invested less than 10% of your net assets in
-                        high-risk investments (as defined below)?
+                        have you invested{" "}
+                        <span className="font-bold">less</span> than 10% of your
+                        net assets in high-risk investments (as defined below)?
                       </FormLabel>
                       <FormControl>
                         <RadioGroup
@@ -75,8 +78,8 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                             field.value === true
                               ? "yes"
                               : field.value === false
-                              ? "no"
-                              : undefined
+                                ? "no"
+                                : undefined
                           }
                         >
                           <div className="flex items-center space-x-2">
@@ -85,15 +88,17 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                               className="text-xs font-normal"
                               htmlFor="yes"
                             >
-                              Yes (I have invested less than 10% of my net
-                              assets)
+                              Yes (I have invested
+                              <span className="font-bold">less</span> than 10%
+                              of my net assets)
                             </Label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="no" id="no" />
                             <Label className="text-xs font-normal" htmlFor="no">
-                              No (I have invested more than 10% of my net
-                              assets)
+                              No (I have invested
+                              <span className="font-bold">more</span> than 10%
+                              of my net assets)
                             </Label>
                           </div>
                         </RadioGroup>
@@ -116,10 +121,13 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          type="number"
+                          type="text"
                           className="border-[#DAE1EA66] w-48"
-                          placeholder="Enter amount"
-                          {...field}
+                          placeholder="Enter here"
+                          onChange={(e) =>
+                            field.onChange(Number(e.target.value))
+                          }
+                          value={field.value || ""}
                         />
                       </FormControl>
                       <FormMessage />
@@ -137,6 +145,7 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                   name="intendsToInvestLessThan10PercentInHighRiskAssets"
                   render={({ field }) => (
                     <FormItem>
+                      <strong>And</strong>
                       <FormLabel className="inline-block ">
                         B.In the
                         <span className="font-bold">
@@ -157,8 +166,8 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                             field.value === true
                               ? "yes"
                               : field.value === false
-                              ? "no"
-                              : undefined
+                                ? "no"
+                                : undefined
                           }
                         >
                           <div className="flex items-center space-x-2">
@@ -167,15 +176,15 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                               className="text-xs font-normal"
                               htmlFor="yes"
                             >
-                              Yes (I intend to invest less than 10% of my net
-                              assets)
+                              Yes (I intend to invest <strong>less</strong> than
+                              10% of my net assets)
                             </Label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="no" id="no" />
                             <Label className="text-xs font-normal" htmlFor="no">
-                              No (I intend to invest more than 10% of my net
-                              assets)
+                              No (I intend to invest <strong>more</strong> than
+                              10% of my net assets)
                             </Label>
                           </div>
                         </RadioGroup>
@@ -198,10 +207,13 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          type="number"
+                          type="text"
                           className="border-[#DAE1EA66] w-48"
-                          placeholder="Enter amount"
-                          {...field}
+                          placeholder="Enter here"
+                          onChange={(e) =>
+                            field.onChange(Number(e.target.value))
+                          }
+                          value={field.value || ""}
                         />
                       </FormControl>
                       <FormMessage />
@@ -221,7 +233,8 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                 should not invest more than 10% of your net assets in high-risk
                 investments. Doing so could expose you to significant losses.
                 <br />
-                For the purpose of this statement, net assets do NOT include:
+                For the purpose of this statement,{" "}
+                <strong>net assets do NOT include:</strong>
                 your home (primary residence) your pension (or any pension
                 withdrawals) or any rights under qualifying contracts of
                 insurance.
@@ -235,9 +248,9 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
                 <br /> I confirm I qualify as a restricted investor on the basis
                 that the following applies to me: Over the last 12 months I have
                 invested the previously mentioned percentage of my net assets in
-                high-risk investments AND in the next 12 months I intend to
-                limit my investment in high-risk investments to less than the
-                previously mentioned percentage of my total net assets.
+                high-risk investments <strong>AND</strong> in the next 12 months
+                I intend to limit my investment in high-risk investments to less
+                than the previously mentioned percentage of my total net assets.
                 <br />{" "}
                 <span className="font-bold">
                   {" "}
@@ -279,7 +292,10 @@ export const RIStatement: FC<StepProps> = ({ setStep }) => {
             <Button
               type="button"
               variant="outline"
-              onClick={() => setStep("business-form-8")}
+              onClick={() => {
+                setStep("business-form-8");
+                setSearchParams({ s: "8" });
+              }}
               className="border-primary-300 border text-primary-300 font-semibold px-8 py-3 rounded-full transition-colors"
             >
               Go Back
