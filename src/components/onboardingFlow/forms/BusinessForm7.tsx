@@ -35,7 +35,7 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
         <p className="text-lg font-bold mb-4">
           {fullName}, this is a high-risk investment. How would you feel if you
           lost the money you're about to invest? {""}
-          <Link to="/risk-summary" className="text-[#0B58FF] underline">
+          <Link to="/riskSummary" className="text-[#0B58FF] underline">
             Take 2 minutes to learn more
           </Link>
           .

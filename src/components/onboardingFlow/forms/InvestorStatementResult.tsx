@@ -25,6 +25,8 @@ const InvestorStatementResult: FC<StepProps> = ({ setStep }) => {
 
     const riPassed =
       values.investorType === "restricted" &&
+      (values?.percentageInvestedInLast12Months ?? 0) <= 10 &&
+      (values.percentageIntendToInvestInNext12Months ?? 0) <= 10 &&
       values.hasInvestedLessThan10PercentInHighRiskAssets !== false &&
       values.intendsToInvestLessThan10PercentInHighRiskAssets !== false;
 
