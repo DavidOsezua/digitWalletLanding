@@ -33,6 +33,7 @@ export const BusinessForm6: FC<StepProps> = ({ setStep }) => {
 
   const onSubmit = async (data: Partial<FormSchema>) => {
     const isValid = await form.trigger(stepFields);
+    console.log("Submitting form with data:", data, "isValid:", isValid);
     if (!isValid) {
       toast.error("Please fill all required fields correctly.");
       return;

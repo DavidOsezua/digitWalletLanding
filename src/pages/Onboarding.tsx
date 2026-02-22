@@ -483,6 +483,7 @@ const Onboarding = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [step]);
+
   return (
     <div className="py-6 px-4">
       <div className="rounded-xl p-4 md:p-6 max-w-3xl mx-auto border border-[#49525333] text-white bg-[#161b33] relative overflow-hidden">

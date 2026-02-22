@@ -1,7 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import { type FC } from "react";
-
-import { Link, useSearchParams } from "react-router";
+import { Link, useNavigate, useSearchParams } from "react-router";
 import type { FormSchema } from "@/pages/Onboarding";
 import { Button } from "@/components/ui/button";
 
@@ -12,11 +11,12 @@ type StepProps = {
 export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
   const form = useFormContext<FormSchema>();
   const [, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const { watch } = form;
   const firstName = watch("undertakerFirstName");
   const lastName = watch("undertakerLastName");
-  const fullName = `${firstName || ""} ${lastName || ""}`.trim() || "User";
+  const fullName = `${firstName || ""} ${lastName || ""}`.trim();
 
   return (
     <>
@@ -26,7 +26,7 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
           setStep("business-form-6");
           setSearchParams({ s: "6" });
         }}
-        className="mb-4"
+        className="mb-4 text-black hover:bg-white/10 relative z-10"
       >
         Go Back
       </Button>
@@ -66,6 +66,9 @@ export const BusinessForm7: FC<StepProps> = ({ setStep }) => {
               style={{
                 background:
                   "linear-gradient(123.04deg, #3A436D 1.64%, #4D698B 98.52%)",
+              }}
+              onClick={() => {
+                navigate("/myaccount/dashboard");
               }}
             >
               Close Account
