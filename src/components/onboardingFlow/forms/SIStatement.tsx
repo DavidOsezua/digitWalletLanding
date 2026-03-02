@@ -48,8 +48,6 @@ export const SIStatement: FC<StepProps> = ({ setStep }) => {
             Sophisticated Investor Statement
           </h3>
           <div className="space-y-6 text-sm text-dark-text-100 ">
-            <p>In the last financial year did you have:</p>
-
             {/* A. Annual Income */}
             <div className="space-y-2">
               <div className="flex items-center space-x-2">

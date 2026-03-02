@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation, useSearchParams } from "react-router";
 import Navbar from "../components/Navbar";
 import DisclaimerBanner from "../components/DisclaimerBanner";
 import Footer from "../components/home/Footer";
@@ -7,6 +7,15 @@ import MainFooter from "../components/MainFooter";
 import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+
+  // Hide footer on RiskSummary page and onboarding step 7 (BusinessForm7)
+  const isRiskSummaryPage = location.pathname === "/riskSummary";
+  const isOnboardingStep7 =
+    location.pathname === "/onboarding" && searchParams.get("s") === "7";
+  const hideFooter = isRiskSummaryPage || isOnboardingStep7;
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#0F1326" }}>
       <ScrollToTop />
@@ -21,12 +30,12 @@ const MainLayout = () => {
         <Outlet />
       </main>
 
-      <MainFooter />
+      {!hideFooter && <MainFooter />}
       {/* Warning Component */}
-      <Warning />
+      {!hideFooter && <Warning />}
 
       {/* Footer */}
-      <Footer />
+      {!hideFooter && <Footer />}
     </div>
   );
 };
