@@ -1,4 +1,4 @@
-import { onboard } from "@/services/OnboardingService";
+import { onboard, startOnboarding } from "@/services/OnboardingService";
 import { updateProfile } from "@/services/ProfileService";
 import { submitQuiz } from "@/services/QuizService";
 import { useQuizStore } from "@/store/quizStore";
@@ -13,6 +13,12 @@ export const useOnboard = () => {
     onSuccess: () => {
       queryClient.refetchQueries({ queryKey: ["user"] });
     },
+  });
+};
+
+export const useStartOnboarding = () => {
+  return useMutation({
+    mutationFn: startOnboarding,
   });
 };
 

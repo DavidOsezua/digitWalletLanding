@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/purity */
 import { Button } from "@/components/ui/button";
+import { useGetUser } from "@/hooks/useQueries";
 import { useAuthStore } from "@/store/authStore";
 import { Mail } from "lucide-react";
 import { useMemo } from "react";
@@ -7,7 +8,8 @@ import { useNavigate } from "react-router";
 
 const Dashboard = () => {
   const { user } = useAuthStore();
-  const isFirstTimeOnboarding = !user?.onboarding;
+  useGetUser();
+  const isFirstTimeOnboarding = user?.onboardingStartedAt === null;
   const navigate = useNavigate();
   const elapsedTime = useMemo(() => {
     if (!user?.lastAttemptedAt) return 0;
@@ -83,11 +85,9 @@ const Dashboard = () => {
                   navigate("/onboarding");
                   return;
                 }
-                navigate(
-                  `/onboarding?s=${
-                    (user?.onboarding?.stepCompleted as number) + 1
-                  }`
-                );
+                window.location.href = `/onboarding?s=${
+                  ((user?.onboarding?.stepCompleted as number) || 0) + 1
+                }`;
               }}
               className="bg-primary-300 hover:bg-primary-300/90 text-sm text-dark-text rounded-full mt-6 px-6"
             >

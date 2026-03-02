@@ -6,11 +6,11 @@ import { apiInstance } from "./api";
 import axios from "axios";
 
 export const onboard = async (
-  credentials: OnboardingCredentials
+  credentials: OnboardingCredentials,
 ): Promise<OnboardingResponse> => {
   const response = await apiInstance.post<OnboardingResponse>(
     "/user/onboard",
-    credentials
+    credentials,
   );
   return response.data;
 };
@@ -22,5 +22,12 @@ export const getIpAdress = async (): Promise<{ ip: string }> => {
       console.error(error);
       throw error;
     });
+  return response.data;
+};
+
+export const startOnboarding = async (): Promise<{ message: string }> => {
+  const response = await apiInstance.post<{ message: string }>(
+    "/user/start-onboarding",
+  );
   return response.data;
 };

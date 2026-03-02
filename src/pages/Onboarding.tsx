@@ -17,6 +17,7 @@ import { SIStatement } from "@/components/onboardingFlow/forms/SIStatement";
 import { Quiz } from "@/components/onboardingFlow/forms/Quiz";
 import { useAuthStore } from "@/store/authStore";
 import { useGetIp, useGetUser } from "@/hooks/useQueries";
+import { useStartOnboarding } from "@/hooks/useMutations";
 import InvestorStatementResult from "@/components/onboardingFlow/forms/InvestorStatementResult";
 
 type StepProps = {
@@ -516,6 +517,17 @@ const Onboarding = () => {
 const Confirm: FC<StepProps> = ({ setStep }) => {
   const navigate = useNavigate();
   const [, setSearchParams] = useSearchParams();
+  const { mutateAsync: startOnboarding, isPending } = useStartOnboarding();
+
+  const handleNext = async () => {
+    try {
+      await startOnboarding();
+      setStep("business-form-1");
+      setSearchParams({ s: "1" });
+    } catch (error) {
+      console.error("Failed to start onboarding:", error);
+    }
+  };
 
   return (
     <>
@@ -549,13 +561,11 @@ const Confirm: FC<StepProps> = ({ setStep }) => {
           Go Back
         </button>
         <button
-          onClick={() => {
-            setStep("business-form-1");
-            setSearchParams({ s: "1" });
-          }}
-          className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors"
+          onClick={handleNext}
+          disabled={isPending}
+          className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors disabled:opacity-50"
         >
-          Next
+          {isPending ? "Loading..." : "Next"}
         </button>
       </div>
     </>

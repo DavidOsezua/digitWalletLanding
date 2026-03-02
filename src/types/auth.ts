@@ -10,6 +10,7 @@ export interface User {
   lastAttemptedAt: string | null;
   totalAttempts: number;
   onboarding: OnboardingResponse["onboarding"] | null;
+  onboardingStartedAt: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -34,5 +35,3 @@ export interface AuthResponse {
 export interface SignUpResponse {
   message: string;
 }
-
-
