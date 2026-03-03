@@ -1,5 +1,4 @@
 import Banner from "@/components/Banner";
-import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 import RiskSummaryContent from "@/components/riskSummary/RiskSummaryContent";
 
 const RiskSummayPage = () => {
@@ -10,7 +9,6 @@ const RiskSummayPage = () => {
         descriptiton="Due to the potential for losses, the Financial Conduct Authority (FCA) considers this investment to be high risk."
       />
       <RiskSummaryContent />
-      <DisclaimerComponent />
     </div>
   );
 };
