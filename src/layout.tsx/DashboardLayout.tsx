@@ -22,7 +22,7 @@ const DashboardLayout = () => {
   const { token } = useAuthStore();
 
   // Hide footer on RiskSummary page and onboarding step 7 (BusinessForm7)
-  const isRiskSummaryPage = location.pathname === "/riskSummary";
+  const isRiskSummaryPage = location.pathname === "/risksummary";
   const isOnboardingStep7 =
     location.pathname === "/onboarding" && searchParams.get("s") === "7";
   const hideFooter = isRiskSummaryPage || isOnboardingStep7;
