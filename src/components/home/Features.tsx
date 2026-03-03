@@ -23,7 +23,7 @@ const Features = () => {
       </h1> */}
 
       <div className="max-w-250 mx-auto">
-        <img src="/DigitWallet.png" alt="" className="w-full h-auto" />
+        <img src="/digitWallet.png" alt="" className="w-full h-auto" />
       </div>
       <div className="max-w-7xl mx-auto pt-4 relative z-10">
         {/* Section Header */}
