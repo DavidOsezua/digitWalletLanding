@@ -1,6 +1,5 @@
 import Banner from "@/components/Banner";
 import ComplianceContent from "@/components/compliance/ComplianceContent";
-import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 
 const CompliancePage = () => {
   return (
@@ -10,7 +9,6 @@ const CompliancePage = () => {
         descriptiton="This is DigitWallet's approach to anti-money laundering (AML) and know-your-customer (KYC) processes"
       />
       <ComplianceContent />
-      <DisclaimerComponent />
     </div>
   );
 };

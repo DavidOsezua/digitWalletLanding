@@ -5,6 +5,7 @@ import Footer from "../components/home/Footer";
 import Warning from "../components/Warning";
 import MainFooter from "../components/MainFooter";
 import ScrollToTop from "../components/ScrollToTop";
+import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const MainLayout = () => {
         <Outlet />
       </main>
 
+      {!hideFooter && <DisclaimerComponent />}
       {!hideFooter && <MainFooter />}
       {/* Warning Component */}
       {!hideFooter && <Warning />}

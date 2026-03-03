@@ -1,5 +1,4 @@
 import Banner from "@/components/Banner";
-import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 import TermsAndConditionContent from "@/components/termandcondition/TermsAndConditionContent";
 
 const TermsOfUsePage = () => {
@@ -11,7 +10,6 @@ const TermsOfUsePage = () => {
         descriptiton2="Welcome to DigitWallet. These Terms of Use (“Terms”) govern your access to and use of the services provided by DigitWallet, including cryptocurrency exchange, FX solutions, and other associated services (collectively, the “Services”). By accessing or using the Services, you agree to comply with and be bound by these Terms.​"
       />
       <TermsAndConditionContent />
-      <DisclaimerComponent />
     </div>
   );
 };

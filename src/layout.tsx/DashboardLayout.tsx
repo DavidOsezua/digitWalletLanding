@@ -14,6 +14,7 @@ import AppSidebar from "@/components/DashboardSidebar";
 import { useAuthStore } from "@/store/authStore";
 import { useEffect } from "react";
 import ScrollToTop from "../components/ScrollToTop";
+import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 
 const DashboardLayout = () => {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const DashboardLayout = () => {
           <Outlet />
         </main>
       </SidebarProvider>
-
+      {!hideFooter && <DisclaimerComponent />}
       {!hideFooter && <MainFooter />}
       {!hideFooter && <Warning />}
       {!hideFooter && <Footer />}

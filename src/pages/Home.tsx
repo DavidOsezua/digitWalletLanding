@@ -26,7 +26,6 @@ const Home = () => {
       <OnboardingSteps />
       <FAQSection />
       <DigitalFinance />
-      <DisclaimerComponent />
     </div>
   );
 };

@@ -7,7 +7,6 @@ const ContactUsPage = () => {
     <div>
       <Banner title="Contact Us" />
       <PartnerWithUs />
-      <DisclaimerComponent />
     </div>
   );
 };

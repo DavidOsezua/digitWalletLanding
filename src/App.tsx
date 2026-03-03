@@ -70,12 +70,10 @@ const App = () => {
           <Route path="verify-otp" element={<VerifyOtp />} />
         </Route>
 
-      
-            <Route path="/onboarding" element={<MainLayout />}>
-
+        <Route path="/onboarding" element={<MainLayout />}>
           <Route path="/onboarding" element={<Onboarding />} />
-          </Route>
-     
+        </Route>
+
         {/* Allow dashboard routes even when blocked */}
         <Route path="/myaccount" element={<DashboardLayout />}>
           <Route
