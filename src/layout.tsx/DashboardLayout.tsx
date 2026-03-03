@@ -1,4 +1,9 @@
-import { Outlet, useNavigate } from "react-router";
+import {
+  Outlet,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router";
 import Navbar from "../components/Navbar";
 import DisclaimerBanner from "../components/DisclaimerBanner";
 import Footer from "../components/home/Footer";
@@ -12,7 +17,16 @@ import ScrollToTop from "../components/ScrollToTop";
 
 const DashboardLayout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
   const { token } = useAuthStore();
+
+  // Hide footer on RiskSummary page and onboarding step 7 (BusinessForm7)
+  const isRiskSummaryPage = location.pathname === "/riskSummary";
+  const isOnboardingStep7 =
+    location.pathname === "/onboarding" && searchParams.get("s") === "7";
+  const hideFooter = isRiskSummaryPage || isOnboardingStep7;
+
   useEffect(() => {
     if (!token) {
       navigate("/auth");
@@ -36,9 +50,9 @@ const DashboardLayout = () => {
         </main>
       </SidebarProvider>
 
-      <MainFooter />
-      <Warning />
-      <Footer />
+      {!hideFooter && <MainFooter />}
+      {!hideFooter && <Warning />}
+      {!hideFooter && <Footer />}
     </div>
   );
 };
