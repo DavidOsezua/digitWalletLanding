@@ -3,7 +3,6 @@ import Features from "../components/home/Features";
 import TailoredSection from "../components/home/TailoredSection";
 import FAQSection from "../components/home/FAQSection";
 import DigitalFinance from "../components/home/DigitalFinance";
-import DisclaimerComponent from "../components/home/DisclaimerComponent";
 
 import OnboardingSteps from "../components/home/OnboardingSteps";
 import ComplianceSection from "../components/home/ComplianceSection";
