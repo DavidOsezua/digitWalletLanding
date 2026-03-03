@@ -37,9 +37,8 @@ const RiskSummaryContent = () => {
           </h2>
           <div className=" text-gray-300 leading-relaxed">
             <p className="text-sm md:text-[20px] font-light">
-              The Financial Ombudsman Service (FOS) will not be able to consider
-              complaints related to this firm or protection scheme. Learn more
-              about FOS protection{" "}
+              The Financial Service Compensation Scheme (FSCS) doesn’t protect this type of investment because it’s not a ‘specified investment’ under the UK regulatory regime – in other words, this type of investment isn’t recognised as the sort of investment that the FSCS can protect. Learn more by using the FSCS investment protection checker.
+
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,8 +50,7 @@ const RiskSummaryContent = () => {
               .
             </p>
             <p className="text-sm md:text-[20px] font-light">
-              The Financial Conduct Authority (FCA) will not be able to protect
-              consumers relating to the firm. Learn more about FOS protection{" "}
+          The Financial Ombudsman Service (FOS) will not be able to consider complaints related to this firm. Learn more about FOS protection
               <a
                 target="_blank"
                 rel="noopener noreferrer"
