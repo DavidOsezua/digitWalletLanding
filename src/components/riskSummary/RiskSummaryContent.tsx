@@ -5,8 +5,12 @@ const RiskSummaryContent = () => {
         What are the key risks?
       </h2>
       {/* Reading Time */}
-      <p className="text-gray-400 text-sm mb-3">
+      <p className="text-white text-lg font-bold mb-1">
         Estimated reading time: 2 min.
+      </p>
+      <p className="mb-3 text-gray-300 text-sm md:text-[20px] ">
+        Due to the potential for losses, the Financial Conduct Authority (FCA)
+        considers this investment to be high risk.
       </p>
 
       {/* Risk Sections */}
@@ -42,14 +46,15 @@ const RiskSummaryContent = () => {
               under the UK regulatory regime – in other words, this type of
               investment isn’t recognised as the sort of investment that the
               FSCS can protect. Learn more by using the FSCS investment
-              protection checker 
+              protection checker
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.fscs.org.uk/check/investment-protection-checker/"
                 className="text-primary-300 hover:underline"
               >
-               {" "} here
+                {" "}
+                here
               </a>
               .
             </p>
@@ -62,7 +67,8 @@ const RiskSummaryContent = () => {
                 href="https://www.financial-ombudsman.org.uk/consumers"
                 className="text-primary-300 hover:underline"
               >
-                {" "}here
+                {" "}
+                here
               </a>
               .
             </p>
@@ -96,14 +102,12 @@ const RiskSummaryContent = () => {
           </h2>
           <div className=" text-gray-300 leading-relaxed">
             <p className="text-sm md:text-[20px] font-light">
-              The performance of most cryptoassets can be highly volatile, with
-              their value dropping as quickly as it can rise. You should be
-              prepared to lose all the money you invest in cryptoassets.
+              Investments in cryptoassets can be complex, making it difficult to
+              understand the risks associated with the investment.
             </p>
             <p className="text-sm md:text-[20px] font-light">
-              The cryptoasset market is largely unregulated. There is a risk of
-              losing money or any cryptoassets you purchase due to risks such as
-              cyber-attacks, financial crime and firm failure.
+              You should do your own research before investing. If something
+              sounds too good to be true, it probably is.
             </p>
           </div>
         </section>
@@ -132,7 +136,7 @@ const RiskSummaryContent = () => {
               </a>
               .
             </p>
-            <p className="text-sm md:text-[20px] font-light">
+            <p className="text-sm md:text-[20px] font-bold">
               If you are interested in learning more about how to protect
               yourself, visit the FCA's website{" "}
               <a
@@ -145,7 +149,7 @@ const RiskSummaryContent = () => {
               </a>
               .
             </p>
-            <p className="text-sm md:text-[20px] font-light">
+            <p className="text-sm md:text-[20px] font-bold">
               For further information about cryptoassets, visit the FCA's
               website{" "}
               <a
