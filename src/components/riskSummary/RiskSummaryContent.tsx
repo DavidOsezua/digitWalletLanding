@@ -5,10 +5,10 @@ const RiskSummaryContent = () => {
         What are the key risks?
       </h2>
       {/* Reading Time */}
-      <p className="text-white text-lg font-bold mb-1">
+      <p className="text-white text-lg font-medium mb-1">
         Estimated reading time: 2 min.
       </p>
-      <p className="mb-3 text-gray-300 text-sm md:text-[20px] ">
+      <p className="mb-3 text-[#F2F2F2] text-sm md:text-[20px] ">
         Due to the potential for losses, the Financial Conduct Authority (FCA)
         considers this investment to be high risk.
       </p>
@@ -20,7 +20,7 @@ const RiskSummaryContent = () => {
           <h2 className="text-base md:text-[20px] font-semibold mb-2">
             1. You could lose all the money you invest
           </h2>
-          <div className=" text-gray-300 leading-relaxed">
+          <div className=" text-[#F2F2F2] leading-relaxed">
             <p className="text-sm md:text-[20px] font-light">
               The performance of most cryptoassets can be highly volatile, with
               their value dropping as quickly as it can rise. You should be
@@ -39,7 +39,7 @@ const RiskSummaryContent = () => {
           <h2 className="text-base md:text-[20px] font-semibold mb-2">
             2. You should not expect to be protected if something goes wrong
           </h2>
-          <div className=" text-gray-300 leading-relaxed">
+          <div className=" text-[#F2F2F2] leading-relaxed">
             <p className="text-sm md:text-[20px] font-light">
               The Financial Service Compensation Scheme (FSCS) doesn’t protect
               this type of investment because it’s not a ‘specified investment’
@@ -80,7 +80,7 @@ const RiskSummaryContent = () => {
           <h2 className="text-base md:text-[20px] font-semibold mb-2">
             3. You may not be able to sell your investment when you want to
           </h2>
-          <div className=" text-gray-300 leading-relaxed">
+          <div className=" text-[#F2F2F2] leading-relaxed">
             <p className="text-sm md:text-[20px] font-light">
               There is no guarantee that investments in cryptoassets can be
               easily sold at any given time. The ability to sell a cryptoasset
@@ -100,7 +100,7 @@ const RiskSummaryContent = () => {
           <h2 className="text-base md:text-[20px] font-semibold mb-2">
             4. Cryptoassets investments can be complex
           </h2>
-          <div className=" text-gray-300 leading-relaxed">
+          <div className=" text-[#F2F2F2] leading-relaxed">
             <p className="text-sm md:text-[20px] font-light">
               Investments in cryptoassets can be complex, making it difficult to
               understand the risks associated with the investment.
@@ -117,7 +117,7 @@ const RiskSummaryContent = () => {
           <h2 className="text-base md:text-[20px] font-semibold mb-2">
             5. Don't put all your eggs in one basket
           </h2>
-          <div className=" text-gray-300 leading-relaxed">
+          <div className=" text-[#F2F2F2] leading-relaxed">
             <p className="text-sm md:text-[20px] font-light">
               Putting all your money into a single type of investment is risky.
               Spreading your money across different investments makes you less
