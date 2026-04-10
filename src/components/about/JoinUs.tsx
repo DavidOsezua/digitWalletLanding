@@ -36,11 +36,11 @@ const JoinUs = () => {
           {/* Right Side - Invoice Dashboard Card */}
           {isMobile ? (
             <div className="max-w-100 mx-auto">
-              <img src="/flag.webp" alt="" />
+              <img src="/joinUs.png" alt="" />
             </div>
           ) : (
             <div className="max-w-100 mx-auto">
-              <img src="/joinUs.webp" alt="" />
+              <img src="/joinUs.png" alt="" />
             </div>
           )}
         </div>

@@ -52,12 +52,6 @@ const TransparentPricingDesktop = () => {
       <RightArrow className="absolute max-w-27 top-[50%] right-[8%] -translate-y-1/2 hidden md:block" />
       <RightArrow className="absolute max-w-27 bottom-[5%] left-[50%] -translate-x-1/2 hidden md:block" />
 
-      <div className="text-white absolute top-[10%] left-15">
-        <p className="max-w-137.5 w-full text-[20px]">
-          We keep our fees simple and upfront — no hidden charges, just fair
-          rates for every transaction.
-        </p>
-      </div>
     </div>
   );
 };

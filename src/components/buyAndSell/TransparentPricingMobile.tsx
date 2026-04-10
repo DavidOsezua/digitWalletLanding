@@ -9,12 +9,12 @@ const TransparentPricingMobile = () => {
       {/* MOBILE LAYOUT */}
       <div className="py-4 md:hidden ">
         {/* First Text */}
-        <div className="text-white mb-6">
+        {/* <div className="text-white mb-6">
           <p className="text-base leading-relaxed">
             We keep our fees simple and upfront — no hidden charges, just fair
             rates for every transaction.
           </p>
-        </div>
+        </div> */}
 
         <div className="relative  sm:min-h-150">
           {/* Background Image */}

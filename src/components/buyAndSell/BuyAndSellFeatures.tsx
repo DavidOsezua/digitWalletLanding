@@ -44,11 +44,9 @@ const BuyAndSellFeatures = () => {
           {/* Same-day Settlement Card - Spans 2 columns */}
           <div className="bg-gradient-blue-2 relative rounded-2xl p-6 flex flex-col lg:col-span-2 overflow-hidden">
             <div className="flex flex-col justify-center gap-12 mb-auto z-10">
-              <Settlement />
-
-              <h3 className="text-gray-900 font-semibold text-lg mb-4">
-                Same-day settlement
-              </h3>
+              <div className="">
+                <img src="/Card.png" alt="" className="max-w-40 h-auto" />
+              </div>
             </div>
             <div className="absolute max-w-129 -right-20 -bottom-20">
               <img src="/world.png" alt="w-full h-auto" />
