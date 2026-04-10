@@ -45,6 +45,7 @@ const Warning = () => {
             construed as, an offer, or a solicitation of an offer, or a
             recommendation, to buy, sell or hold any digital asset or to open a
             particular account or engage in any specific investment strategy.
+          
           </p>
           <p className="text-[16px] md:text-[18px]">
             Digital asset markets are highly volatile and can lead to loss of

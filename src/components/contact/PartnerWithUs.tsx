@@ -87,8 +87,7 @@ const PartnerWithUs = () => {
             </h2>
 
             <p className="text-gray-300 text-base md:text-lg">
-              Have a question, need support, or want to explore partnership
-              opportunities? We're here to help
+              Interested in accepting crypto for your company?
             </p>
           </div>
 
@@ -114,8 +113,7 @@ const PartnerWithUs = () => {
                     Business Inquiries
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    Interested in accepting crypto or custody solutions for your
-                    company?
+                   For help with your account or crypto transactions.
                   </p>
                   <p className="text-white text-sm">
                     Email:{" "}
@@ -168,7 +166,7 @@ const PartnerWithUs = () => {
                     Business Inquiries
                   </h3>
                   <p className="text-gray-400 text-sm">
-                     Interested in partnering with DigitWallet or utilizing our services?
+                    Interested in accepting crypto for your company?
                   </p>
                   <p className="text-white text-sm">
                     Email:{" "}

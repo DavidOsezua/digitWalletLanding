@@ -25,8 +25,8 @@ const OnboardingStepsMobile = () => {
                   </h3>
 
                   <p className="text-white/74 text-sm  leading-relaxed">
-                    Sign up today and follow our onboarding flow to provide your
-                    KYC information. Get started today — minimize complexity.
+                    Sign up and follow our onboarding flow to provide your KYC
+                    information.Get started.
                   </p>
                 </div>
               </div>

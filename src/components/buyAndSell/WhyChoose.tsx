@@ -22,14 +22,13 @@ const WhyChoose = () => {
     {
       id: 3,
       title: "24/7 Support",
-      description: "Complete transactions outside of traditional banking hours",
+      description: "Our dedicated is here to support you",
       icon: <Support247 />,
     },
     {
       id: 4,
       title: "Scalable",
-      description:
-        "Whether you're converting small amounts or large, our platform is designed to handle it all",
+      description: "Convert amounts that suit your needs",
       icon: <Scalable />,
     },
   ];
@@ -78,14 +77,19 @@ const WhyChoose = () => {
           ))}
         </div>
 
+        <p className="my-8 md:text-[20px] font-bold text-white">
+          References to speed and scalability are illustrative only and not
+          guaranteed. Actual performance may vary depending on system demand,
+          technical factors, and external conditions, and services may not
+          always operate at the stated levels.
+        </p>
         {/* Call to Action Section */}
         <div className="space-y-4">
           <h2 className="text-white text-[24px] md:text-[40px] font-medium leading-tight ">
             Ready to Make Your Crypto Work for You?
           </h2>
           <p className="text-white/80 text-[14px] md:text-lg  max-w-3xl">
-            Experience fiat-crypto conversions with DigitWallet. Sign up today
-            to unlock the full potential of your digital assets.
+            Experience fiat-crypto conversions with DigitWallet.
           </p>
           <Button buttonText="Get Started Now" to="/myaccount" />
         </div>

@@ -3,9 +3,7 @@ import Features from "../components/home/Features";
 import TailoredSection from "../components/home/TailoredSection";
 import FAQSection from "../components/home/FAQSection";
 import DigitalFinance from "../components/home/DigitalFinance";
-
 import OnboardingSteps from "../components/home/OnboardingSteps";
-import ComplianceSection from "../components/home/ComplianceSection";
 import LogoTicker from "../components/home/LogoTicker";
 
 const Home = () => {
@@ -20,7 +18,7 @@ const Home = () => {
       <Hero />
       <Features />
       <TailoredSection />
-      <ComplianceSection />
+      {/* <ComplianceSection /> */}
       <LogoTicker />
       <OnboardingSteps />
       <FAQSection />

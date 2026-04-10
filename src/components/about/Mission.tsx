@@ -31,10 +31,7 @@ const Mission = () => {
                 investors with innovative cryptocurrency solutions. We aim to
                 bridge the gap between traditional finance and digital assets,
                 providing institutions with the tools and services they need to
-                thrive in the ever-evolving world of decentralised finance. From
-                crypto custody to prime brokerage, we are committed to building
-                trust in this new financial ecosystem, one transaction at a
-                time.
+                thrive in the ever-evolving world of decentralised finance.
               </p>
             </div>
 
@@ -53,19 +50,15 @@ const Mission = () => {
                 Our vision is to become a global leader in the cryptocurrency
                 and DeFi space, shaping the future of finance for corporations
                 and institutions. We envision a world where businesses of all
-                sizes can seamlessly integrate digital assets into their
-                financial operations, unlocking new opportunities for growth and
-                innovation. We see DigitWallet at the forefront of this
-                transformation, offering solutions that are compliant focused
-                but also future-proof and tailored to meet the demands of the
-                digital economy.
+                sizes can integrate digital assets into their financial
+                operations.
               </p>
             </div>
           </div>
         </div>
 
         {/* Our Story Section */}
-        <div className="space-y-4 md:space-y-6">
+        {/* <div className="space-y-4 md:space-y-6">
           <h2 className="text-3xl md:text-4xl font-semibold text-white ">
             Our Story
           </h2>
@@ -104,7 +97,7 @@ const Mission = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

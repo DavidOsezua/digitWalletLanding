@@ -14,22 +14,34 @@ const FAQSection = () => {
     {
       question: "How do I trade?",
       answer:
-        "You have the option of trading and transactiong via our online platform or you can execute your transcations with your dedicated account manager via our secure channels.",
+        "You have the option of trading and transacting via our online platform or you can execute your transactions with your dedicated account manager.",
     },
     {
       question: "Can I accept crypto as a business?",
       answer:
-        "Yes, businesses can accept crypto payments and receive fiat payouts. Our platform supports seamless crypto-to-fiat conversion with compliance and settlement tools tailored for merchants",
-    },
-    {
-      question: "How long do payouts take ?",
-      answer:
-        "Payouts typically are processed within minutes, depending on the currency and destination. Real-time tracking is available in your dashboard",
+        "Yes, businesses can accept crypto payments and receive fiat payouts. Our platform supports crypto-to-fiat conversion.",
     },
     {
       question: "Is KYC required?",
-      answer:
-        "Yes, completing KYC is required to comply with regulatory standards and ensure secure transactions for all users.",
+      answer: `Signing up for a DigitWallet account:
+
+- Open the DigitWallet website, and choose 'Sign up'.
+
+- Enter your email and choose a strong password.
+
+- Confirm your email address.
+
+- Complete your identity verification.
+
+New users must undergo a mandatory 24-hour cool-off period starting from the moment they complete their Identity Verification. During this period, interaction with our services is restricted, although you can complete the required assessments.
+
+- Fill out an Investor Categorisation.
+
+During this stage, we will ask our users to specify their investor type — sophisticated (experienced), high net worth, or restricted investor. Additionally, we will gather any necessary information to confirm their investor type, such as the proportion of their assets invested and assets they intend to invest in higher-risk products (like cryptoassets) in relation to their overall net assets. This FCA-established categorisation enables users to take more financially sound investment decisions. You need to successfully complete the Investor Categorisation to proceed with the Appropriateness Assessment. You have the opportunity to retake the Investor Categorisation until you successfully complete it.
+
+- Complete an Appropriateness Assessment.
+
+We will ask our users to complete a set of multiple-choice questions, focused on general knowledge about crypto trading, to assess users' awareness of the risks involved in cryptoassets and cryptoasset-derived products and services. Required by the FCA, this will help verify that you make informed and proportionate investment decisions. If you do not successfully complete an Appropriateness Assessment, you can retake it immediately. If you do not pass on the second attempt, you will be able to try again after 24 hours. If you do not pass on the third attempt you will not be able to continue.`,
     },
   ];
 
@@ -86,7 +98,7 @@ const FAQSection = () => {
                   {/* Answer */}
                   {openIndex === index && (
                     <div className="px-6 pb-5">
-                      <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
+                      <p className="text-gray-300 text-sm lg:text-base leading-relaxed whitespace-pre-line">
                         {faq.answer}
                       </p>
                     </div>

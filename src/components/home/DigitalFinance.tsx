@@ -2,42 +2,31 @@ import { NavLink } from "react-router";
 
 const DigitalFinance = () => {
   return (
-    <div className=" text-white py-4 md:py-8 px-8">
+    <div className=" text-white py-4 md:pt-8 px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <img src="/digitalFinance.png" alt="" />
           </div>
 
           {/* Right Side - Content */}
           <div className="space-y-2 md:space-y-4">
-            <h1 className="text-[28px] lg:text-5xl font-[400px] tracking-wide">
-              Start Your{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
-                }}
-              >
-                Digital Finance{" "}
-              </span>
-              Journey Today
-            </h1>
-
+          
             <div className="space-y-3 md:space-y-6">
-              <div className="  flex flex-col md:flex-row md:justify-between md:items-center gap-2 text-gray-300">
-                <span className="text-lg">24/7 Customer Support</span>
+              <div className="  flex flex-col   gap-4 text-gray-300">
+                <span className="text-lg md:text-[32px] tracking-wider ">24/7 Customer Support</span>
 
                 <NavLink
                   to="/myaccount"
-                  className="bg-primary-300 text-slate-900 font-semibold px-8 py-3 rounded-full transition-colors inline-block text-center"
+                  className="bg-primary-300 text-slate-900 max-w-50 font-semibold px-8 py-3 rounded-full transition-colors inline-block text-center"
                 >
                   Get Started
                 </NavLink>
               </div>
 
-              <div className="w-full bg-gradient-card-2 h-px"></div>
+              {/* <div className="w-full bg-gradient-card-2 h-px"></div> */}
+
+            
 
               {/* <p className="text-gray-400 text-sm">
                 Join others who trust DigitalWallet to power their crypto

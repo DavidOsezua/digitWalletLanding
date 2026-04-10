@@ -63,6 +63,7 @@ const SolutionsLayout = ({ children }: { children: React.ReactNode }) => {
             {children}
 
             <div className="bg-bg-body pt-8">
+              <DisclaimerComponent/>
               <MainFooter />
               <Warning />
               <Footer />

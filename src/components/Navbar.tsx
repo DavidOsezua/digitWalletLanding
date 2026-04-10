@@ -23,9 +23,9 @@ const Navbar = () => {
 
   const solutionsLinks = [
     { name: "Buy and Sell", path: "/buyandsell" },
-    { name: "Custody", path: "/custody" },
-    { name: "Crypto Payment Gateway", path: "/cryptogateway" },
-    { name: "Pay With Crypto", path: "/paywithcrypto" },
+    // { name: "Custody", path: "/custody" },
+    // { name: "Crypto Payment Gateway", path: "/cryptogateway" },
+    // { name: "Pay With Crypto", path: "/paywithcrypto" },
   ];
 
   const toggleMobileMenu = () => {

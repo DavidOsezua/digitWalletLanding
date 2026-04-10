@@ -36,32 +36,34 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-2 md:space-y-4"
+            className="space-y-2 md:space-y-8"
           >
             {/* Tagline */}
-            <span className=" text-[10px] md:text-base text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full  ">
+            {/* <span className=" text-[10px] md:text-base text-primary-300 bg-gradient-dark-bg px-4 py-2 rounded-full  ">
               Simplified Bankinking with Ease
-            </span>
+            </span> */}
 
             {/* Main Heading */}
+            <div className="space-y-3">
+              <h1 className="text-[32px] relative md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide md:tracking-wider">
+                Welcome To{" "}
+                <span
+                  style={{ color: "var(--color-primary-300)" }}
+                  className="tracking-[13px]"
+                >
+                  Digitwallet.
+                </span>
+                {/* Top-right area - Star */}
+                <div className="absolute -top-3 -right-3 md:-top-1 md:right-3  pointer-events-none max-w-7">
+                  <img src="/star.png" alt="" className="w-full h-auto" />
+                </div>
+              </h1>
 
-            <h1 className="text-[32px] relative md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide md:tracking-wider">
-              Powering Financial{" "}
-              <span style={{ color: "var(--color-primary-300)" }}>
-                Freedom.
-              </span>
-              {/* Top-right area - Star */}
-              <div className="absolute -top-3 -right-3 md:-top-1 md:right-3 pointer-events-none max-w-7">
-                <img src="/star.png" alt="" className="w-full h-auto" />
-              </div>
-            </h1>
-
-            {/* Description */}
-            <p className="text-gray-300 text-sm md:text-lg max-w-lg">
-              Digitwallet Provides an all-in-one solution to help you manage,
-              exchange, and grow your assets with minimal hassle.
-            </p>
-
+              {/* Description */}
+              <p className="text-gray-300 text-sm md:text-lg max-w-lg">
+                Explore the full potential of digital assets
+              </p>
+            </div>
             {/* CTA Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}

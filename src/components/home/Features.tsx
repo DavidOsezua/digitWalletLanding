@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router";
 import RightArrow from "../SvgComponent/RightArrow";
 import AccountsSvg from "../SvgComponent/AccountsSvg";
-import Clock from "../SvgComponent/Clock";
-import Access from "../SvgComponent/Access";
 import Secure from "../SvgComponent/Secure";
 
 const Features = () => {
@@ -32,22 +30,24 @@ const Features = () => {
             Everything You Need in One Place
           </h2>
 
-          <div className="max-w-md space-y-3">
+          <div className="max-w-md space-y-3 flex flex-col items-end ">
             <p className="text-gray-300 text-sm lg:text-base ">
-              Digitwallet provides a suit of services for you to buy & sell
-              crypto, safeguard your crypto, pay and, send money to friends and
-              more — all in one place.
+              DigitWallet provides a suit of services for you to buy & sell
+              crypto, pay your global invoices in crypto — all in one place.
             </p>
-            <NavLink
-              to="/myaccount"
-              className="px-6 py-2.5 rounded-full font-medium text-sm text-white inline-block text-center"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to bottom, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
-              }}
-            >
-              Get Started
-            </NavLink>
+
+            <div className="ml-auto">
+              <NavLink
+                to="/myaccount"
+                className="px-6 py-2.5 rounded-full  font-medium text-sm text-white inline-block text-center"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to bottom, rgba(147, 205, 253, 1), rgba(77, 106, 174, 1))",
+                }}
+              >
+                Get Started
+              </NavLink>
+            </div>
           </div>
         </div>
 
@@ -70,8 +70,7 @@ const Features = () => {
                 Conversions
               </h3>
               <p className="text-dark-text text-sm mb-6">
-                Convert Between fiat and crypto with regulated, named IBANs,
-                ready.
+                Convert between fiat and crypto with named IBANs.
               </p>
 
               {/* Conversion Interface */}
@@ -108,15 +107,13 @@ const Features = () => {
                 Accounts
               </h3>
               <p className="text-dark-text text-sm mb-6 max-w-md">
-                Open and manage your experience. Securely view your account
-                balances and transaction history. Get insights and control your
-                finances.
+                View your account balances and transactions history.
               </p>
 
               {/* Account Dashboard Preview */}
               <div className="mt-auto">
                 <img
-                  src="/accounts.png"
+                  src="/account.webp"
                   alt="Account Dashboard"
                   className="w-full h-auto"
                 />
@@ -137,43 +134,20 @@ const Features = () => {
                 border: "1px solid var(--color-border-navbar)",
               }}
             >
-              {/* Access Icon */}
-              <div className="mb-4 md:mb-6">
-                <Access />
-              </div>
-
-              <h3 className="text-xl md:text-2xl font-bold text-dark-text mb-2">
-                24/7 Access
+              <h3 className="text-xl md:text-5xl tracking-[13px] font-bold text-dark-text mb-2">
+                Trade
               </h3>
-              <p className="text-dark-text text-xs md:text-sm mb-4 md:mb-6   max-w-35 md:max-w-70">
-                Access your account anytime, anywhere, from any device. Take
-                control of your finances with our comprehensive platform.
-              </p>
+              <h3 className="text-xl md:text-5xl tracking-[13px] font-bold text-dark-text mb-2">
+                Anywhere.
+              </h3>
 
               {/* World Background */}
-              <div className="absolute top-1/2 -translate-y-1/6  md:-bottom-[5%] -right-[15%] md:-right-[15%] w-[90%]  md:w-2/3">
+              <div className="absolute top-1/2 -translate-y-1/6   -right-[15%] md:-right-[15%] w-[90%]  ">
                 <img
                   src="/world.png"
                   alt="World Map"
                   className="w-full h-auto"
                 />
-              </div>
-
-              {/* All Day Access Badge */}
-              <div className="absolute top-1/2  right-1/7   bg-white rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg max-w-30 md:max-w-50">
-                <div className="space-y-1 md:space-y-4">
-                  <Clock className="max-w-6" />
-
-                  <p className="text-dark-text text-[10px] md:text-xs leading-tight">
-                    Access to view your funds any time
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute -right-1 bg-white rounded-xl md:rounded-md px-3 py-1 max-w-40.75 text-center top-1/3">
-                <p className="text-black/59 text-[10px] md:text-sm">
-                  All Day Access
-                </p>
               </div>
             </motion.div>
 
@@ -194,11 +168,13 @@ const Features = () => {
               </div>
 
               <h3 className="text-xl md:text-2xl font-bold text-dark-text mb-2">
-                Security Focused
+                Two Factor Authentication
               </h3>
-              <p className="text-dark-text text-xs md:text-sm mb-4 md:mb-6 max-w-50">
-                Benefit from advanced security measures to safeguard your
-                financial data.
+              <p className="text-dark-text text-xs md:text-sm mb-4 md:mb-6 max-w-90">
+                DigitWallet employs two-factor authentication (2FA), to access
+                to your account; these measures relate to platform security only
+                and do not safeguard or guarantee the performance or value of
+                any underlying assets or investments.
               </p>
 
               {/* Security Elements */}

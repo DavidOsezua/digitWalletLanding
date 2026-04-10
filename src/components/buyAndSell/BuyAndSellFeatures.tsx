@@ -1,3 +1,4 @@
+import Button from "../Button";
 import HighVolumes from "../SvgComponent/HighVolumes";
 import MultipleCurrencies from "../SvgComponent/MultipleCurrencies";
 import Settlement from "../SvgComponent/Settlement";
@@ -5,7 +6,19 @@ import Settlement from "../SvgComponent/Settlement";
 const BuyAndSellFeatures = () => {
   return (
     <section className="py-16 px-4 bg-bg-body">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto space-y-8">
+        {/* Section Header */}
+        <div className="space-y-4">
+          <h2 className="text-white text-[24px] md:text-[40px] font-medium leading-tight">
+            Buy and Sell Crypto with Your Fiat
+          </h2>
+          <p className="text-white/80 text-[14px] md:text-lg max-w-3xl">
+            Our Solution allows you to convert your traditional fiat currency
+            (like GBP, EUR, USD, and more) into cryptocurrency, and vice versa.
+          </p>
+          <Button buttonText="Get Started Now" to="/myaccount" />
+        </div>
+
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-3 lg:h-118.75">
           {/* Portfolio Balance Card - Spans 2 rows */}

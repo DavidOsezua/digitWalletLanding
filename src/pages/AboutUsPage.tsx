@@ -3,6 +3,7 @@ import JoinUs from "@/components/about/JoinUs";
 import Mission from "@/components/about/Mission";
 import HowItWorksSection from "@/components/buyAndSell/HowItWorksSection";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
+import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 import Footer from "@/components/home/Footer";
 import MainFooter from "@/components/MainFooter";
 import Navbar from "@/components/Navbar";
@@ -45,36 +46,10 @@ const AboutUsPage = () => {
           <DisclaimerBanner />
           <About />
           <Mission />
-          <HowItWorksSection
-            badge="Core Value"
-            title="What Makes Us Different"
-            variant="about"
-            description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
-            leftCard={{
-              icon: Sell2,
-              title: "Solution Focused",
-              description:
-                "Compliant custody with enterprise-grade protection.",
-              currencies: [Dollar, Euro, Pounds],
-            }}
-            rightCards={[
-              {
-                icon: Refresh,
-                title: "Security First",
-                description:
-                  "Compliant custody with enterprise-grade protection.",
-                currencies: [Bitcoin, ETH, USDT, USDC],
-              },
-              {
-                icon: Sell2,
-                title: "Cross-Sector Impact",
-                description: "Solutions for both individuals and businesses.",
-                currencies: [Bitcoin, ETH, USDT, USDC],
-              },
-            ]}
-          />
+
           <JoinUs />
           <div className="bg-bg-body pt-8 ">
+            <DisclaimerComponent />
             <MainFooter />
             <Warning />
             <Footer />
@@ -95,36 +70,9 @@ const AboutUsPage = () => {
           <DisclaimerBanner />
           <About />
           <Mission />
-          <HowItWorksSection
-            badge="Core Value"
-            title="What Makes Us Different"
-            variant="about"
-            description="After creating an account with DigitWallet and completing KYC (Know your Customer) verification, you are ready and set to go."
-            leftCard={{
-              icon: Sell2,
-              title: "Solution Focused",
-              description:
-                "Compliant custody with enterprise-grade protection.",
-              currencies: [Dollar, Euro, Pounds],
-            }}
-            rightCards={[
-              {
-                icon: Refresh,
-                title: "Security First",
-                description:
-                  "Compliant custody with enterprise-grade protection.",
-                currencies: [Bitcoin, ETH, USDT, USDC],
-              },
-              {
-                icon: Sell2,
-                title: "Cross-Sector Impact",
-                description: "Solutions for both individuals and businesses.",
-                currencies: [Bitcoin, ETH, USDT, USDC],
-              },
-            ]}
-          />
           <JoinUs />
           <div className="bg-bg-body pt-8 ">
+            <DisclaimerComponent />
             <MainFooter />
             <Warning />
             <Footer />

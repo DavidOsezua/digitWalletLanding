@@ -23,9 +23,9 @@ const OnboardingStepsDesktop = () => {
                   Create Your Account
                 </h3>
 
-                <p className="text-white/74 text-sm  leading-relaxed">
-                  Sign up today and follow our onboarding flow to provide your
-                  KYC information.Get started today — minimize complexity.
+                <p className="text-white/74 text-base  leading-relaxed">
+                  Sign up and follow our onboarding flow to provide your KYC
+                  information.<br/>Get started.
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const OnboardingStepsDesktop = () => {
                   Add Wallet & Verify
                 </h3>
 
-                <p className="text-gray-400 text-sm  leading-relaxed">
+                <p className="text-gray-400 text-base  leading-relaxed">
                   Once your DigitWallet account is approved you are ready to
                   whitelist your wallet and beginning exchanging.
                 </p>
@@ -76,7 +76,7 @@ const OnboardingStepsDesktop = () => {
                   Start Transacting
                 </h3>
 
-                <p className="text-gray-400 text-sm  leading-relaxed">
+                <p className="text-gray-400 text-base  leading-relaxed">
                   Buy or sell crypto, send and receive payments, or accept
                   crypto from clients — all from your dashboard.
                 </p>

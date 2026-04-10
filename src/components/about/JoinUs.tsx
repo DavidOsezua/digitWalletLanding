@@ -14,11 +14,10 @@ const JoinUs = () => {
           {/* Left Side - Text Content */}
           <div className="space-y-6 md:space-y-12 relative z-10">
             <h2 className="text-white text-[24px] md:text-[32px] lg:text-[40px] font-medium leading-tight">
-              Ready to Join a Professional Crypto Ecosystem?
+              Ready to Join?
             </h2>
 
             <div className="space-y-4 text-white text-base md:text-[20px] max-w-130">
-              <p>Explore how DigitWallet can support your financial goals.</p>
               <p>
                 Send funds to business partners, contractors, or suppliers in
                 crypto while they receive fiat into their bank account
@@ -32,6 +31,8 @@ const JoinUs = () => {
             <Button buttonText="Get Started Now" to="/myaccount" />
           </div>
 
+          
+
           {/* Right Side - Invoice Dashboard Card */}
           {isMobile ? (
             <div className="max-w-100 mx-auto">
@@ -43,6 +44,7 @@ const JoinUs = () => {
             </div>
           )}
         </div>
+        <p className="text-base  md:text-[20px] font-bold text-white my-8">DigitWallet is licensed in the Czech Republic in relation to certain activities. However, cryptoasset investments are unregulated in the UK and are not covered by the Financial Services Compensation Scheme (FSCS) or the Financial Ombudsman Service (FOS). You should be prepared to lose all the money you invest.</p>
       </div>
     </section>
   );
