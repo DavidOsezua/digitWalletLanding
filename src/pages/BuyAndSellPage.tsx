@@ -1,6 +1,5 @@
 import BuyAndSell from "../components/buyAndSell/BuyAndSell";
 import BuyAndSellFeatures from "../components/buyAndSell/BuyAndSellFeatures";
-import HowItWorksSection from "../components/buyAndSell/HowItWorksSection";
 import HowItWorksSteps from "../components/buyAndSell/HowItWorksSteps";
 import TransparentPricingSection from "../components/buyAndSell/TransparentPricingSection";
 import WhyChoose from "../components/buyAndSell/WhyChoose";

@@ -1,7 +1,6 @@
 import About from "@/components/about/About";
 import JoinUs from "@/components/about/JoinUs";
 import Mission from "@/components/about/Mission";
-import HowItWorksSection from "@/components/buyAndSell/HowItWorksSection";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
 import DisclaimerComponent from "@/components/home/DisclaimerComponent";
 import Footer from "@/components/home/Footer";
@@ -9,15 +8,6 @@ import MainFooter from "@/components/MainFooter";
 import Navbar from "@/components/Navbar";
 import ProgressiveBackgroundImage from "@/components/ProgressiveBackgroundImage";
 import ScrollToTop from "@/components/ScrollToTop";
-import Bitcoin from "@/components/SvgComponent/Bitcoin";
-import Dollar from "@/components/SvgComponent/Dollar";
-import ETH from "@/components/SvgComponent/ETH";
-import Euro from "@/components/SvgComponent/Euro";
-import Pounds from "@/components/SvgComponent/Pounds";
-import Refresh from "@/components/SvgComponent/Refresh";
-import Sell2 from "@/components/SvgComponent/Sell2";
-import USDC from "@/components/SvgComponent/USDC";
-import USDT from "@/components/SvgComponent/USDT";
 import Warning from "@/components/Warning";
 import { useMobile } from "@/hooks/useMobile";
 
