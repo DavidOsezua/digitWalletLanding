@@ -8,9 +8,9 @@ const MainFooter = () => {
   const companyLinks = [
     { name: "Home", path: "/" },
     { name: "Buy & Sell Crypto", path: "/buyandsell" },
-    { name: "Custody", path: "/custody" },
-    { name: "Crypto Gateway", path: "/cryptogateway" },
-    { name: "Pay with Crypto", path: "/paywithcrypto" },
+    // { name: "Custody", path: "/custody" },
+    // { name: "Crypto Gateway", path: "/cryptogateway" },
+    // { name: "Pay with Crypto", path: "/paywithcrypto" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
