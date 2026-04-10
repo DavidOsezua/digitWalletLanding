@@ -1,7 +1,7 @@
 import Button from "../Button";
 import HighVolumes from "../SvgComponent/HighVolumes";
 import MultipleCurrencies from "../SvgComponent/MultipleCurrencies";
-import Settlement from "../SvgComponent/Settlement";
+
 
 const BuyAndSellFeatures = () => {
   return (
