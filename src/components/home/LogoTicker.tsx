@@ -1,13 +1,13 @@
 const LogoTicker = () => {
   const logos = [
-    { src: "/logo1.png", alt: "Safeheron" },
-    { src: "/logo2.png", alt: "Ledger" },
+    
     { src: "/logo3.png", alt: "ECB Group" },
     { src: "/logo4.png", alt: "Vespia" },
     { src: "/logo5.png", alt: "Banking Circle" },
     { src: "/logo6.png", alt: "Ledger" },
     { src: "/logo7.png", alt: "ECB Group" },
     { src: "/logo4.png", alt: "Vespia" },
+     { src: "/logo5.png", alt: "Banking Circle" },
   ];
 
   return (
