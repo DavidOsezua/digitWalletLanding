@@ -13,7 +13,7 @@ const DisclaimerBanner = () => {
             className="underline hover:opacity-80 transition-opacity"
             style={{ color: "#6294FF" }}
           >
-            Take 2 minutes to learn more
+            Take 2 mins to learn more
           </NavLink>
         </p>
       </div>

@@ -23,26 +23,26 @@ const FAQSection = () => {
     },
     {
       question: "Is KYC required?",
-      answer: `Signing up for a DigitWallet account:
+        answer: `Signing up for a DigitWallet account:
 
-- Open the DigitWallet website, and choose 'Sign up'.
+-Open the DigitWallet website, and choose ‘Sign up’.
 
-- Enter your email and choose a strong password.
+-Enter your email and choose a strong password.
 
-- Confirm your email address.
+-Confirm your email address.
 
-- Complete your identity verification.
+-Complete your identity verification.
 
 New users must undergo a mandatory 24-hour cool-off period starting from the moment they complete their Identity Verification. During this period, interaction with our services is restricted, although you can complete the required assessments.
 
-- Fill out an Investor Categorisation.
+-Fill out an Investor Categorisation.
 
-During this stage, we will ask our users to specify their investor type — sophisticated (experienced), high net worth, or restricted investor. Additionally, we will gather any necessary information to confirm their investor type, such as the proportion of their assets invested and assets they intend to invest in higher-risk products (like cryptoassets) in relation to their overall net assets. This FCA-established categorisation enables users to take more financially sound investment decisions. You need to successfully complete the Investor Categorisation to proceed with the Appropriateness Assessment. You have the opportunity to retake the Investor Categorisation until you successfully complete it.
+During this stage, we will ask our users to specify their investor type — sophisticated (experienced), high net worth, or restricted investor. Additionally, we will gather any necessary information to confirm their investor type, such as the proportion of their assets invested and assets they intend to invest in higher-risk products (like cryptoassets) in relation to their overall net assets. This FCA-established categorisation support users to take more financially sound investment decisions. You need to successfully complete the Investor Categorisation to proceed with the Appropriateness Assessment. You have the opportunity to retake the Investor Categorisation until you successfully complete it.
 
-- Complete an Appropriateness Assessment.
+-Complete an Appropriateness Assessment.
 
-We will ask our users to complete a set of multiple-choice questions, focused on general knowledge about crypto trading, to assess users' awareness of the risks involved in cryptoassets and cryptoasset-derived products and services. Required by the FCA, this will help verify that you make informed and proportionate investment decisions. If you do not successfully complete an Appropriateness Assessment, you can retake it immediately. If you do not pass on the second attempt, you will be able to try again after 24 hours. If you do not pass on the third attempt you will not be able to continue.`,
-    },
+We will ask our users to complete a set of multiple-choice questions, focused on general knowledge about crypto trading, to assess users’ awareness of the risks involved in cryptoassets and cryptoasset-derived products and services. Required by the FCA, this will support that you can make informed and proportionate investment decisions. If you do not successfully complete an Appropriateness Assessment, you can retake it immediately. If you do not pass on the second attempt, you will be able to try again after 24 hours. If you do not pass on the third attempt you will not be able to continue.`
+    }
   ];
 
   const toggleFAQ = (index: number) => {
