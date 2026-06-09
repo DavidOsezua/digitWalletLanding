@@ -1,9 +1,22 @@
 import { AlertCircle } from "lucide-react";
+import { useLocation } from "react-router";
+
+// Pages that should display the FCA financial promotion approval text
+const APPROVAL_TEXT_PATHS = ["/", "/about", "/buyandsell"];
 
 export default function DisclaimerComponent() {
+  const { pathname } = useLocation();
+  const showApprovalText = APPROVAL_TEXT_PATHS.includes(pathname);
+
   return (
     <section>
       <div className="max-w-337.5 mx-auto p-4 md:p-8">
+        {showApprovalText && (
+          <p className="text-white  font-semibold mb-4 md:text-[24px]">
+            This financial promotion has been approved by Gateway 21 FCA ref
+            number 999557 on 11 May 2026
+          </p>
+        )}
         <div
           className="max-w-7xl w-full rounded-sm p-4 md:p-8"
           style={{
