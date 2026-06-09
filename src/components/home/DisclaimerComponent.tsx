@@ -4,9 +4,6 @@ export default function DisclaimerComponent() {
   return (
     <section>
       <div className="max-w-337.5 mx-auto p-4 md:p-8">
-        <p className="font-bold  md:text-[24px] my-8 text-white">
-         This financial promotion has been approved by Gateway 21 FCA ref number 999557 on 11 May 2026
-        </p>
         <div
           className="max-w-7xl w-full rounded-sm p-4 md:p-8"
           style={{
