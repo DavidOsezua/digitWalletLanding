@@ -12,7 +12,7 @@ export interface GeolocationResponse {
 }
 
 const LOCATION_STORAGE_KEY = "user_location_check";
-const BLOCKED_COUNTRY_CODE = ""; 
+const BLOCKED_COUNTRY_CODE = "GB";
 
 /**
  * Check if user's location from the UK
